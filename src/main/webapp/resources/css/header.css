@@ -9,3 +9,25 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.main-header.logo-link {
+  padding: 8px 16px;
+}
+
+.main-header.logo-link .main-header.logo {
+  height: 38px;
+}
+
+.main-header.nav-link-container {
+  display: flex;
+  align-items: center;
+}
+
+.main-header.nav-link-container .main-header.nav-link {
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+.main-header.btn {
+  margin-left: 8px;
+}
