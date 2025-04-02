@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+/* BUTTON */
+button.btn {
+  font-weight: 600;
+}
+
+/* SIZE */
+button.btn.btn-small {
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 14px;
+}
+
+button.btn.btn-medium {
+  font-size: 24px;
+  padding: 8px 16px;
+  border-radius: 40px;
+}
+
+button.btn.btn-large {
+  font-size: 36px;
+  padding: 12px 20px;
+  border-radius: 60px;
+}
+
+button.btn.btn-secondary.btn-small {
+  border-radius: 20px;
+}
+
+button.btn.btn-secondary.btn-medium {
+  border-radius: 50px;
+}
+
+button.btn.btn-secondary.btn-large {
+  border-radius: 70px;
+}
+
+/* COLOR */
+button.btn.btn-primary {
+  color: #f4f4f4;
+  background: #1f53f0;
+}
+
+button.btn.btn-secondary {
+  color: #1f53f0;
+  background: #f4f4f4;
+  border: 2px solid #1f53f0;
+}
+
+/* BUTTON HOVER */
+button.btn.btn-hover {
+  transition: all linear 150ms;
+}
+
+/* PRIMARY HOVER */
+button.btn.btn-primary.btn-hover:hover {
+  background: #4e95d9;
+}
+
+/* SECONDARY HOVER */
+button.btn.btn-secondary.btn-hover:hover {
+  background: #c1e5f5;
+}
+
+/* LINK */
+a.link {
+  font-weight: 900;
+}
+
+/* SIZE */
+a.link.link-small {
+  font-size: 12px;
+  padding: 6px 12px;
+}
+a.link.link-medium {
+  font-size: 20px;
+  padding: 8px 16px;
+}
+a.link.link-large {
+  font-size: 32px;
+  padding: 12px 20px;
+}
+
+/* LINK HOVER */
+a.link.link-hover {
+  transition: all linear 150ms;
+}
+
+a.link.link-hover:hover {
+  color: #4e95d9;
+  background: #c1e5f5;
+}

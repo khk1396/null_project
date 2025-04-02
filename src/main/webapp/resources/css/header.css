@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.main-header-container {
+  padding: 0 32px;
+}
+
+.main-header.container-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
