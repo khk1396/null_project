@@ -50,7 +50,7 @@ button.btn.btn-secondary {
 
 /* BUTTON HOVER */
 button.btn.btn-hover {
-  transition: all linear 150ms;
+  transition: color linear 150ms, background linear 150ms;
 }
 
 /* PRIMARY HOVER */
@@ -84,7 +84,7 @@ a.link.link-large {
 
 /* LINK HOVER */
 a.link.link-hover {
-  transition: all linear 150ms;
+  transition: color linear 150ms, background linear 150ms;
 }
 
 a.link.link-hover:hover {

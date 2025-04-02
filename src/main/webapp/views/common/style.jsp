@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="/resources/css/reset.css" rel="stylesheet" />
-<link href="/resources/css/stylesheet.css" rel="stylesheet" />
+<link href="resources/css/reset.css" rel="stylesheet" />
+<link href="resources/css/stylesheet.css" rel="stylesheet" />
 </head>
 <body>
 	<h2>BUTTON</h2>

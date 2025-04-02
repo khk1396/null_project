@@ -8,12 +8,12 @@
 </head>
 <body>
 	<!-- HEADER -->
-	<jsp:include page="/views/common/header.jsp" />
+	<jsp:include page="views/common/header.jsp" />
 	
 	<!-- STYLE -->
-	<jsp:include page="/views/common/style.jsp" />
+	<jsp:include page="views/common/style.jsp" />
 	
 	<!-- FOOTER -->
-	<jsp:include page="/views/common/footer.jsp" />
+	<jsp:include page="views/common/footer.jsp" />
 </body>
 </html>
