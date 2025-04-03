@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
 .main-header-container {
-  display: sticky;
+  position: sticky;
+  top: 0;
   padding: 0 32px;
   border-bottom: 1px solid #1e2022;
+  z-index: 1000;
+  background: #f4f4f4;
 }
 
 .main-header.container-inner {
@@ -17,6 +20,7 @@
 }
 
 .main-header.logo-link .main-header.logo {
+  min-width: 102px;
   height: 38px;
 }
 

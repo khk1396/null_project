@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+/* MAIN BANNER */
+.main-page.top-banner-container {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  min-width: 1200px;
+  height: 300px;
+}
+
+.main-page.top-banner-link {
+  width: 100%;
+  height: 100%;
+}
+
+.main-page.top-banner-image {
+  width: 100%;
+  height: 100%;
+}
+
+.main-page.contents-container {
+  padding: 36px 88px;
+}
+
+/* BOX-LIST SECTION */
+
+.main-page.section-title.box-title {
+  font-size: 24px;
+}
+
+.main-page.box-item-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 3.3%;
+
+  margin-top: 24px;
+}
+
+/* PROD-LIST SECTION */
+
+.main-page.section.prod-list-container {
+  margin-top: 36px;
+}
+
+.main-page.prod-item-list {
+  margin-top: 24px;
+}

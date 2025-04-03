@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="resources/css/reset.css" rel="stylesheet" />
-<link href="resources/css/stylesheet.css" rel="stylesheet" />
+<link href="resources/css/common/reset.css" rel="stylesheet" />
+<link href="resources/css/common/stylesheet.css" rel="stylesheet" />
 </head>
 <body>
 <!-- NOTI: 스타일 확인 후 주석 처리 또는 코드 삭제해야 함 -->
-<!-- 
+<%--  
 	<h2>BUTTON</h2>
 	<br><br>
 	<h3>PRIMARY</h3>
@@ -29,6 +29,7 @@
 	<a class="link link-small link-hover" >LINK</a>
 	<a class="link link-medium link-hover" >LINK</a>
 	<a class="link link-large" >LINK</a>
-	<br> -->
+	<br>
+--%>
 </body>
 </html>
