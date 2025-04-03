@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+    main {
+        height: 950px;
+        box-sizing: border-box;
+    }
+
+    .pageDescription{
+        color: #e87131;
+        margin: 20px;
+        font-size: 40px; 
+        font-weight: 900;
+        text-align: center;
+    }
+    .content{
+        display: flex;
+        height: 90.1%;
+        box-sizing: border-box;
+    }
+    .productList{
+        height: 90%;
+        width: 1300px;
+    }
+	.DIVproduct {
+        display: flex;
+		background-color: rgb(148, 216, 236);
+        width: 90%;
+        height: 250px;
+        margin: auto;
+        margin-top: 30px;
+        border-top: 2px solid gray;
+        border-bottom: 2px solid gray;
+	}
+
+	.DIVproduct input[type=checkbox] {
+		margin-left:10px;
+		margin-right:10px;
+	}
+
+    .productName{
+        text-align: center;
+        color: #1F53F0;
+        height: 30%;
+        height: 49%;
+        font-size: 37px;
+        font-weight: 900;
+    }
+
+    .productDescription{
+        height: 49%;
+        font-size: 20px;
+        font-weight: 500;
+        color: rgb(109, 96, 96);
+    }
+
+    .emptySection{
+    	border-top:1px solid #9ea0a8;
+    	border-bottom : 1px solid #9ea0a8;
+        width: 280px;
+    }
+
+    .comment{
+        width: 33%;
+        height: 60%;
+        background-color: white;
+    }
+
+    .commentBox{
+        font-size: 20px;
+        resize: none;
+        width: 100%;
+        height: 150px;
+    }
+
+    .registOne{
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        width:17%;
+    }
+	
+	main>div.content>.emptySection ul.btnList{
+        list-style: none;
+
+    }
+
+    main>div.content>.emptySection ul.btnList li{
+        margin: 20px;
+
+    }
+    
+    form .selectRegist {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .selectRegistBtn{
+    	margin-top:15px;
+    	margin-right:40px;
+    }
+
