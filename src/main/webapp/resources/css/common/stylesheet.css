@@ -46,7 +46,6 @@ button.btn.btn-primary {
 
 button.btn.btn-secondary {
   color: #1f53f0;
-  background: #f4f4f4;
   border: 2px solid #1f53f0;
 }
 
@@ -192,11 +191,62 @@ a.link.link-hover:hover {
   min-width: 1200px;
   margin: 0 auto;
 }
+
 /* FOOTER FIXED BOTTOM */
 .footer-fixed-bottom {
   height: auto;
   min-height: 100%;
   padding-bottom: 84px; /* FOOTER HEIGHT */
+}
+
+/* INPUT */
+
+.input-container {
+	width: 100%;
+}
+
+/* SHRINK INPUT */
+.input-container.shrink {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.input-label.shrink {
+	position: absolute;
+	left: 12px;
+	z-index: 10;
+	opacity: 0.3;
+	font-size: 18px;
+	transition: transform linear 250ms;
+	cursor: text;
+}
+
+.input.shrink {
+	position: absolute;
+	top: 0;
+	border-bottom: 1px solid #C1E5F5;
+	padding: 12px 12px;
+	width: 100%;
+	font-size: 16px;
+}
+
+.input-container.shrink.focus .input-label.shrink {
+	font-size: 12px;
+	transform: translate(-4px, -20px);
+}
+
+/* PRIMARY INPUT */
+
+.input.input-primary {
+	width: 100%;
+	padding: 16px 16px;
+	border-bottom: 2px solid #C1E5F5;
+}
+
+.input.input-primary:focus {
+	border-bottom-color: #E87131;
 }
 
 
