@@ -22,6 +22,6 @@
 	
 	<!-- FOOTER -->
 	<%-- <jsp:include page="views/common/footer.jsp" /> --%>
-	<jsp:include page="views/main/main.jsp" />
+	<jsp:include page="views/mainPage/main.jsp" />
 </body>
 </html>

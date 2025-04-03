@@ -4,12 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="resources/css/header.css" rel="stylesheet" />
+<link href="resources/css/common/header.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="main-header-container" >
 		<div class="main-header container-inner" >
-			<a class="main-header logo-link" href="/semi_box"><img class="main-header logo" src="resources/svg/logo.svg" alt="project_logo.img" /></a>
+			<a class="main-header logo-link" href="/semi_box">
+				<img class="main-header logo" src="resources/svg/logo.svg" alt="project_logo.img" />
+			</a>
 			
 			<!-- 헤더 링크 -->
 			<!-- TODO : Controller로 GET 요청 후 페이지 forwarding -->
