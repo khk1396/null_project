@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="resources/css/common/footer.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath}/resources/css/common/footer.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="main-footer-container" >
@@ -13,7 +13,7 @@
 			<div class="main-footer footer-info" >
 				Copyright {2025}. KH정보교육원 - A. NULL Co. All rights reserved.
 			</div>
-			<img class="main-footer logo" src="resources/svg/logo.svg" />
+			<img class="main-footer logo" src="${pageContext.request.contextPath}/resources/svg/logo.svg" />
 		</div>
 	</div>
 </body>

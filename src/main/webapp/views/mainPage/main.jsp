@@ -71,6 +71,7 @@
 			</div>
 		</section>	
 	</div>
+	<a href="views/orderRefund/oderhistory.jsp">주문내역</a>
 	<jsp:include page="/views/common/footer.jsp" />
 </body>
 </html>

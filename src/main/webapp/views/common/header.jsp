@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="resources/css/common/header.css" rel="stylesheet" />
+<link href="${pageContext.request.contextPath}/resources/css/common/header.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="main-header-container" >
 		<div class="main-header container-inner" >
 			<a class="main-header logo-link" href="/semi_box">
-				<img class="main-header logo" src="resources/svg/logo.svg" alt="project_logo.img" />
+				<img class="main-header logo" src="${pageContext.request.contextPath}/resources/svg/logo.svg" alt="project_logo.img" />
 			</a>
 			
 			<!-- 헤더 링크 -->
