@@ -17,7 +17,7 @@
 			<img class="main-page top-banner-image" src="resources/images/main_banner.jpg" alt="main_banner.img" />
 		</a>
 	</div>
-	<div class="main-page contents-container page-layout footer-fixed-bottom" >
+	<div class="main-page contents-container page-layout" >
 		<section class="main-page section box-list-container" >
 			<h1 class="main-page section-title box-title">인기 상품</h1>
 			<!-- TODO: 인기 상품 (박스 목록) -->
