@@ -103,7 +103,6 @@ a.link.link-hover:hover {
 
 /* CARD */
 .box-item-container.card {
-  position: relative;
   width: 22%;
   height: 22%;
   border-radius: 12px;
@@ -111,26 +110,26 @@ a.link.link-hover:hover {
 }
 
 .box-item.card.img-container {
-  padding: 38px 72px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 0;
-  height: 0;
-  padding-top: 35%;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+}
+
+/* LINK LAYOUT */
+.box-item-link {
+  width: 100%;
+  height: 100%;
 }
 
 /* IMAGE */
 .box-item.card.img {
-  /* TODO: 임시 레이아웃 이미지 생성 후 수정 */
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  height: 120px;
   background: #1f53f0;
-  border-radius: 12px;
+  object-fit: cover;
 }
 
 /* INFORMATION */
@@ -138,13 +137,16 @@ a.link.link-hover:hover {
   padding: 24px 28px;
   font-weight: bold;
 }
+
 .box-item.card.title {
   font-size: 1.5em;
   color: #1f53f0;
 }
+
 .box-item.card.des {
   margin-top: 8px;
 }
+
 .box-item.card.price {
   margin-top: 8px;
 }
@@ -153,18 +155,20 @@ a.link.link-hover:hover {
 
 /* CARD */
 .prod-item-container.card {
-  width: 180px;
-  height: 200px;
+  width: 16%;
+  height: 16%;
   border-radius: 12px;
 }
 
 .prod-item.card.img-container {
   padding: 32px 48px 0;
+  width: 100%;
+  height: 80px;
 }
 
 .prod-item.card.img {
   width: 100%;
-  height: 80px;
+  height: 100%;
   border-radius: 8px;
   background: #1f53f0;
 }
@@ -180,4 +184,11 @@ a.link.link-hover:hover {
 
 .prod-item.card.des {
   margin-top: 8px;
+}
+
+/* PAGE LAYOUT */
+.page-layout {
+  max-width: 1440px;
+  min-width: 1200px;
+  margin: 0 auto;
 }

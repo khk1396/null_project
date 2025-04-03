@@ -20,6 +20,7 @@
 }
 
 .main-header.logo-link .main-header.logo {
+  min-width: 102px;
   height: 38px;
 }
 
