@@ -98,7 +98,7 @@ a.link.link-hover:hover {
 
 /* BOX SHADOW */
 .box-shadow {
-  box-shadow: 1px 4px 10px 2px #f4f4f4;
+  box-shadow: 1px 4px 10px 2px #F4F4F4;
 }
 
 /* CARD */
@@ -107,6 +107,7 @@ a.link.link-hover:hover {
   height: 22%;
   border-radius: 12px;
   font-size: 16px;
+  overflow: hidden;
 }
 
 .box-item.card.img-container {
@@ -115,7 +116,6 @@ a.link.link-hover:hover {
   border-radius: 12px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  overflow: hidden;
 }
 
 /* LINK LAYOUT */
@@ -192,3 +192,11 @@ a.link.link-hover:hover {
   min-width: 1200px;
   margin: 0 auto;
 }
+/* FOOTER FIXED BOTTOM */
+.footer-fixed-bottom {
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 84px; /* FOOTER HEIGHT */
+}
+
+
