@@ -7,7 +7,7 @@
 <link href="resources/css/common/header.css" rel="stylesheet" />
 </head>
 <body>
-	<div class="main-header-container" >
+	<div class="main-header-container page-layout" >
 		<div class="main-header container-inner" >
 			<a class="main-header logo-link" href="/semi_box">
 				<img class="main-header logo" src="resources/svg/logo.svg" alt="project_logo.img" />

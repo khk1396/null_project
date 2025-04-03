@@ -10,7 +10,7 @@
 	<jsp:include page="/views/common/style.jsp" />
 	<jsp:include page="/views/common/header.jsp" />
 	<!-- NOTI: branch - impl#01_mainUI -->
-	<div class="main-page top-banner-container" >
+	<div class="main-page top-banner-container page-layout" >
 		<!-- TODO: 메인 배너  -->
 		<a class="main-page top-banner-link" href="" >
 			<!-- TODO: 이미지 수정 예정 -->

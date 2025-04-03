@@ -1,1 +1,8 @@
+# Java project
 /target/
+/.idea/
+/.classpath
+.project
+/.settings/
+/logs/
+*.log
