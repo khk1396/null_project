@@ -6,3 +6,4 @@
 /.settings/
 /logs/
 *.log
+.metadata/
