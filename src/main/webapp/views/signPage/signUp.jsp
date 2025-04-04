@@ -25,6 +25,7 @@
 					<label class="input-label" for="sign-up-userId" >아이디</label>
 					<input id="sign-up-userId" class="sign-up-page input input-primary" type="text" name="userId" />
 				</span>
+				<!--id 중복 버튼 -->
 				<!-- password input -->
 				<span class="sign-up-page input-container userPwd" >
 					<label class="input-label" for="sign-up-userPwd"  >비밀번호</label>
@@ -40,6 +41,8 @@
 					<label class="input-label" for="sign-up-nickname"  >닉네임</label>
 					<input id="sign-up-nickname" type="password" class="sign-up-page input input-primary" name="nickname" />
 				</span>
+				<!-- 전화번호 -->
+				<!--  -->
 				<!-- TODO: 배송지 입력 -->
 				<div class="sign-up-page btn-container" >
 					<button class="sign-up-page sign-up-btn btn btn-medium btn-secondary btn-hover submit" type="submit" >회원가입</button>
