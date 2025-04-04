@@ -84,13 +84,17 @@ a.link.link-large {
 }
 
 /* LINK HOVER */
-a.link.link-hover {
+a.link.link-hover, a.link.link-text-hover {
   transition: color linear 150ms, background linear 150ms;
 }
 
 a.link.link-hover:hover {
   color: #4e95d9;
   background: #c1e5f5;
+}
+
+a.link.link-text-hover:hover {
+	color: #4e95d9;
 }
 
 /* BOX ITEM */
@@ -201,16 +205,14 @@ a.link.link-hover:hover {
 
 /* INPUT */
 
-.input-container {
-	width: 100%;
-}
-
 /* SHRINK INPUT */
+
 .input-container.shrink {
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	height: 40px;
 }
 
 .input-label.shrink {
@@ -219,7 +221,7 @@ a.link.link-hover:hover {
 	z-index: 10;
 	opacity: 0.3;
 	font-size: 18px;
-	transition: transform linear 250ms;
+	transition: transform linear 150ms;
 	cursor: text;
 }
 
@@ -238,6 +240,10 @@ a.link.link-hover:hover {
 }
 
 /* PRIMARY INPUT */
+
+.input-container.primary {
+	width: 100%;
+}
 
 .input.input-primary {
 	width: 100%;

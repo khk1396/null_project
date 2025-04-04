@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="resources/css/common/reset.css" rel="stylesheet" />
-<link href="resources/css/common/stylesheet.css" rel="stylesheet" />
+<link href="${ pageContext.request.contextPath }/resources/css/common/reset.css" rel="stylesheet" />
+<link href="${ pageContext.request.contextPath }/resources/css/common/stylesheet.css" rel="stylesheet" />
 </head>
 <body>
 <!-- NOTI: 스타일 확인 후 주석 처리 또는 코드 삭제해야 함 -->

@@ -21,23 +21,23 @@
 			<!-- TODO: 유저 관련 테이블 생성 후 컬럼명 변경 -->
 			<form class="sign-page form" action="enroll" method="post" >
 				<!-- id input -->
-				<span class="sign-up-page input-container userId" >
+				<span class="sign-up-page input-container primary userId" >
 					<label class="input-label" for="sign-up-userId" >아이디</label>
 					<input id="sign-up-userId" class="sign-up-page input input-primary" type="text" name="userId" />
 				</span>
 				<!--id 중복 버튼 -->
 				<!-- password input -->
-				<span class="sign-up-page input-container userPwd" >
+				<span class="sign-up-page input-container primary userPwd" >
 					<label class="input-label" for="sign-up-userPwd"  >비밀번호</label>
 					<input id="sign-up-userPwd" type="password" class="sign-up-page input input-primary" name="userPwd" />
 				</span>
 				<!-- password check input -->
-				<span class="sign-up-page input-container pwdCheck" >
+				<span class="sign-up-page input-container primary pwdCheck" >
 					<label class="input-label" for="sign-up-pwdCheck"  >비밀번호 확인</label>
 					<input id="sign-up-pwdCheck" type="password" class="sign-up-page input input-primary" />
 				</span>
 				<!-- nickname -->
-				<span class="sign-up-page input-container nickname" >
+				<span class="sign-up-page input-container primary nickname" >
 					<label class="input-label" for="sign-up-nickname"  >닉네임</label>
 					<input id="sign-up-nickname" type="password" class="sign-up-page input input-primary" name="nickname" />
 				</span>
