@@ -11,8 +11,8 @@
 </head>
 <body>
 	<!-- HEADER -->
-	<jsp:include page="/views/common/header.jsp" />
-	<jsp:include page="/views/common/style.jsp" />
+	<jsp:include page="${ pageContext.request.contextPath}/views/common/header.jsp" />
+	<jsp:include page="${ pageContext.request.contextPath}/views/common/style.jsp" />
 	<!-- SIGN IN PAGE -->
 	<div class="sign-page container page-layout footer-fixed-bottom" >
 		<span class="sign-page inner box-shadow" >
