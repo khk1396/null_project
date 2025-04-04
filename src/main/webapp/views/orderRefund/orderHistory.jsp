@@ -7,34 +7,32 @@
 <title>주문내역</title>
 
     <style>
-        * { margin: auto; padding: 0;}
-        body { width: auto; height: auto;
-                
-        }
+
 
         #mainFrame {
                 width: auto;
-                height: 600px;
-                border: 1px black solid;
+                height: auto;
+                border: px black solid;
                 box-sizing: border-box;
                 margin-top: 6%;
-                margin-left: 20%;
-                margin-right: 20%;
+                margin-left: 10%;
+                margin-right: 10%;
                 margin-bottom: 10%;
-                display: flex
-;
-    flex-direction: row;
+                /*
+                display: flex;
+                flex-direction: row;
+                */
         }
 
 
         #orderMenu, #orderContent{
             border: px pink solid;
-            height: 100%;
+            width:  100%;
             margin: 0;
         }
-        #orderMenu {  width: 15%;  border-right: 1px black solid;
+        #orderMenu {  height: 15%;  border: 1px black solid;
          }
-        #orderContent { width: 85%; 
+        #orderContent { height: 85%; 
             box-sizing: border-box;
         }
 
@@ -67,7 +65,9 @@
             height: 45%;
             display: flex;
             box-sizing: border-box;
-            border-top: 0.6mm black solid;
+            
+            border-bottom: 0.2pxblack solid;
+          
         }        
 
         #orderContentUpTitle {
@@ -104,7 +104,7 @@
 
         .orderinquiry {
             border:  px brown solid;
-            border-top: 1px black solid;
+            border-top: px black solid;
             border-bottom: 1px black solid;
             width: 100%;
             height: 25%;
@@ -176,11 +176,24 @@
 	<!-- STYLE -->
 	<jsp:include page="/views/common/style.jsp" />
 	
+	
+	
+	
     <div id="mainFrame">
-        <div id="orderMenu"></div>
+        <div id="orderMenu">
+        
+
+        
+        
+        
+        
+        </div>
 
 
-        <di id="orderContent">
+
+
+
+        <div id="orderContent">
             <div id="orderContentUp">
                 <div id="orderContentUpTitle"> 주문 내역 </div>
                 <div id="orderContentUpCategory"> 
@@ -323,12 +336,6 @@
 
 
 
-
-
-
-
-        </div>
-    </div>
 
 
 
