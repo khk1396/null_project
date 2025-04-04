@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/* SIGN-IN PAGE */
+
+.sign-in-page.input-container.userId {
+	margin-bottom: 40px;
+}
+
+.sign-in-page.input-container.userPwd {
+	margin-bottom: 70px;
+}
+
+.sign-in-page.btn-container {
+	display: flex;
+	justify-content: center;
+}
+
+.sign-in-page.sign-in-btn.btn-medium {
+	margin-right: 28px;
+	padding: 10px 20px;
+}
