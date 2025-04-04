@@ -4,15 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="${ pageContext.request.contextPath}/resources/css/signPage/signInPage.css" rel="stylesheet" />
-<link href="${ pageContext.request.contextPath}/resources/css/signPage/common.css" rel="stylesheet" />
-<script src="${ pageContext.request.contextPath }/resources/js/common/input.js" ></script>
+<link href="resources/css/signPage/signInPage.css" rel="stylesheet" />
+<link href="resources/css/signPage/common.css" rel="stylesheet" />
+<script src="resources/js/common/input.js" ></script>
+<script src="resources/js/signPage/funcBtn.js"></script>
 <title></title>
 </head>
 <body>
 	<!-- HEADER -->
-	<jsp:include page="${ pageContext.request.contextPath}/views/common/header.jsp" />
-	<jsp:include page="${ pageContext.request.contextPath}/views/common/style.jsp" />
+	<jsp:include page="/views/common/header.jsp" />
+	<jsp:include page="/views/common/style.jsp" />
 	<!-- SIGN IN PAGE -->
 	<div class="sign-page container page-layout footer-fixed-bottom" >
 		<span class="sign-page inner box-shadow" >
@@ -31,9 +32,17 @@
 					<input id="sign-in-userPwd" type="password" class="sign-in-page input shrink" name="userPwd" onfocus="return onFocusShrinkInput('.sign-in-page.userPwd')" />
 					<label class="input-label shrink" for="sign-in-userPwd"  >PASSWORD</label>
 				</span>
+				<!-- 비밀번호 찾기 버튼 -->
+				<div class="sign-in-page find-pwd-container" >
+					<span class="sign-in-page find-pwd-inner" >
+						<a class="sign-in-page link link-small link-text-hover">
+							비밀번호 찾기
+						</a>
+					</span>
+				</div>
 				<div class="sign-in-page btn-container" >
 					<button class="sign-in-page sign-in-btn btn btn-medium btn-primary btn-hover" type="submit" >로그인</button>
-					<button class="sign-in-page sign-up-btn btn btn-medium btn-secondary btn-hover" type="reset" >회원가입</button>
+					<button class="sign-in-page sign-up-btn btn btn-medium btn-secondary btn-hover" type="button" onclick="" >회원가입</button>
 				</div>			
 			</form>
 		</span>	

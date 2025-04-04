@@ -7,7 +7,13 @@
 }
 
 .sign-in-page.input-container.userPwd {
-	margin-bottom: 70px;
+	margin-bottom: 12px;
+}
+
+.sign-in-page.find-pwd-container {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 36px;
 }
 
 .sign-in-page.btn-container {
