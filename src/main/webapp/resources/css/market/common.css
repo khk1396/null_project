@@ -1,0 +1,263 @@
+@charset "UTF-8";
+
+
+main {
+    height: 1100px;
+    box-sizing: border-box;
+    padding-top:6%;
+}
+
+#mainFrame {
+	width: auto;
+	height: auto;
+	box-sizing: border-box;
+	margin-top: 6%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 10%;
+	/*
+                display: flex;
+                flex-direction: row;
+                */
+}
+
+
+#tradeMenu, #tradeContent {
+	width: 100%;
+}
+
+#tradeMenu {
+	height: 15%;
+}
+
+#tradeContent {
+	height: 85%;
+	box-sizing: border-box;
+}
+
+#tradeContentUp, #tradeContentDown {
+	width: 100%;
+	margin: 0;
+}
+
+#tradeContentUp {
+	height: 20%;
+	box-sizing: border-box;
+}
+
+#tradeContentDown {
+	height: 80%;
+	box-sizing: border-box;
+}
+
+#tradeContentUpTitle, #tradeContentUpCategory {
+	width: 100%;
+	margin: 0;
+}
+
+#tradeContentUpCategory {
+	height: 45%;
+	display: flex;
+	box-sizing: border-box;
+	border-bottom: 0.2px black solid;
+}
+
+#tradeContentUpTitle {
+	height: 55%;
+	font-size: 40px;
+	font-family: sans-serif;
+	padding-left: 2%;
+	padding-top: 1%;
+}
+
+.Category {
+	height: 100%;
+	font-size: 16px;
+	font-family: sans-serif;
+	text-align: center;
+	line-height: 60px;
+	margin:auto;
+}
+
+.tradeinquiry {
+	border-bottom: 1px black solid;
+	width: 100%;
+	height: 25%;
+	display: flex;
+}
+
+.tradeinquirydetail {
+	margin:auto;
+	margin-right:80px;
+	height: 100%;
+	text-align: center;
+}
+
+.tradeinquirydetail button{
+	margin-top:45%;
+}
+
+#tradeinquiryInfo {
+	width: 25%;
+	display: flex;
+}
+
+#tradeinquiryPrice {
+	width: 15%;
+}
+
+#tradeinquiryOpen {
+	width: 10%;
+}
+
+.tradeinquirydetail-left, .tradeinquirydetail-right {
+	height: 100%;
+	width: 100%;
+}
+
+.tradeinquirydetail-left { 
+	width: 50%;
+}
+
+.tradeinquirydetail-right {
+	width:40%;
+}
+
+.productInfo {
+	height: 30%;
+	padding-top: 6%;
+}
+
+.productImg {
+	width: 100%;
+	height: 100%;
+}
+
+.content{
+    display: flex;
+    height: 90.1%;
+    box-sizing: border-box;
+}
+main div.content div.listDescription{
+    margin-top: 40px;
+    color: #042EFF;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+main div.registedProductsList {
+    overflow-y: scroll;
+    width: 96%;
+    height: 72%;
+    margin: auto;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    box-sizing:border-box;
+}
+
+    div.registedProductsList div.productCard {
+        margin-top: 20px;
+        margin-bottom:20px;
+        width: 330px;
+        height: 400px;
+        text-align: center;
+        justify-items: center;
+        box-shadow: 0px 0px 10px black;
+        border-radius: 5%;
+    }
+
+.content .mainContent .productList{
+    height: 620px;
+    width: 1300px;
+}
+div.mainContent .productList .DIVproduct {
+    display: flex;
+    background-color: rgb(148, 216, 236);
+    width: 90%;
+    height: 250px;
+    margin: auto;
+    margin-top: 30px;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+.DIVproduct input[type=checkbox] {
+    margin-left:10px;
+    margin-right:10px;
+}
+
+div.productList .DIVproduct .productName{
+    text-align: center;
+    color: #1F53F0;
+    height: 49%;
+    font-size: 37px;
+    font-weight: 900;
+    background-color: rgb(148, 216, 236);
+}
+
+div.productList .DIVproduct .productDescription{
+    height: 51%;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(109, 96, 96);
+    background-color: rgb(148, 216, 236);
+}
+
+.emptySection{
+    width: 280px;
+}
+
+.comment{
+    width: 33%;
+    height: 60%;
+    background-color: white;
+}
+
+.commentBox{
+    font-size: 20px;
+    resize: none;
+    width: 100%;
+    height: 150px;
+}
+
+.registOne{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width:17%;
+    background-color: rgb(148, 216, 236);
+}
+
+form .selectRegist {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.selectRegistBtn{
+    margin-top:15px;
+    margin-right:40px;
+}
+
+div.mainContent>div.pageBtnList a {
+    font-size: 40px;
+    padding:20px;
+}
+
+div#mainFrame #tradeMenu a{
+	font-size: 40px;
+    padding:20px;
+}
+
+div.DIVproduct div.commentPlace{
+	margin-left: 1%; 
+	width: 400px;
+	 background-color: rgb(148, 216, 236);
+}
+
+div.DIVproduct div.commentText{
+	margin-top: 10%;
+ 	font-size:20px; 
+ 	font-weight: 900; 
+ 	color: rgb(12, 6, 1);
+}
