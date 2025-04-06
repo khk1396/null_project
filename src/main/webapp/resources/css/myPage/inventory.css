@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.my-page.sub-header {
+	margin-bottom: 16px;
+}
+
+.my-page.sub-header.btn {
+	margin-right: 12px;
+}
+
+.my-page.box-item-container.card {
+	width: calc((100% - 100px)/3);
+	height: calc((100% - 100px)/3);
+}

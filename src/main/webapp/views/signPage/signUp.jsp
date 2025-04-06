@@ -39,11 +39,19 @@
 				<!-- nickname -->
 				<span class="sign-up-page input-container primary nickname" >
 					<label class="input-label" for="sign-up-nickname"  >닉네임</label>
-					<input id="sign-up-nickname" type="password" class="sign-up-page input input-primary" name="nickname" />
+					<input id="sign-up-nickname" type="text" class="sign-up-page input input-primary" name="nickname" />
 				</span>
 				<!-- 전화번호 -->
+				<span class="sign-up-page input-container primary phone" >
+					<label class="input-label" for="sign-up-phone"  >닉네임</label>
+					<input id="sign-up-phone" type="text" class="sign-up-page input input-primary" name="phone" />
+				</span>
 				<!--  -->
 				<!-- TODO: 배송지 입력 -->
+				<span class="sign-up-page input-container primary address" >
+					<label class="input-label" for="sign-up-address" >배송지</label>
+					<input id="sign-up-address" type="text" class="sign-up-page input input-primary" name="address" />
+				</span>
 				<div class="sign-up-page btn-container" >
 					<button class="sign-up-page sign-up-btn btn btn-medium btn-secondary btn-hover submit" type="submit" >회원가입</button>
 					<button class="sign-up-page sign-up-btn btn btn-medium btn-secondary btn-hover" type="reset" >돌아가기</button>

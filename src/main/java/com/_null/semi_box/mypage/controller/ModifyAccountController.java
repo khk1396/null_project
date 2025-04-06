@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/mypage/inventory")
-public class MyPageController extends HttpServlet {
+@WebServlet("/mypage/modify-password")
+public class ModifyAccountController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	/**
 	 * @param request
@@ -19,6 +19,6 @@ public class MyPageController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Content directory: /src/main/webapp
-		request.getRequestDispatcher("/views/myPage/inventory.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/myPage/modifyPassword.jsp").forward(request, response);
 	}
 }
