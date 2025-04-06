@@ -23,6 +23,9 @@
 						<label class="my-page input-label" for="current-pwd"  >현재 비밀번호</label>
 						<input id="current-pwd" type="password" class="my-page input input-primary" name="currentPwd" />
 					</span>
+					<span class="my-page btn-container" >
+						<a class="my-page btn btn-secondary btn-small btn-hover" href="" >탈퇴하기</a>
+					</span>
 				</form>
 			</div>
 		</div>
