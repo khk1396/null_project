@@ -149,7 +149,10 @@
 	<!-- STYLE -->
 	<jsp:include page="/views/common/style.jsp" />
 	
+     <!-- main 틀-->
     <div class="mainFrame">
+
+         <!-- 상단 틀-->
         <div id="orderMenu">
 
             <div class="menubtn"></div>
@@ -167,8 +170,10 @@
 
         </div>
 
-
+       <!-- 하위 틀-->
         <di id="orderContent">
+
+            <!-- 제목 및 컬럼이름들 -->
             <div id="orderContentUp">
                 <div id="orderContentUpTitle"> 배송 내역 </div>
                 <div id="orderContentUpCategory"> 
@@ -176,12 +181,10 @@
                     <div id="CategoryInfo">상품정보</div>
                     <div class="Category" id="CategoryQuantity">배송 정보</div>
                     <div class="Category" id="CategoryPrice">배송 상태</div>
-
-                    
                 </div>
             </div>
 
-
+            <!-- 각 컬럼 값들 -->
             <div id="orderContentDown">
                 <div class="orderinquiry">
                     <div class="orderinquirydetail" id="orderinquiryNo">접수번호</div>
@@ -275,24 +278,7 @@
                     </div>
                     <div class="orderinquirydetail" id="orderinquiryPrice">배송 완료</div>
                 </div>
-
-
-                
-                
-
-
-                
-
             </div>
-
-
-
-
-
-
-
-
-
         </div>
     </div>
 

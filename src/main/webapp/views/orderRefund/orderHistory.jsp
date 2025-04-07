@@ -159,9 +159,10 @@
 
 
 
-
+    <!-- main 틀-->
     <div class="mainFrame">
 
+        <!-- 상단 틀-->
         <div  id="orderMenu">
             <div class="menubtn"></div>
             <div class="menubtn"></div>
@@ -174,8 +175,9 @@
         </div>
   
 
-        
+        <!-- 하위 틀-->
         <div  id="orderContent">
+             <!-- 제목 및 컬럼이름들 -->
             <div id="orderContentUp">
                 <div id="orderContentUpTitle"> 주문 내역 </div>
                 <div id="orderContentUpCategory"> 
@@ -188,7 +190,7 @@
                 </div>
             </div>
 
-
+            <!-- 각 컬럼 값들 -->
             <div id="orderContentDown">
                 <div class="orderinquiry">
                     <div class="orderinquirydetail" id="orderinquiryNo">고유키</div>
@@ -302,11 +304,6 @@
                         </div>
                     </div>    
                 </div>
-
-        
-
-                
-
             </div>
         </div>
     </div>

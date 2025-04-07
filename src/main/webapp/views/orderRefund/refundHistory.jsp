@@ -148,9 +148,12 @@
 	<!-- STYLE -->
 	<jsp:include page="/views/common/style.jsp" />
 	
-    <div class="mainFrame">
-        <div id="orderMenu">
 
+    <!-- main 틀-->
+    <div class="mainFrame">
+
+         <!-- 상단 틀-->
+        <div id="orderMenu">
 
             <div class="menubtn"></div>
             <div class="menubtn"></div>
@@ -163,7 +166,11 @@
 
         </div>
 
+
+        <!-- 하위 틀-->
         <di id="orderContent">
+
+         <!-- 제목 및 컬럼이름들 -->
             <div id="orderContentUp">
                 <div id="orderContentUpTitle"> 환불 내역 </div>
                 <div id="orderContentUpCategory"> 
@@ -171,12 +178,11 @@
                     <div id="CategoryInfo">상품정보</div>
                     <div class="Category" id="CategoryQuantity">개수</div>
                     <div class="Category" id="CategoryPrice">환불 금액</div>
-                    <div class="Category" id="CategoryOpen">진행 여부</div>
-                    
+                    <div class="Category" id="CategoryOpen">진행 여부</div>                    
                 </div>
             </div>
 
-
+            <!-- 각 컬럼 값들 -->
             <div id="orderContentDown">
                 <div class="orderinquiry">
                     <div class="orderinquirydetail" id="orderinquiryNo">고유키</div>
@@ -256,25 +262,7 @@
                     <div class="orderinquirydetail" id="orderinquiryPrice">9,990</div>
                     <div class="orderinquirydetail" id="orderinquiryOpen">개봉</div>  
                 </div>
-
-
-
-
-                
-                
-
-
-                
-
             </div>
-
-
-
-
-
-
-
-
 
         </div>
     </div>
