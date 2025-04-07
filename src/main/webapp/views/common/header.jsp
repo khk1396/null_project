@@ -17,13 +17,13 @@
 			<!-- TODO : Controller로 GET 요청 후 페이지 forwarding -->
 			<div class="main-header nav-link-container" >
 				<!-- 상품 판매 페이지 이동 -->
-				<a class="main-header nav-link link link-medium link-hover" href="shop" >SHOP</a>
+				<a class="main-header nav-link link link-medium link-hover" href="${ pageContext.request.contextPath }/shop" >SHOP</a>
 				<!-- 마이페이지 이동 -->
-				<a class="main-header nav-link link link-medium link-hover" href="mypage/inventory">MYPAGE</a>
+				<a class="main-header nav-link link link-medium link-hover" href="${ pageContext.request.contextPath }/mypage/inventory">MYPAGE</a>
 				<!-- 유저 간 거래 페이지 이동 -->
-				<a class="main-header nav-link link link-medium link-hover" href="market">MARKET</a>
+				<a class="main-header nav-link link link-medium link-hover" href="${ pageContext.request.contextPath }/market">MARKET</a>
 				<!-- 로그인 회원 가입 팝업 오픈 -->
-				<a class="main-header nav-link link link-medium link-hover" href="signin" >SIGNIN</a>	
+				<a class="main-header nav-link link link-medium link-hover" href="${ pageContext.request.contextPath }/signin" >SIGNIN</a>	
 			</div>
 		</div>
 	</div>
