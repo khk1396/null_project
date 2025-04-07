@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+
+.mainFrame {
+    width: auto;
+    height: auto;
+    border: 1px black solid;
+    box-sizing: border-box;
+    margin-top: 6%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    
+}
+
+
+#orderMenu, #orderContent{
+    border: px pink solid;
+    width:  100%;
+    margin: 0;
+    
+    
+}
+#orderMenu {  height: 15%;  border: 1px black solid;
+     display: flex;
+ }
+#orderContent { height: 85%; 
+    box-sizing: border-box;
+}
+
+
+.menubtn{
+   width: 20%;
+   height: 100%;
+}
+
+.menubtn-order , .menubtn-refund{
+    border: px black solid;
+    font-family: SUIT-Regular, sans-serif;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+        
+}
+.menubtn-order {
+    padding-top: 15%;
+    
+}
+
+.menubtn-shopping {
+    border: px black solid;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    padding-top: 15%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
