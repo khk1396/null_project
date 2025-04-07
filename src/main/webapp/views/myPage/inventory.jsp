@@ -8,11 +8,11 @@
 <link href="${ pageContext.request.contextPath }/resources/css/myPage/inventory.css" rel="stylesheet" />
 </head>
 <body>
-	<jsp:include page="/views/common/header.jsp" />
+	<jsp:include page="${ pageContext.request.contextPath }/views/common/header.jsp" />
 	<!-- MY INVENTORY PAGE -->
 	<div class="my-page container page-layout footer-fixed-bottom" >
 		<!-- ASIDE NAV BAR -->
-		<jsp:include page="/views/myPage/asideNavBar.jsp" />
+		<jsp:include page="${ pageContext.request.contextPath }/views/myPage/asideNavBar.jsp" />
 		<div class="my-page contents-container inventory" >
 			<!-- SUB HEADER -->
 			<div class="my-page sub-header inventory" > 
@@ -55,6 +55,6 @@
 			</div>
 		</div>
 	</div>
-	<jsp:include page="/views/common/footer.jsp" />
+	<jsp:include page="${ pageContext.request.contextPath }/views/common/footer.jsp" />
 </body>
 </html>
