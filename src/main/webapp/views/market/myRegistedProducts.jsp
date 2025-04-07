@@ -4,23 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>내가 등록한 상품</title>
-<link href="/semi_box/resources/css/market/common.css" rel="stylesheet"/>
-
-<style>
-
-
-<!-- 다름 -->
-#tradeinquiryInfo {
-	width: 20%;
-}
-
-<!-- 다름 -->
-.tradeinquirydetail-left {
-	width: 60%;
-}
-
-</style>
+<title>나의 등록 상품</title>
+<script src="${ pageContext.request.contextPath }/resources/js/market/registeredItem.js" type="text/javascript" ></script>
 </head>
 <body>
 	<!-- HEADER -->
@@ -28,85 +13,67 @@
 
 	<!-- STYLE -->
 	<jsp:include page="/views/common/style.jsp" />
+	<jsp:include page="subHeader.jsp" />
 
-
-
-
-	<div id="mainFrame">
-		<div id="tradeMenu">
-			<div class="pageBtnList" style="text-align: center;" width="100%"
-				height="100px">
-				<a href="market" class="link link-medium link-hover" style="padding-left: 35px; padding-right: 35px;">다른 상품</a> 
-					<a href="#" onclick="location.reload();" class="link link-medium link-hover">등록한 상품</a> 
-					<a href="myAppliedProducts" class="link link-medium link-hover">거래 요청 상품</a> 
-					<a href="tradeRegist" class="link link-medium link-hover" style="padding-left: 35px; padding-right: 35px;">상품 등록</a> 
-					<a href="tradeHistory" class="link link-medium link-hover" style="padding-left: 35px; padding-right: 35px;">거래 내역</a>
-					<br><hr>
-			</div>
-		</div>
-		<div id="tradeContent">
-			<div id="tradeContentUp">
-				<div id="tradeContentUpTitle">내가 등록한 상품</div>
-				<div id="tradeContentUpCategory">
-					<div class="Category">등록한 상품</div>
-					<div class="Category" style="padding-left:80px;">요청 온 상품</div>
-					<div class="Category" style="padding-left:85px;">코멘트</div>
-					<div class="Category">등록 날짜</div>
-					<div class="Category">수락/거절</div>
-				</div>
+	<div class="market-page contents-container my-registered page-layout footer-fixed-bottom">
+		<div class="market-page contents-inner my-registered">
+			<div class="market-page contents-title-container my-registered" >
+				<h1 class="market-page contents-title my-registered">나의 등록 상품</h1>
 			</div>
 
-
-			<div id="tradeContentDown">
-				<div>
-					<% for (int i = 0; i < 3; i++) { %>
-					<div class="tradeinquiry">
-						<div id="tradeinquiryInfo"> <!-- 내가 등록한 상품 정보들 -->
-							<div class="tradeinquirydetail-left">
-								<div class="image">
-									<img class="productImg" src="/semi_box/views/market/puppy.jpg"
-										alt="상품 이미지">
+			<div class="market-page my-registered-item-list-container my-registered">
+				<div class="market-page my-registered-item-list-inner my-registered">
+					<% for (int i = 0; i < 100; i++) { %>
+						<!-- TODO: 실제 데이터 조회 시 data-set 값 변경해야 함 -->
+						<div 
+							class="market-page my-registered-item-container list my-registered box-shadow" 
+							<%-- data-set="trade-list<%= i %>" --%> 
+							onclick="return onClickRegisteredItem(this);"
+						  	aria-expanded="false"
+							aria-controls="trade-list<%= i %>"
+						>
+							<div class="market-page my-registered-item-inner info-container my-registered">
+								<span class="market-page my-registered-item img-container">
+									<img class="market-page my-registered-item img" src="/semi_box/views/market/puppy.jpg" alt="PRODUCT.IMG">
+								</span>
+								<span class="market-page my-registered-item info-container" >
+									<div class="market-page my-registered-item prod-name">상품명</div>
+									<div class="market-page my-registered-item prod-price">500,000원</div>
+									<div class="market-page my-registered-item prod-category">카테고리</div>
+									<div class="market-page my-registered-item prod-comment" >코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트</div>
+									<div class="market-page my-registered-item prod-created-date" >2025-04-04</div>
+								</span>
+							</div>
+						</div>
+						<div id="trade-list<%= i %>" class="market-page my-registered trade-item-list-container" >
+							<!-- TODO: 비동기 통신으로 거래 요청 목록 조회해야 함 -->
+							<div class="market-page my-registered trade-item-list-inner" >
+								<div class="market-page my-registered trade-item-container box-shadow" >
+									<div class="market-page my-registered trade-item-inner my-registered">
+										<span class="market-page my-registered trade-item img-container">
+											<img class="market-page my-registered trade-item img" src="/semi_box/views/market/puppy.jpg" alt="PRODUCT.IMG">
+										</span>
+										<span class="market-page my-registered trade-item info-container" >
+											<div class="market-page my-registered trade-item prod-name">상품명</div>
+											<div class="market-page my-registered trade-item prod-price">10,000원</div>
+											<div class="market-page my-registered trade-item prod-category">카테고리</div>
+											<div class="market-page my-registered trade-item prod-comment" >코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트</div>
+											<div class="market-page my-registered trade-item prod-created-date" >2025-04-04</div>
+										</span>
+										<!-- TODO: 비동기 요청 기능 들어가야 함 -->
+										<span class="market-page my-registered trade-item btn-container" >
+											<button class="market-page my-registered trade-item btn btn-small btn-secondary btn-hover" >수락</button>
+											<button class="market-page my-registered trade-item btn btn-small btn-secondary btn-hover">거절</button>				
+										</span> 
+									</div>
 								</div>
 							</div>
-							<div class="tradeinquirydetail-right">
-								<div class="productInfo">상품명</div>
-								<div class="productInfo">상품 가격</div>
-								<div class="productInfo">카테고리</div>
-							</div>
 						</div>
-						<div id="tradeinquiryInfo"> <!-- 요청 들어온 상품 정보들 -->
-							<div class="tradeinquirydetail-left">
-								<div class="image">
-									<img class="productImg" src="/semi_box/views/market/puppy.jpg"
-										alt="상품 이미지">
-								</div>
-							</div>
-							<div class="tradeinquirydetail-right">
-								<div class="productInfo">상품명</div>
-								<div class="productInfo">상품 가격</div>
-								<div class="productInfo">카테고리</div>
-							</div>
-						</div>
-						<div class="tradeinquirydetail" style="padding-top:2.3%;" id="tradeinquiryPrice">코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트</div>
-						<div class="tradeinquirydetail" style="padding-top:5%;" id="tradeinquiryOpen">2025-04-04</div>
-						<div class="tradeinquirydetail" id="tradeinquiryOpen">
-							<button class="btn btn-small btn-secondary btn-hover" style="margin-left:30px;">수락</button>
-							<button class="btn btn-small btn-secondary btn-hover">거절</button>
-						</div>
-					</div>
 					<% } %>
 				</div>
-
-
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-
 
 	<!-- FOOTER -->
 	<jsp:include page="/views/common/footer.jsp" />
