@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>상품판매페이지</title>
-<link href="${ pageContext.request.contextPath }/resources/css/product/productSale.css" rel="stylesheet" />
+<link href="${ pageContext.request.contextPath }/resources/css/shop/shopMain.css" rel="stylesheet" />
+<link href="${ pageContext.request.contextPath }/resources/css/shop/common.css" rel="stylesheet" />
 </head>
 <body>      
     <!-- HEADER -->
@@ -26,7 +27,7 @@
     	-->
     	<div class="shop-page item-list-container" >
     		<div class="shop-page item-container box-shadow" >
-    			<a class="shop-page item-inner link" href="" >
+    			<a class="shop-page item-inner product-item-link" href="${pageContext.request.contextPath}/shop/details" >
 	    			<div class="shop-page item-img-container" >
 		    			<img class="shop-page item-img" src="${pageContext.request.contextPath}/resources/images/black.jpg"/>    			
 	    			</div>
@@ -41,7 +42,7 @@
     			</a>
     		</div>
 	   		<div class="shop-page item-container box-shadow" >
-	   			<a class="shop-page item-inner link" >
+	   			<a class="shop-page item-inner product-item-link" >
 	    			<div class="shop-page item-img-container" >
 		    			<img class="shop-page item-img" src="${pageContext.request.contextPath}/resources/images/platinum.jpg"/>    			
 	    			</div>
@@ -56,7 +57,7 @@
     			</a>
     		</div>
     		<div class="shop-page item-container box-shadow" >
-	    		<a class="shop-page item-inner link" >
+	    		<a class="shop-page item-inner product-item-link" >
 	    			<div class="shop-page item-img-container" >
 		    			<img class="shop-page item-img" src="${pageContext.request.contextPath}/resources/images/gold.jpg"/>    			
 	    			</div>
@@ -71,7 +72,7 @@
 		   		</a>
     		</div>    		
     		<div class="shop-page item-container box-shadow" >
-    			<a class="shop-page item-inner link" >
+    			<a class="shop-page item-inner product-item-link" >
 	    			<div class="shop-page item-img-container" >
 		    			<img class="shop-page item-img" src="${pageContext.request.contextPath}/resources/images/silver.jpg"/>    			
 	    			</div>
@@ -86,7 +87,7 @@
     			</a>
     		</div>
     		<div class="shop-page item-container box-shadow" >
-    			<a class="shop-page item-inner link" >
+    			<a class="shop-page item-inner product-item-link" >
 	    			<div class="shop-page item-img-container" >
 		    			<img class="shop-page item-img" src="${pageContext.request.contextPath}/resources/images/bronze.jpg"/>    			
 	    			</div>

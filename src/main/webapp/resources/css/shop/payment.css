@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+.shop-page.payment.contents-inner {
+	display: flex;
+	padding: 38px;
+	border-radius: 8px;
+}
+
+.shop-page.payment-img-container {
+	position: relative;
+	width: 45%;
+	height: 0;
+	padding-top: 35%;
+	border-radius: 4px;
+	overflow: hidden;
+	margin-right: 48px;
+}
+
+.shop-page.payment-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.shop-page.payment-details-container {
+	width: 50%;
+}
+
+.shop-page.payment-product-info.title {
+	margin-bottom: 24px;
+}
+
+.shop-page.payment-product-info h1 {
+	color: #1f53f0;
+}
+
+.shop-page.payment-option-title {
+	margin-bottom: 24px;	
+}
+
+.shop-page.payment-option-title h1 {
+	color: #E87131;
+}
+
+.shop-page.payment-product-info-container {
+	margin-bottom: 36px;
+}
+
+.shop-page.payment-product-info {
+	margin-bottom: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.shop-page.product-info.label {
+	font-size: 18px;
+	font-weight: 900;
+}
+
+.shop-page.product-info.value {
+	font-size: 24px;
+}
+
+.shop-page.payment-option.label {
+	display: flex;
+	align-items: center;
+	margin-bottom: 16px;
+}
+.shop-page.payment-option.radio {
+	width: 16px;
+	height: 16px;
+	margin-right: 12px;
+}
+
+.shop-page.payment-option.value {
+	font-size: 18px;
+}
+
+.shop-page.payment.btn-container {
+	width: 100%;
+	margin-top: 24px;	
+	text-align: right;
+}
+
+.shop-page.payment.btn {
+	width: 50%;
+}

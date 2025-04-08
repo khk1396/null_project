@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+.shop-page.payment-result.contents-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 0;
+}
+
+.shop-page.payment-result.contents-inner {
+	padding: 40px;
+}
+
+.shop-page.payment-result.contents-title {
+	font-size: 24px;
+	margin-bottom: 40px;
+}
+
+.shop-page.payment-result.payment-info-container {
+	margin-bottom: 32px;
+}
+
+.shop-page.payment-result.payment-info {
+	margin-bottom: 12px;
+	font-size: 20px;
+}
+
+.shop-page.payment-result.payment-info.title {
+	font-size: 20px;
+	font-weight: 900;
+	margin-bottom: 20px;
+}
+
+.shop-page.payment-result.payment-info.title.product {
+	color: #1f53f0;
+}
+
+.shop-page.payment-result.payment-info.title.method {
+	color: #E87131;
+	margin-top: 20px;
+}
