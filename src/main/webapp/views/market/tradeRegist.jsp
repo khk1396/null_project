@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList, com._null.semi_box.model.vo.Product" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,34 +31,37 @@
                 <div class="listDescription">
                     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<span style="text-decoration:underline; text-decoration-thickness: 2px;">상품 등록</span>
                 </div>
-                <form action="" method="post">
+                <form action="selectRegist" method="post">
                     <div class="productList" style="overflow-y:scroll;">
                     
-                    <% for(int i = 0; i< 5; i++) { %>
+                    <% 
+               		 	ArrayList<Product> productList = (ArrayList<Product>)request.getAttribute("productList");
+                		for(int i = 0; i<productList.size(); i++) { 
+                	%>	
                             <div class="DIVproduct">
                                 <!-- id에는 상품명 -->
-                                <input type="checkbox" id="<%= i %>" name="product" value="" style="zoom: 3.0;"/>
+                                <input type="checkbox" id="<%= i %>" name="productId" value="<%= productList.get(i).getProductId() %>" style="zoom: 3.0;"/>
                                 <label for="<%= i %>">
                                     <!-- src에는 상품이미지주소 productList.get(i).getProductImg()-->
-                                    <img src="/semi_box/views/market/puppy.jpg" alt="상품이미지" width="100%" height="100%"/>
+                                    <img src="<%= productList.get(i).getProductImg() %>" alt="상품이미지" width="100%" height="100%"/>
                                 </label>&nbsp;
                                 <div style="box-sizing: border-box; width: 25%;">
                                     <div class="productName">  <br> 
-                                        <!-- 여기는 상품명 -->   발바닥            
+                                        <!-- 여기는 상품명 -->   <%= productList.get(i).getProductName() %>            
                                     </div>
                                     <div class="productDescription">
-                                        <!-- 여기는 상품내용 -->   귀여운 발바닥
+                                        <!-- 여기는 상품내용 -->   <%= productList.get(i).getProductDescription() %>
                                     </div>
                                 </div>
                                 <div class="commentPlace">
                                     <div class="commentText">코멘트</div>
-                                    <textarea class="commentBox" name="" placeholder="희망하는 상품 혹은 유저들에게 미리 전달할 내용을 입력하세요."></textarea>
+                                    <textarea class="commentBox" name="<%= productList.get(i).getProductId() %>" placeholder="희망하는 상품 혹은 유저들에게 미리 전달할 내용을 입력하세요."></textarea>
                                 </div>
                                 <div class="registOne">
                                     <button class="btn btn-medium btn-secondary btn-hover" onclick="registOne();">등록</button>
                                 </div>
                             </div>
-                            <%} %>
+                            <%}%>
                     </div>
                     <div class="selectRegist">
                         <button class="selectRegistBtn btn btn-medium btn-secondary btn-hover" type="submit">선택 등록</button>

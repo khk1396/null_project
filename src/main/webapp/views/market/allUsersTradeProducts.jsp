@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList, com._null.semi_box.model.vo.Product" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,14 +37,18 @@
                 </div>
 
                 <div class="registedProductsList">
-                <% for(int i = 0; i<15; i++) { %>
-                    <div class="productCard">
-                        <img src="/semi_box/views/market/puppy.jpg" width="250px" height="200px"/>
-                        <div class="productName">상품명</div>
-                        <div class="productPrice">39,800원</div><br>
-                        <div class="productDescription" style="font-size: 12px;">이게얼마나맛있고멋있고귀여운제품인지너는알고있느냐정말맛있게먹을수도있다</div><br>
-                        <div class="productComment">나는 이걸 세상에서 제일비싼 물건과 교환을 원한다. 연락은 내가 먼저할테니 너는 받기만 하거라. 연락 느리다 재촉하지 마라. 불만있으면 abcd@naver.com 메일보내라</div>
-                    </div>
+                <% 
+                ArrayList<Product> productList = (ArrayList<Product>)request.getAttribute("productList");
+                for(int i = 0; i<productList.size(); i++) { 
+                %>
+                    <form action="clickWantProduct" method="post" class="productCard" onclick="wantTradeProduct(this);">
+                    	<input type="hidden" name="productId" value="<%= productList.get(i).getProductId() %>"/>
+                        <img src="<%= productList.get(i).getProductImg() %>" width="250px" height="200px"/>
+                        <div class="productName" name="productName"><%= productList.get(i).getProductName() %></div>
+                        <div class="productPrice"><%= productList.get(i).getProductPrice() %></div><br>
+                        <div class="productDescription" style="font-size: 12px;"><%= productList.get(i).getProductDescription() %></div><br>
+                        <div class="productComment"><%= productList.get(i).getRegistComment() %></div>
+                    </form>
                  <%} %>
                 </div>
                 
@@ -52,6 +57,12 @@
             <div class="emptySection"></div>
         </div>
 	</main>
+	
+	<script>
+		wantTradeProduct = function(e) {
+			e.submit();
+		}
+	</script>
 	
 	<footer>
 		<jsp:include page="../common/footer.jsp" />
