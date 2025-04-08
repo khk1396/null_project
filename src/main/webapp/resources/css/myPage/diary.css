@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+.my-page.diary-item-container {
+	display: flex;
+	padding-bottom: 20px;
+}
+
+.my-page.diary-item-container:not(:first-child) {
+	padding-top: 20px;
+}
+
+/*  */
+.my-page.diary-item-container:not(:last-child) {
+	border-bottom: 1px solid #C1E5F5; 
+}
+
+.my-page.diary-item.img {
+	width: 160px;
+	height: 160px;
+	background: #1F53F0;
+	margin-right: 12px;
+	border-radius: 8px;
+	overflow: hidden;
+	object-fit: cover;
+}
+.my-page.diary-item.info-container {
+	width: calc(100% - 184px);
+	padding-left: 12px;
+	border-left: 1px solid #C1E5F5;
+}
+
+.my-page.diary-item.info {
+	margin-bottom: 12px;
+}
+
+.my-page.diary-item.info-title {
+	font-size: 20px;
+	font-weight: 900;
+	margin-bottom: 12px;
+}
+
+.my-page.diary-item.info-contents {
+	line-height: 1.5;
+}
+
+.my-page.diary-item.info-title.fortune {
+	color: #9E2990; 
+}
+
+.my-page.diary-item.info-title.diary {
+	color: #E87131; 
+}
+
+.my-page.diary-item.info-contents.diary, .my-page.diary-item.info-contents.fortune {
+	font-size: 18px;
+}

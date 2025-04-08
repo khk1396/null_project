@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.my-page.nav-container {
+	width: 250px;
+}
+
+.my-page.nav-inner {
+	display: flex;
+	flex-direction: column;
+	border-right: 1px solid #C1E5F5;
+}
+
+.my-page.nav.link {
+	padding: 24px 0;
+}

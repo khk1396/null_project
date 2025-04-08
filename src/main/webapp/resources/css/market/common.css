@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+/* MARKET SUBHEADER */
+
+.market-page.sub-header-container {
+	min-width: 1200px;
+	position: sticky;
+	top: 55px;
+	z-index: 999;
+	border-bottom: 1px solid #1E2022;
+}
+.market-page.sub-header-inner {
+	padding: 0 32px;	
+}
+.market-page.link.link-medium {
+	padding: 12px 20px;
+}

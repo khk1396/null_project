@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+.market-page.trade-item-container.trade-regist {
+	width: calc((100% - 72px) / 4);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+
+.market-page.item-img-container.trade-regist {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-top: 50%;
+}
+
+.market-page.item-img.trade-regist {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.market-page.item-checkbox.trade-regist {
+	position: absolute;
+	top: 16px;
+	left: 16px;
+	width: 24px;
+	height: 24px;
+	z-index: 998;
+}
+
+.market-page.item-info-container {
+	padding: 16px;
+}
+
+.market-page.item-info.name {
+	font-size: 22px;
+	font-weight: 900;
+	margin-bottom: 8px;
+}
+
+.market-page.item-info.description {
+	margin-bottom: 8px;
+}
+
+.market-page.item-info.comment-title {
+	margin-bottom: 8px;
+}
+
+.market-page.trade-regist.comment-textarea {
+	font-size: 20px;
+	resize: none;
+	width: 100%;
+	height: 80px;
+	padding: 8px;
+	border: 1px solid #1f53f0;
+	line-height: 1.2;
+}
+.market-page.trade-regist.btn-container {
+	margin-top: 48px;
+}
+

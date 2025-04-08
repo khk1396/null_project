@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.my-page.container {
+	display: flex;
+	padding: 40px 88px 84px;
+}
+
+.contents-container {
+	width: calc(100% - 250px);
+	padding-left: 50px;
+}
+
+.my-page.title-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 24px;
+}
+
+.my-page.item-list-container {
+	margin-bottom: 70px;
+}
