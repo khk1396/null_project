@@ -15,6 +15,6 @@ public class ShopController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Get shop");
-		request.getRequestDispatcher("/views/shopPage/shop.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/product/ProductSale.jsp").forward(request, response);
 	}
 }
