@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>나의 등록 상품</title>
-<script src="${ pageContext.request.contextPath }/resources/js/market/registeredItem.js" type="text/javascript" ></script>
+<script src="${ pageContext.request.contextPath }/resources/js/market/marketUtils.js" type="text/javascript" ></script>
 </head>
 <body>
 	<!-- HEADER -->

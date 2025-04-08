@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+.shop-page.sale-detail.contents-container {
+	padding: 120px 88px 240px;
+}
+
+.shop-page.sale-detail.contents-inner {
+	width: 100%;
+	display: flex;
+	margin-bottom: 120px;
+}
+
+.shop-page.sale-detail.box-img-container {
+	position: relative;
+	width: 50%;
+	height: 0;
+	padding-top: 50%;
+	border-radius: 4px;
+	overflow: hidden;
+	margin-right: 48px;
+}
+
+.shop-page.sale-detail.box-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.shop-page.sale-detail.box-info-cotainer {
+	width: 50%;
+	height: 100%;
+}
+.shop-page.sale-detail.box-info {
+	display: flex;
+	align-items: center;
+	margin-bottom: 24px;
+}
+
+.shop-page.sale-detail.box-info.name {
+	font-size: 56px;
+	margin-bottom: 24px;
+}
+
+.shop-page.sale-detail.box-info-title {
+	font-size: 24px;
+	margin-right: 24px;
+	font-weight: 900;
+}
+
+.shop-page.sale-detail.box-info-price {
+	font-size: 32px;
+}
+
+#decreaseBtn.shop-page.sale-detail.btn {
+	margin-right: 12px;
+}
+
+#increaseBtn.shop-page.sale-detail.btn {
+	margin-left: 12px;
+}
+
+.shop-page.sale-detail.box-info-total-price {
+	margin-right: 12px;
+	font-size: 36px;
+}
+
+.shop-page.sale-detail.count {
+	font-size: 24px;
+}
+
+.shop-page.sale-detail.btn-container.form {
+	width: 100%;
+}
+
+.shop-page.sale-detail.btn.submit {
+	width: 100%;
+}
+
+.shop-page.sale-detail.product-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px 48px;
+}
+
+.shop-page.sale-detail.product-item {
+	width: calc((100% - 96px) / 3);
+}
+
+.shop-page.sale-detail.product-list-title {
+	font-size: 28px;
+	margin-bottom: 48px;
+	font-weight: 900;
+}
+
+.shop-page.product-item-img-container {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-top: 50%;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.shop-page.product-item-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;	
+	object-fit: cover;
+}
+.shop-page.product-item-info-container {
+	padding: 12px;
+	text-align: right;
+}
+
+.shop-page.product-item-info.name {
+	margin-bottom: 12px;
+}
+.shop-page.product-item-info.price {
+	font-size: 20px;
+}

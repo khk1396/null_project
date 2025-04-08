@@ -1,19 +1,19 @@
-package com._null.semi_box.product.controller;
+package com._null.semi_box.shop.controller;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/shop")
-public class ProductController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	
-	
+/**
+ * Servlet implementation class PaymentResultController
+ */
+@WebServlet("/shop/paymentResult")
+public class PaymentResultController extends HttpServlet {
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/views/product/productSale.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/shop/paymentComplete.jsp").forward(request, response);
 	}
 }

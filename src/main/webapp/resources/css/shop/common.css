@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+/* PPRODUCT PAGE */
+.shop-page.contents-container {
+	padding-top: 120px;
+	padding-right: 88px;
+	padding-left: 88px;
+}
+
+.shop-page.contents-title {
+	margin-bottom: 80px;
+}
+
+.shop-page.category-container {
+	margin-bottom: 80px;
+}
+
+.shop-page.btn {
+	margin-right: 12px;
+}
+
+.shop-page.item-list-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 36px;
+}
