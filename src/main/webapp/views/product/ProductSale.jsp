@@ -45,26 +45,18 @@
     <jsp:include page="../common/style.jsp" />
     
     <div class="page-layout">  
-    <br><br><br><br><br>
     	<h2 style="padding-left: 15%;">획득상품 선택</h2>
-    <br><br>
-    
     		<button style="margin-left: 15%;" class="btn btn-medium category-btn btn-unselected" onclick="selectCategory(this)">가전제품</button>
     		<button class="btn btn-medium category-btn btn-unselected" onclick="selectCategory(this)">의류패션</button>
     		<button class="btn btn-medium category-btn btn-unselected" onclick="selectCategory(this)">생활용품</button>
     		<button class="btn btn-medium category-btn btn-unselected" onclick="selectCategory(this)">건강기능</button>
-    
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    	<h1 style="padding-left: 15%;">세미박스 선택</h1><br><br><br>
+    	<h1 style="padding-left: 15%;">세미박스 선택</h1>
     		<button style="margin-left: 10%;" type="button" onclick="openBox()"><img src="${pageContext.request.contextPath}/resources/images/ag.jpg"/></button> <%-- 회색박스 --%>
     		<button type="button" onclick="openBox()"><img src="${pageContext.request.contextPath}/resources/images/bp.jpg"/></button> <%-- 검정박스 --%>
     		<button type="button" onclick="openBox()"><img src="${pageContext.request.contextPath}/resources/images/cd.jpg"/></button> <%-- 연보라박스 --%>
    			<button type="button" onclick="openBox()"><img src="${pageContext.request.contextPath}/resources/images/dh.jpg"/></button> <%-- 갈색박스 --%>
-    
-	<br><br><br><br><br><br>
 	 </div>
 	 
-	<br><br><br>
     <!-- FOOTER -->
     <jsp:include page="../common/footer.jsp" />
     
