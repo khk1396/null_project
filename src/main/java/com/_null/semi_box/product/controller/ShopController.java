@@ -1,4 +1,4 @@
-package com._null.semi_box.shop.controller;
+package com._null.semi_box.product.controller;
 
 import java.io.IOException;
 
