@@ -35,6 +35,10 @@
 	cursor: pointer;
 }
 
+.shop-page.item-inner.link {
+	width: 100%;
+}
+
 .shop-page.item-img-container {
 	position: relative;
 	width: 100%;
