@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+/* MARKET MY-REGISTERED-ITEM */
+.market-page.my-registered-item-container {
+	margin-bottom: 24px;
+	border-radius: 12px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.market-page.my-registered-item-inner {
+	display: flex;
+	justify-content: center;
+}
+
+.market-page.my-registered-item.img-container {
+	position: relative;
+	width: 20%;
+	height: 0;
+	padding-bottom: 18%;
+}
+
+.market-page.my-registered-item.img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.market-page.my-registered-item.info-container {
+	width: 90%;
+	padding: 12px 24px;
+}
+
+.market-page.my-registered-item.prod-name {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 12px;
+}
+
+.market-page.my-registered-item.prod-price {
+	font-size: 18px;
+	margin-bottom: 12px;
+}
+
+.market-page.my-registered-item.prod-category {
+	margin-bottom: 12px;
+	color: #1f53f0;
+	font-weight: 900;
+}
+
+.market-page.my-registered-item.prod-comment {
+	margin-bottom: 12px;
+	font-size: 24px;
+	line-height: 1.2;
+}
+.market-page.my-registered-item.prod-created-date {
+	color: #E87131;
+}
+
+.market-page.my-registered.trade-item-list-container {
+	overflow: hidden;
+	height: 0;
+	transition: height linear 150ms;
+}
+
+/* TODO: 목록 조회 기능 추가 후 height 값 수정해야 함 */
+.market-page.my-registered.trade-item-list-container.open {
+	height: 500px;
+	margin-bottom: 30px;
+	overflow: scroll;
+}
+
+.market-page.my-registered.trade-item-list-inner {
+	width: 100%;
+	height: 100%;
+	padding: 12px;
+}
+
+.market-page.my-registered.trade-item-container {
+	border-radius: 12px;
+	overflow: hidden;
+	margin-bottom: 12px;
+}
+
+.market-page.my-registered.trade-item-inner {
+	display: flex;
+	align-items: center;
+}
+
+.market-page.my-registered.trade-item.img-container {
+	position: relative;
+	width: 14%;
+	height: 0;
+	padding-bottom: 12%;
+}
+
+.market-page.my-registered.trade-item.img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;	
+}
+
+.market-page.my-registered.trade-item.info-container {
+	padding: 12px;
+	width: 70%;
+}
+
+.market-page.my-registered.trade-item.prod-name {
+	font-weight: 900;
+	margin-bottom: 6px;
+}
+
+.market-page.my-registered.trade-item.prod-price {
+	margin-bottom: 6px;
+}
+
+.market-page.my-registered.trade-item.prod-category {
+	margin-bottom: 6px;
+	font-weight: 900;
+	font-size: 14px;
+	color: #1f53f0;
+}
+
+.market-page.my-registered.trade-item.prod-comment {
+	margin-bottom: 6px;
+	font-size: 18px;
+	font-weight: 900;
+}
+
+.market-page.my-registered.trade-item.prod-created-date {
+	color: #E87131;
+}
+.market-page.my-registered.trade-item.btn-container {
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.market-page.my-registered.trade-item.btn {
+	/* width: 100%; */
+	min-width: 120px;
+}
+.market-page.my-registered.trade-item.btn:first-child {
+	margin-bottom: 12px;
+}

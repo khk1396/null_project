@@ -6,12 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>모든 유저 교환 상품</title>
-<link href="/semi_box/resources/css/common/reset.css" rel="stylesheet" />
-<link href="/semi_box/resources/css/common/stylesheet.css" rel="stylesheet" />
 <link href="/semi_box/resources/css/market/common.css" rel="stylesheet"/>
-
-
-
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -67,5 +62,6 @@
 	<footer>
 		<jsp:include page="../common/footer.jsp" />
 	</footer>
+
 </body>
 </html>

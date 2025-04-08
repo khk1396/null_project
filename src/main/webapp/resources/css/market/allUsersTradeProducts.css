@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/* MARKET CONTENTS CONTAINER */
+.market-page.contents-inner {
+	padding: 160px 32px 70px;
+}
+
+.market-page.contents-title-container {
+	margin-bottom: 	120px;
+}
+
+.market-page.item-list-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+}
+
+.market-page.product-item.container.card {
+	width: calc((100% - 72px) / 4);
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.market-page.product-item.card.img-container {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 50%;
+}
+
+.market-page.product-item.card.img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.market-page.product-item.card.info-container {
+	width: 100%;
+	padding: 16px;
+}
+
+.market-page.product-item.card.name {
+	font-size: 20px;
+	font-weight: 900;
+	margin-bottom: 8px;
+}
+
+.market-page.product-item.card.price {
+	font-size: 18px;
+	margin-bottom: 8px;
+}
+
+.market-page.product-item.card.comment {
+	width: 100%;
+}

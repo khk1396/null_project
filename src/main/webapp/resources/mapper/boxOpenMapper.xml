@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="boxOpenMapper">
+
+    <!-- PRODUCT 테이블 insert -->
+    <insert id="insertBoxOpenProduct" parameterType="com._null.semi_box.boxopen.model.vo.BoxOpenProduct">
+        INSERT INTO PRODUCT (
+            PRODUCT_ID,
+            USER_PK,
+            PRODUCT_SN,
+            GET_DATE,
+            DIARY,
+            FORTUNE,
+            STATUS
+        ) VALUES (
+            #{productId},
+            #{userPk},
+            #{productSn},
+            SYSDATE,
+            #{diary},
+            #{fortune},
+            #{status}
+        )
+    </insert>
+
+    <!-- PRODUCT_DETAIL 테이블 select (resultMap 사용) -->
+    <select id="selectProductDetailByProductSn" parameterType="String" resultMap="productDetailResultMap">
+        SELECT 
+            PRODUCT_SN,
+            BOX_CODE,
+            PRODUCT_NAME,
+            PRODUCT_DESCRIPTION,
+            PRODUCT_PRICE,
+            PRODUCT_IMG
+        FROM PRODUCT_DETAIL
+        WHERE PRODUCT_SN = #{productSn}
+    </select>
+
+    <!-- 다이어리 추가(map 사용) -->
+    <update id="updateDiary" parameterType="map">
+        UPDATE PRODUCT
+        SET DIARY = #{diary}
+        WHERE PRODUCT_ID = #{productId}
+    </update>
+
+    <!-- 전체 PRODUCT_SN 목록 -->
+    <select id="selectAllProductSn" resultType="string">
+        SELECT PRODUCT_SN FROM PRODUCT_DETAIL
+    </select>
+
+    <!-- resultMap 추가 -->
+    <resultMap id="productDetailResultMap" type="com._null.semi_box.boxopen.model.vo.BoxOpenProductDetail">
+        <result property="productSn" column="PRODUCT_SN"/>
+        <result property="boxCode" column="BOX_CODE"/>
+        <result property="productName" column="PRODUCT_NAME"/>
+        <result property="productDescription" column="PRODUCT_DESCRIPTION"/>
+        <result property="productPrice" column="PRODUCT_PRICE"/>
+        <result property="productImg" column="PRODUCT_IMG"/>
+    </resultMap>
+
+</mapper>

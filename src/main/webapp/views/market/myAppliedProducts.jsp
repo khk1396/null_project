@@ -4,98 +4,67 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>내가 등록한 상품</title>
-<link href="/semi_box/resources/css/market/common.css" rel="stylesheet"/>
-
-<style>
-
-<!-- 다름 -->
-#tradeinquiryInfo {
-	width: 20%;
-}
-
-<!-- 다름 -->
-.tradeinquirydetail-left {
-	width: 60%;
-}
-
-</style>
+<title>나의 등록 상품</title>
 </head>
 <body>
 	<!-- HEADER -->
 	<jsp:include page="/views/common/header.jsp" />
+	<!-- SUB HEADER -->
+	<jsp:include page="subHeader.jsp" />
 
-	<!-- STYLE -->
-	<jsp:include page="/views/common/style.jsp" />
-
-
-
-
-	<div id="mainFrame">
-		<div id="tradeMenu">
-			<div class="pageBtnList" style="text-align: center;" width="100%"
-				height="100px">
-				<a href="market" class="link link-medium link-hover" style="padding-left: 35px; padding-right: 35px;">다른 상품</a> 
-					<a href="myRegistedProducts" class="link link-medium link-hover">등록한 상품</a> 
-					<a href="#" onclick="location.reload();" class="link link-medium link-hover">거래 요청 상품</a> 
-					<a href="tradeRegist" class="link link-medium link-hover" style="padding-left: 35px; padding-right: 35px;">상품 등록</a> 
-					<a href="tradeHistory" class="link link-medium link-hover" style="padding-left: 35px; padding-right: 35px;">거래 내역</a>
-					<br><hr>
+	<div class="market-page my-applied-prod-container page-layout footer-fixed-bottom" >
+		<div class="market-page my-applied-prod contents-inner">
+			<div class="market-page contents-title-container my-applied-prod">
+				<h1 class="market-page contents-title my-applied-prod" >나의 거래 요청</h1>
 			</div>
-		</div>
-		<div id="tradeContent">
-			<div id="tradeContentUp">
-				<div id="tradeContentUpTitle">내가 요청한 상품</div>
-				<div id="tradeContentUpCategory">
-					<div class="Category">등록된 상품</div>
-					<div class="Category" style="padding-left:80px;">요청한 상품</div>
-					<div class="Category" style="padding-left:85px;">코멘트</div>
-					<div class="Category">요청 날짜</div>
-					<div class="Category">요청 취소</div>
-				</div>
-			</div>
-
-
-			<div id="tradeContentDown">
-				<div>
+			<div class="market-page my-applied-prod-item-list-container">
+				<div class="market-page contents-title my-applied-prod-list-inner" >
 					<% for (int i = 0; i < 3; i++) { %>
-					<div class="tradeinquiry">
-						<div id="tradeinquiryInfo"> <!-- 상대방이 등록한 상품 정보들 -->
-							<div class="tradeinquirydetail-left">
-								<div class="image">
-									<img class="productImg" src="/semi_box/views/market/puppy.jpg"
-										alt="상품 이미지">
+						<div class="market-page my-applied-prod-item-container my-applied-prod">
+							<span class="market-page my-applied-prod-item-section my-applied-prod"> <!-- 상대방이 등록한 상품 정보들 -->
+								<div class="market-page contents-category my-applied-prod">등록된 상품</div>
+								<div class="market-page contents-category-data my-applied-prod product-info">
+									<span class="market-page contents-img-container my-applied-prod product-info">
+										<img class="market-page contents-img my-applied-prod" src="/semi_box/views/market/puppy.jpg" alt="상품 이미지">
+									</span>
+									<span class="market-page contents-data my-applied-prod product-info">
+										<div class="market-page contents-data my-applied-prod">상품명</div>
+										<div class="market-page contents-data my-applied-prod">상품 가격</div>
+										<div class="market-page contents-data my-applied-prod">카테고리</div>
+									</span>
 								</div>
-							</div>
-							<div class="tradeinquirydetail-right">
-								<div class="productInfo">상품명</div>
-								<div class="productInfo">상품 가격</div>
-								<div class="productInfo">카테고리</div>
-							</div>
-						</div>
-						<div id="tradeinquiryInfo"> <!-- 내가 요청한 상품 정보들 -->
-							<div class="tradeinquirydetail-left">
-								<div class="image">
-									<img class="productImg" src="/semi_box/views/market/puppy.jpg"
-										alt="상품 이미지">
+							</span>
+							<span class="market-page my-applied-prod-item-section my-applied-prod" > <!-- 내가 요청한 상품 정보들 -->
+								<div class="market-page contents-category my-applied-prod">요청한 상품</div>
+								<div class="market-page contents-category-data my-applied-prod product-info">
+									<span class="market-page contents-img-container my-applied-prod">
+										<img class="market-page contents-img my-applied-prod" src="/semi_box/views/market/puppy.jpg" alt="상품 이미지">
+									</span>
+									<span class="market-page contents-data my-applied-prod product-info">
+										<div class="market-page contents-data my-applied-prod">상품명</div>
+										<div class="market-page contents-data my-applied-prod">상품 가격</div>
+										<div class="market-page contents-data my-applied-prod">카테고리</div>
+									</span>
 								</div>
-							</div>
-							<div class="tradeinquirydetail-right">
-								<div class="productInfo">상품명</div>
-								<div class="productInfo">상품 가격</div>
-								<div class="productInfo">카테고리</div>
-							</div>
+							</span>
+							<span class="market-page my-applied-prod-item-section my-applied-prod comment" >
+								<div class="market-page contents-category my-applied-prod comment">코멘트</div>
+								<div class="market-page contents-category-data my-applied-prod comment" >
+									코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트
+								</div>
+							</span>
+							<span class="market-page my-applied-prod-item-section my-applied-prod applied-date">
+								<div class="market-page contents-category my-applied-prod applied-date">요청 날짜</div>
+								<div class="market-page contents-category-data my-applied-prod applied-date" >
+									2025-04-04							
+								</div>
+							</span>
+							<span class="market-page my-applied-prod-item-section my-applied-prod btn-container" >
+								<button class="btn btn-small btn-secondary btn-hover" >요청 취소</button>
+							</span>
 						</div>
-						<div class="tradeinquirydetail" style="padding-top:2.3%;" id="tradeinquiryPrice">코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트</div>
-						<div class="tradeinquirydetail" style="padding-top:5%;" id="tradeinquiryOpen">2025-04-04</div>
-						<div class="tradeinquirydetail" id="tradeinquiryOpen">
-							<button class="btn btn-small btn-secondary btn-hover" style="margin-left:25px;">요청 취소</button>
-						</div>
-					</div>
 					<% } %>
 				</div>
-
-
 			</div>
 		</div>
 	</div>

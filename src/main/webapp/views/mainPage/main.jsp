@@ -41,6 +41,21 @@
 							</div>
 							<div class="box-item card price">
 								100,000원
+								
+								
+								<!-- !!!!!!!!!!!!!!!!!!!!!!! -->
+								<!--  테스트용 입니다!!!!  -->
+										<script>
+										    function openBox() {
+										        location.href = "<%= request.getContextPath() %>/views/boxOpen/boxEffect.jsp";
+										    }
+										</script>
+										<button onclick="openBox()">박스 오픈 버튼</button>
+								<!--  테스트용 입니다!!!!  -->	
+								<!-- !!!!!!!!!!!!!!!!!!!!!!! -->
+								
+								
+								
 							</div>				
 						</span>
 					</a>
