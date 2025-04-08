@@ -18,5 +18,6 @@
 
     <mappers>
         <mapper resource="mapper/boxOpenMapper.xml"/>
+        <mapper resource="mapper/market-mapper.xml"/>
     </mappers>
 </configuration>

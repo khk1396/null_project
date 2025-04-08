@@ -3,7 +3,7 @@ package com._null.semi_box.sign.model.vo;
 import java.sql.Date;
 
 public class Member {
-	private int userPk;              // 회원식별자 (sequence no) 
+	private String userPk;           // 회원식별자 (sequence no) 
 	private String userId;           // 회원아이디
 	private String userPassword;     // 회원비밀번호
 	private String userName;         // 회원이름 
@@ -25,8 +25,15 @@ public class Member {
 		this.status = status;
 	}
 	
+	@Override
+	public String toString() {
+		return "Member [userPk=" + userPk + ", userId=" + userId + ", userPassword=" + userPassword + ", userName="
+				+ userName + ", userNickName=" + userNickName + ", address=" + address + ", enrollDate=" + enrollDate
+				+ ", status=" + status + "]";
+	}
+
 	// 회원 정보
-	public Member(int userPk, String userId, String userPassword, String userName, String userNickName, String address,
+	public Member(String userPk, String userId, String userPassword, String userName, String userNickName, String address,
 			Date enrollDate, String status) {
 		super();
 		this.userPk = userPk;
@@ -39,10 +46,10 @@ public class Member {
 		this.status = status;
 	}
 
-	public int getUserPk() {
+	public String getUserPk() {
 		return userPk;
 	}
-	public void setUserPk(int userPk) {
+	public void setUserPk(String userPk) {
 		this.userPk = userPk;
 	}
 	public String getUserId() {
