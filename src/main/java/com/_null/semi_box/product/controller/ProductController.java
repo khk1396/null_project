@@ -1,4 +1,4 @@
-package com._null.semi_box.shop.controller;
+package com._null.semi_box.product.controller;
 
 import java.io.IOException;
 
@@ -9,12 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/shop")
-public class ShopController extends HttpServlet {
+public class ProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Get shop");
-		request.getRequestDispatcher("/views/product/ProductSale.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/product/productSale.jsp").forward(request, response);
 	}
 }
