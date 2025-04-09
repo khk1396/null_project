@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="diaryMapper">
+
+<select id="selectDiaryList" resultType="com._null.semi_box.mypage.model.vo.DiaryEntry">
+<!-- 별칭 임의로 수정하지 마세요!!!!!!!!!!!!! -->
+    SELECT
+        P.PRODUCT_ID as productId,
+        P.USER_PK as userPk,
+        P.PRODUCT_SN as productSn,
+        D.PRODUCT_NAME as productName,
+        D.PRODUCT_PRICE as productPrice,
+        D.PRODUCT_IMG as productImg,
+        P.DIARY as diary,
+        P.FORTUNE as fortune
+    FROM
+        PRODUCT P
+    JOIN
+        PRODUCT_DETAIL D ON P.PRODUCT_SN = D.PRODUCT_SN
+    WHERE
+        P.USER_PK = 'temp-user'
+    ORDER BY
+        P.GET_DATE DESC
+</select>
+
+
+</mapper>
