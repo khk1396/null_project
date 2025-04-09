@@ -10,7 +10,8 @@
 
     <div class="infopopup all">
         <div class="infopopup content-box">
-            <img src="<%= request.getContextPath() %>/resources/images/image.png" alt="상품 이미지" class="infopopup product-image">
+            <img src="<%= request.getContextPath() + request.getAttribute("productImg") %>" 
+     			alt="상품 이미지" class="infopopup product-image">
 
             <h3 class="infopopup product-name">
                 <%= request.getAttribute("productName") %>
