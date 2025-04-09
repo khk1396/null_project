@@ -1,12 +1,12 @@
-package com._null.semi_box.sign.model.vo;
+package com._null.semi_box.member.model.vo;
 
 import java.sql.Date;
 
 public class Member {
 	private int userPk;              // 회원식별자 (sequence no) 
 	private String userId;           // 회원아이디
-	private String userPassword;     // 회원비밀번호
 	private String userName;         // 회원이름 
+	private String userPassword;     // 회원비밀번호
 	private String userNickName;     // 회원닉네임
 	private String address;          // 배송지
 	private Date enrollDate;         // 가입일
@@ -15,24 +15,23 @@ public class Member {
 	public Member () {};
 	
 	// 회원 가입시  
-	public Member(String userId, String userPassword, String userName, String userNickName, String address, String status) {
+	public Member(String userId, String userName, String userPassword, String userNickName, String address) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
 		this.userPassword = userPassword;
 		this.userNickName = userNickName;
 		this.address = address;
-		this.status = status;
 	}
 	
 	// 회원 정보
-	public Member(int userPk, String userId, String userPassword, String userName, String userNickName, String address,
+	public Member(int userPk, String userId, String userName, String userPassword, String userNickName, String address,
 			Date enrollDate, String status) {
 		super();
 		this.userPk = userPk;
 		this.userId = userId;
-		this.userPassword = userPassword;
 		this.userName = userName;
+		this.userPassword = userPassword;
 		this.userNickName = userNickName;
 		this.address = address;
 		this.enrollDate = enrollDate;

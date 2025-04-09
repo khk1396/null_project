@@ -4,6 +4,11 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+	<!-- Mapper namespace 설정 -->
+	<typeAliases>
+    	<typeAlias alias="Member" type="com._null.semi_box.member.model.vo.Member"/>
+	</typeAliases>
+	
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -15,9 +20,11 @@
             </dataSource>
         </environment>
     </environments>
-
+	
+	<!-- Mapper 등록 -->
     <mappers>
         <mapper resource="mapper/boxOpenMapper.xml"/>
         <mapper resource="mapper/diaryMapper.xml"/>
+        <mapper resource="mapper/memberMapper.xml"/>
     </mappers>
 </configuration>
