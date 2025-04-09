@@ -1,4 +1,4 @@
-package com._null.semi_box.sign.service;
+package com._null.semi_box.member.service;
 
 import com._null.semi_box.member.model.vo.Member;
 

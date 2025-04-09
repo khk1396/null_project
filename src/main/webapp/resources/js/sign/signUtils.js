@@ -17,22 +17,32 @@ function onChangeCheckAuthId(target) {
 	return isAuthValue;
 }
 
-/* 중복 확인 요청 */
-async function onClickCheckExistId(id) {
-	let isExist = false;
-	// TODO: url 주소 설정
-	// 비동기 요청 처리 
-	// fetch 헤더 데이터 설정
-	// 가능하면 fetch api로
-	isExist = await fetch('/sign/checkExistId', {
-		method: "GET",
-		headers: {
-		  "Content-Type": "application/json",
+/* 아이디 중복 확인 비동기 요청 */
+function checkId() {
+	const userId = document.getElementById('sign-up-userId').value.trim();
+	const button = document.getElementById('check-id-btn');
+	
+	if(!userId) {
+		showToast("아이디를 입력하세요.", button);
+		return;
+	}
+	
+	fetch('checkId', {
+		method: 'POST',
+		headers: { 
+			'Content-Type': 'application/x-www-form-urlencoded'
 		},
-		body: {
-			// 요청한 데이터가 어떻게 들어오는지 확인
-		},
-	});
-
-	return result; 
+		body: `userId=${encodeURIComponent(userId)}`
+	})
+	.then(res => res.text())
+	.then(data => {
+		showToast(data, button);
+	})
+	.catch(() => {
+		showToast('', button)
+	}); 
+	
 };
+
+
+/* 닉네임 중복 확인 비동기 요청 */

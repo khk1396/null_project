@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com._null.semi_box.member.model.vo.Member;
-import com._null.semi_box.sign.service.MemberServiceImpl;
+import com._null.semi_box.member.service.MemberServiceImpl;
 
 
 @WebServlet("/signup")

@@ -1,4 +1,4 @@
-package com._null.semi_box.sign.service;
+package com._null.semi_box.member.service;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -25,6 +25,16 @@ public class MemberServiceImpl implements MemberService {
 		if (result > 0) {
 			sqlSession.commit();
 		}
+		sqlSession.close();
+		
+		return result;
+	}
+
+	public int selectMemberById(String userId) {
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = mDao.selectMemberById(sqlSession, userId);
+		
 		sqlSession.close();
 		
 		return result;

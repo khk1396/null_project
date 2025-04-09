@@ -18,3 +18,15 @@
 .sign-up-page.sign-up-btn.submit {
 	margin-right: 40px;
 }
+
+.sign-up-page.input-container-inner {
+	position: relative;
+}
+
+.sign-up-page.btn.btn-primary.btn-small.check-btn {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	border-radius: 4px;
+}

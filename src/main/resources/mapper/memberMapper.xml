@@ -20,7 +20,12 @@
 		       AND USER_PASSWORD = #{userPassword}
 		       AND STATUS = 'Y'
    </select>
-   
+   <select id="selectMemberById" resultType="_int" >
+		SELECT COUNT(*) 
+		FROM MEMBER
+		WHERE USER_ID = #{userId}
+		AND STATUS = 'Y'
+   </select>
    <insert id="insertMember" parameterType="Member">
 		INSERT INTO MEMBER (USER_PK
 						  , USER_ID

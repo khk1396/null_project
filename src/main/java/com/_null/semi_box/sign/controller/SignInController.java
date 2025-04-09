@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com._null.semi_box.member.model.vo.Member;
-import com._null.semi_box.sign.service.MemberService;
-import com._null.semi_box.sign.service.MemberServiceImpl;
+import com._null.semi_box.member.service.MemberService;
+import com._null.semi_box.member.service.MemberServiceImpl;
 
 @WebServlet("/signin")
 public class SignInController extends HttpServlet {
