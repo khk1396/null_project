@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="memberMapper">
+    <!--  로그인 ID, PASSWORD 확인 -->
+    <select id="selectMember" resultMap="memberResultMap" 
+   							 parameterType="Member">
+		SELECT USER_PK
+			 , USER_ID
+		     , USER_NAME
+		     , USER_PASSWORD
+		     , USER_NICKNAME
+		     , ADDRESS
+		     , ENROLL_DATE
+		     , STATUS
+		  FROM MEMBER
+		 WHERE USER_ID = #{userId} 
+		       AND USER_PASSWORD = #{userPassword}
+		       AND STATUS = 'Y'
+   </select>
+   
+   <insert id="insertMember" parameterType="Member">
+		INSERT INTO MEMBER (USER_PK
+						  , USER_ID
+						  , USER_NAME
+						  , USER_PASSWORD
+						  , USER_NICKNAME
+						  , ADDRESS
+						  , ENROLL_DATE
+						  , STATUS
+						  )
+					VALUES ( SEQ_USER_PK.NEXTVAL
+						  , #{userId}
+						  , #{userName}
+						  , #{userPassword}
+						  , #{userNickName}
+						  , #{address}
+						  , SYSDATE
+						  , 'Y' )
+   </insert>
+   
+   <!-- resultMap 추가 -->
+   <resultMap id="memberResultMap" type="Member">
+       <result property="userPk" column="USER_PK"/>
+       <result property="userId" column="USER_ID"/>
+       <result property="userName" column="USER_NAME"/>
+       <result property="userPassword" column="USER_PASSWORD"/>
+       <result property="userNickName" column="USER_NICKNAME"/>
+       <result property="address" column="ADDRESS"/>
+       <result property="enrollDate" column="ENROLL_DATE"/>
+       <result property="status" column="STATUS"/>        
+   </resultMap>
+
+</mapper>

@@ -19,5 +19,6 @@
     <mappers>
         <mapper resource="mapper/boxOpenMapper.xml"/>
         <mapper resource="mapper/diaryMapper.xml"/>
+        <mapper resource="mapper/memberMapper.xml"/>
     </mappers>
 </configuration>
