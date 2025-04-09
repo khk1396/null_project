@@ -33,7 +33,7 @@
 							<div class="my-page diary-item-container">
 								<!-- 상품 이미지 -->
 								<span class="my-page diary-item img">
-									<img src="${item.productImg}" alt="${item.productName}" />
+									<img src="${pageContext.request.contextPath}${item.productImg}" alt="${item.productName}" />
 								</span>
 								
 								<!-- 상품 정보 -->
