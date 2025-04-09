@@ -18,14 +18,18 @@
 			<div class="sign-page title" >
 				회원가입
 			</div>
-			<!-- TODO: 유저 관련 테이블 생성 후 컬럼명 변경 -->
 			<form class="sign-page form" action="signup" method="post" >
 				<!-- id input -->
 				<span class="sign-up-page input-container primary userId" >
 					<label class="input-label" for="sign-up-userId" >아이디</label>
 					<input id="sign-up-userId" class="sign-up-page input input-primary" type="text" name="userId" />
+					<!-- TODO: 
+						유효성 검사
+						최소 길이(영문 3자) ~ 최대 길이(영문 30자)
+						한글 입력 안됨, 특수문자는 '_'만 가능  						 
+						id 중복 버튼 api 기능 구현 (비동기 호출)
+					-->
 				</span>
-				<!--id 중복 버튼 -->
 				<!-- name input -->
 				<span class="sign-up-page input-container primary userName" >
 					<label class="input-label" for="sign-up-userName"  >이름</label>
@@ -33,6 +37,11 @@
 				</span>
 				<!-- password input -->
 				<span class="sign-up-page input-container primary userPwd" >
+					<!-- 
+						TODO: 
+						비밀번호 최소 8자 ~ 최대 30
+						특수문자, 숫자 포함 가능 (공백 x)  
+					-->
 					<label class="input-label" for="sign-up-userPwd"  >비밀번호</label>
 					<input id="sign-up-userPwd" type="password" class="sign-up-page input input-primary" name="userPassword" />
 				</span>
@@ -43,22 +52,26 @@
 				</span>
 				<!-- nickname -->
 				<span class="sign-up-page input-container primary nickname" >
+					<!-- 
+						TODO:
+						특수문자 제외 한글/영문
+						중복 검사 
+					 -->
 					<label class="input-label" for="sign-up-nickname"  >닉네임</label>
 					<input id="sign-up-nickname" type="text" class="sign-up-page input input-primary" name="userNickName" />
 				</span>
-				<!-- nickname confirm-->
-				<span class="sign-up-page input-container primary phone" >
-					<label class="input-label" for="sign-up-phone"  >닉네임 확인</label>
-					<input id="sign-up-phone" type="text" class="sign-up-page input input-primary" />
-				</span>
-				<!-- TODO: 배송지 입력 -->
+				<!-- 
+					TODO: 배송지 입력
+					https://postcode.map.daum.net/guide api 활용 
+					사용 input zip-code, 주소 정보, 상세 정보
+				-->
 				<span class="sign-up-page input-container primary address" >
 					<label class="input-label" for="sign-up-address" >배송지</label>
 					<input id="sign-up-address" type="text" class="sign-up-page input input-primary" name="address" />
 				</span>
 				<div class="sign-up-page btn-container" >
-					<button class="sign-up-page sign-up-btn btn btn-medium btn-secondary btn-hover submit" type="submit" >회원가입11</button>
-					<button class="sign-up-page sign-up-btn btn btn-medium btn-secondary btn-hover" type="reset" >돌아가기</button>
+					<button class="sign-up-page sign-up-btn btn btn-medium btn-secondary btn-hover submit" type="submit" >회원가입</button>
+					<button class="sign-up-page sign-up-btn btn btn-medium btn-secondary btn-hover" type="reset" onclick="return history.back();" >돌아가기</button>
 				</div>
 			</form>
 		</span>	

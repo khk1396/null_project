@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com._null.semi_box.sign.model.vo.Member;
-import com._null.semi_box.sign.service.*;
+import com._null.semi_box.member.model.vo.Member;
+import com._null.semi_box.sign.service.MemberService;
+import com._null.semi_box.sign.service.MemberServiceImpl;
 
 @WebServlet("/signin")
 public class SignInController extends HttpServlet {
@@ -19,12 +20,10 @@ public class SignInController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("/views/signPage/signIn.jsp").forward(request, response);
-		System.out.println("doGet signin /views/signPage/signIn.jsp");
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("doPost signin");
 		req.setCharacterEncoding("UTF-8");	// post 요청 시 데이터에 한글이 포함된 경우 인코딩 처리
 		
 		String userId = req.getParameter("userId");
@@ -38,12 +37,10 @@ public class SignInController extends HttpServlet {
 		Member loginUser = service.selectMember(m);
 		
 		if (loginUser != null) {
-			System.out.println("doPost signin ok");
 			HttpSession session = req.getSession();
 			session.setAttribute("loginUser", loginUser);
 			resp.sendRedirect( req.getContextPath() );  // 메인페이지(/semi_box)로 이동후 메인 페이지에 SIGN IN위치에 SIGN OUT 아이콘 표시해야함
 		} else {
-			System.out.println("doPost signin fail");
 			req.setAttribute("errorMsg", "로그인에 실패했습니다.");
 			// 에러 메시지 표시후 로그인창으로 signin
 			resp.sendRedirect( req.getContextPath() + "/signin" );  // 로그인 화면

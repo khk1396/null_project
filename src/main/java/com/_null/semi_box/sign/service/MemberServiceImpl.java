@@ -2,8 +2,8 @@ package com._null.semi_box.sign.service;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com._null.semi_box.sign.model.dao.MemberDao;
-import com._null.semi_box.sign.model.vo.Member;
+import com._null.semi_box.member.model.dao.MemberDao;
+import com._null.semi_box.member.model.vo.Member;
 import com._null.semi_box.sign.template.Template;
 
 public class MemberServiceImpl implements MemberService {

@@ -1,8 +1,8 @@
-package com._null.semi_box.sign.model.dao;
+package com._null.semi_box.member.model.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com._null.semi_box.sign.model.vo.Member;
+import com._null.semi_box.member.model.vo.Member;
 
 public class MemberDao {
 	public Member selectMember(SqlSession sqlSession, Member m) {

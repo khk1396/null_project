@@ -1,6 +1,6 @@
 package com._null.semi_box.sign.service;
 
-import com._null.semi_box.sign.model.vo.Member;
+import com._null.semi_box.member.model.vo.Member;
 
 public interface MemberService {
 	

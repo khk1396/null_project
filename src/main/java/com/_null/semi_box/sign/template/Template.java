@@ -18,7 +18,7 @@ public class Template {
 		 * SqlSession 객체를 생성하기 위해서 --> SqlSessionFactory 객체 필요
 		 * SqlSessionFactory 객체를 생성하기 위해서 --> SqlSessionFactoryBuilder 객체 필요
 		 */		
-		String resource = "/mybatis-config.xml";
+		String resource = "mybatis-config.xml";
 		// => source folder 내에 해당 파일 위치
 		try {			
 			InputStream inputStream = Resources.getResourceAsStream(resource);

@@ -18,9 +18,9 @@
 	<!-- HEADER -->
 	<jsp:include page="/views/common/header.jsp" />
 	<jsp:include page="/views/common/style.jsp" />
-	<!-- SIGN IN PAGE -->
 	
-	<c:if test="${ empty alertMsg }">
+	<!-- SIGN IN PAGE -->
+	<c:if test="${ not empty alertMsg }">
 	   ${ loginUser.userName }
 	</c:if>
 	

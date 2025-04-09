@@ -1,4 +1,4 @@
-package com._null.semi_box.sign.model.vo;
+package com._null.semi_box.member.model.vo;
 
 import java.sql.Date;
 
