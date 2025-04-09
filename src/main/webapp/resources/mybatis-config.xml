@@ -4,6 +4,12 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+
+		 <typeAliases> 
+		 	 <typeAlias  type="com._null.semi_box.mypage.model.vo.OrderHistory" alias="OrderHistory" />
+		 	 
+		 </typeAliases> 
+		 
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -19,5 +25,6 @@
     <mappers>
         <mapper resource="mapper/boxOpenMapper.xml"/>
         <mapper resource="mapper/diaryMapper.xml"/>
+        <mapper resource="mapper/historyMapper.xml"/>
     </mappers>
 </configuration>

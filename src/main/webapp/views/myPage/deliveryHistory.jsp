@@ -149,11 +149,15 @@
 	<!-- STYLE -->
 	<jsp:include page="/views/common/style.jsp" />
 	
+	<!-- ASIDE BAR -->
+    <jsp:include page="/views/myPage/asideNavBar.jsp" />
+
+	
      <!-- main 틀-->
     <div class="mainFrame">
-
          <!-- 상단 틀-->
         <div id="orderMenu">
+
 
             <div class="menubtn"></div>
             <div class="menubtn"></div>

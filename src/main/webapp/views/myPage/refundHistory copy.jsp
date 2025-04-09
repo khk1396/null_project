@@ -148,6 +148,8 @@
 	<!-- STYLE -->
 	<jsp:include page="/views/common/style.jsp" />
 	
+	   <!-- ASIDE BAR -->
+	<jsp:include page="/views/myPage/asideNavBar.jsp" />
 
     <!-- main 틀-->
     <div class="mainFrame">
@@ -159,8 +161,12 @@
             <div class="menubtn"></div>
             <div class="menubtn"></div>
             <div class="menubtn">
-                <div class="menubtn-order">주문 내역</div> 
-                <div class="menubtn-refund">환불 내역</div> 
+                <div class="menubtn-order">
+				<a href="purchase-history">주문 내역 </a>
+                </div> 
+                <div class="menubtn-refund">
+                <a href="refund-hostroy">환불 내역</a>
+                </div> 
             </div>
             <div class="menubtn"></div>
 
@@ -176,7 +182,7 @@
                 <div id="orderContentUpCategory"> 
                     <div class="Category" id="CategoryNo">주문번호</div>
                     <div id="CategoryInfo">상품정보</div>
-                    <div class="Category" id="CategoryQuantity">개수</div>
+                    <div class="Category" id="CategoryQuantity"></div>
                     <div class="Category" id="CategoryPrice">환불 금액</div>
                     <div class="Category" id="CategoryOpen">진행 여부</div>                    
                 </div>
@@ -198,70 +204,14 @@
                             <div class="boxinfo bcategory">카테고리</div>
                         </div>                        
                     </div>
-                    <div class="orderinquirydetail" id="orderinquiryQuantity">1</div>
+                    <div class="orderinquirydetail" id="orderinquiryQuantity"></div>
                     <div class="orderinquirydetail" id="orderinquiryPrice">9,990</div>
                     <div class="orderinquirydetail" id="orderinquiryOpen">개봉</div>  
                 </div>
 
 
-                <div class="orderinquiry">
-                    <div class="orderinquirydetail" id="orderinquiryNo">고유키</div>
-                    <div id="orderinquiryInfo">
-                        <div class="orderinquirydetail-left">
-                            <div class="image">
-                                <img class="boximage" src="${pageContext.request.contextPath}/resources/svg/box.JPG" alt="box이미지">
-                            </div>
-                        </div>
-                        <div class="orderinquirydetail-right">
-                            <div class="boxinfo Date">환불 신청 날짜</div>
-                            <div class="boxinfo name">박스명</div>
-                            <div class="boxinfo bcategory">카테고리</div>
-                        </div>                        
-                    </div>
-                    <div class="orderinquirydetail" id="orderinquiryQuantity">1</div>
-                    <div class="orderinquirydetail" id="orderinquiryPrice">9,990</div>
-                    <div class="orderinquirydetail" id="orderinquiryOpen">개봉</div>  
-                </div>
 
 
-                <div class="orderinquiry">
-                    <div class="orderinquirydetail" id="orderinquiryNo">고유키</div>
-                    <div id="orderinquiryInfo">
-                        <div class="orderinquirydetail-left">
-                            <div class="image">
-                                <img class="boximage" src="${pageContext.request.contextPath}/resources/svg/box.JPG" alt="box이미지">
-                            </div>
-                        </div>
-                        <div class="orderinquirydetail-right">
-                            <div class="boxinfo Date">환불 신청 날짜</div>
-                            <div class="boxinfo name">박스명</div>
-                            <div class="boxinfo bcategory">카테고리</div>
-                        </div>                        
-                    </div>
-                    <div class="orderinquirydetail" id="orderinquiryQuantity">1</div>
-                    <div class="orderinquirydetail" id="orderinquiryPrice">9,990</div>
-                    <div class="orderinquirydetail" id="orderinquiryOpen">개봉</div>  
-                </div>
-
-
-                <div class="orderinquiry">
-                    <div class="orderinquirydetail" id="orderinquiryNo">고유키</div>
-                    <div id="orderinquiryInfo">
-                        <div class="orderinquirydetail-left">
-                            <div class="image">
-                                <img class="boximage" src="${pageContext.request.contextPath}/resources/svg/box.JPG" alt="box이미지">
-                            </div>
-                        </div>
-                        <div class="orderinquirydetail-right">
-                            <div class="boxinfo Date">환불 신청 날짜</div>
-                            <div class="boxinfo name">박스명</div>
-                            <div class="boxinfo bcategory">카테고리</div>
-                        </div>                        
-                    </div>
-                    <div class="orderinquirydetail" id="orderinquiryQuantity">1</div>
-                    <div class="orderinquirydetail" id="orderinquiryPrice">9,990</div>
-                    <div class="orderinquirydetail" id="orderinquiryOpen">개봉</div>  
-                </div>
             </div>
 
         </div>

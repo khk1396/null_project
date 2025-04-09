@@ -37,6 +37,7 @@ public class BoxEffectServlet extends HttpServlet {
 
         //  상품 정보 조회
         BoxEffectDAO dao = new BoxEffectDAO();
+        /*
         ProductDetail product = dao.selectProductBySn(productSn);
 
         // 조회 결과 JSP에 전달
@@ -44,7 +45,7 @@ public class BoxEffectServlet extends HttpServlet {
             request.setAttribute("productName", product.getProductName());
             request.setAttribute("productPrice", product.getProductPrice());
         }
-
+*/
         request.getRequestDispatcher("/views/common/boxOpen/itemInfoPopup.jsp").forward(request, response);
     }
 }
