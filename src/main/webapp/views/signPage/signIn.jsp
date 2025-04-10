@@ -43,11 +43,6 @@
 				</span>
 				<!-- 비밀번호 찾기 버튼 -->
 				<div class="sign-in-page find-pwd-container" >
-					<span class="sign-in-page find-pwd-inner" >
-						<a class="sign-in-page link link-small link-text-hover">
-							비밀번호 찾기
-						</a>
-					</span>
 				</div>
 				<div class="sign-in-page btn-container" >
 					<button class="sign-in-page sign-in-btn btn btn-medium btn-primary btn-hover" type="submit" >로그인</button>
