@@ -17,27 +17,15 @@ import com._null.semi_box.payBox.service.PayBoxServiceImpl;
 
 @WebServlet("/mypage/inventory")
 public class MyPageController extends HttpServlet {
-	/**
-	 * @param request
-	 * @param response
-	 * @throws ServletException
-	 * @throws IOException
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 현재 로그인 정보 확인
 		HttpSession session = request.getSession();
 		Member loginUser = (Member)session.getAttribute("loginUser");
 		
 		if(loginUser == null) {
 			response.sendRedirect("/semi_box/signin");
 		} else {
-			// login USER_PK로 pay_box 데이터 조회
-			// TODO : PAY BOX DATA 추가 후 다시 조회 
 			String userPk = String.valueOf(loginUser.getUserPk());
-			// System.out.println("user pk : " + userPk);
-			// select
 			PayBoxService inventoryService = new PayBoxServiceImpl();
-			// System.out.println("pay box list : " + inventoryService.selectPayBoxAllByUserPk(userPk));
 			ArrayList<PayBox> list = inventoryService.selectPayBoxAllByUserPk(userPk);
 			
 			request.setAttribute("payBoxList", list);

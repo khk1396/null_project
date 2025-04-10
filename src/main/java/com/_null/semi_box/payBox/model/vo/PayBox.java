@@ -11,6 +11,9 @@ public class PayBox {
 	private Date payDate; 		//	PAY_DATE	DATE
 	private String status; 		//	STATUS	VARCHAR2(8 BYTE)
 	
+	/* BOX_IMG 테이블 정보 */
+	private String boxImg; 		// BOX_IMG VARCHAR2()
+	
 	public PayBox() {}
 	
 	public void setStatus(String status) {
@@ -67,6 +70,14 @@ public class PayBox {
 
 	public String getStatus() {
 		return status;
+	}
+
+	public String getBoxImg() {
+		return boxImg;
+	}
+
+	public void setBoxImg(String boxImg) {
+		this.boxImg = boxImg;
 	}
 
 	@Override
