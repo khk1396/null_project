@@ -7,6 +7,7 @@
 	<!-- Mapper namespace 설정 -->
 	<typeAliases>
     	<typeAlias alias="Member" type="com._null.semi_box.member.model.vo.Member"/>
+	<typeAlias  type="com._null.semi_box.mypage.model.vo.OrderHistory" alias="OrderHistory" />
 	</typeAliases>
 	
     <environments default="development">
