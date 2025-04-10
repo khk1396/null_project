@@ -31,5 +31,9 @@
 	<a class="link link-large" >LINK</a>
 	<br>
 --%>
+
+<%-- 토스트 알림 
+	<div id="toast" ></div> --%>
+
 </body>
 </html>

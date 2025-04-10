@@ -13,4 +13,12 @@ public class MemberDao {
 		return sqlSession.insert("memberMapper.insertMember", m);
 	}
 
+	public int selectMemberById(SqlSession sqlSession, String userId) {
+		return sqlSession.selectOne("memberMapper.selectMemberById", userId);
+	}
+
+	public int selectMemberByNickName(SqlSession sqlSession, String userNickName) {
+		return sqlSession.selectOne("memberMapper.selectMemberByNickName", userNickName);
+	}
+
 }

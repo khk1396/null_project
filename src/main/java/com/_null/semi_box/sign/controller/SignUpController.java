@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com._null.semi_box.member.model.vo.Member;
-import com._null.semi_box.sign.service.MemberServiceImpl;
+import com._null.semi_box.member.service.MemberServiceImpl;
 
 
 @WebServlet("/signup")
@@ -18,7 +18,6 @@ public class SignUpController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doGet signup");
 		request.getRequestDispatcher("/views/signPage/signUp.jsp").forward(request, response);	
 	}
 	
