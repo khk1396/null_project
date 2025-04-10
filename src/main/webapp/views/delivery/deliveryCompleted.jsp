@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <title>배송 내역</title>
 
-<link href="${ pageContext.request.contextPath }/resources/css/history/common.css" rel="stylesheet" />
+<!-- <link href="${ pageContext.request.contextPath }/resources/css/history/deliveryCO.css" rel="stylesheet" /> -->
+<link href="${ pageContext.request.contextPath }/resources/css/history/deliverCompleted.css" rel="stylesheet" />
     <style>
 
 
@@ -24,7 +25,7 @@
 	<jsp:include page="/views/common/style.jsp" />
 	
     <!-- main 틀-->
-    <div class="shopMainFrame">
+    <div class="deliveryMainFrame">
        
 
         <!-- 신청완료 타이틀 부분-->
@@ -56,9 +57,9 @@
         <div class="Complet completBtn">     
             <div class="completdown"></div>
             <div class="completdown">
-                <button class="btn btn-medium btn-secondary btn-hover">홈으로 이동</button>  </div>
+                <button class="btn btn-medium btn-secondary btn-hover" ><a href="/semi_box">홈으로 이동</a></button></div>
             <div class="completdown">
-                <button class="btn btn-medium btn-primary btn-hover">상세 내역 보기</button>  </div>   
+                <button class="btn btn-medium btn-primary btn-hover"><a href="${ pageContext.request.contextPath }/mypage/delivery-history" class="orderDeliveryRefundBtn-a">상세 내역 보기</a></button></div>   
             <div class="completdown"></div>  
         </div>
 

@@ -2,21 +2,14 @@
 
 
 .mainFrame {
-
-    /*
     width: auto;
-    height: auto; 
-    */
+    height: auto;
     border: 1px black solid;
     box-sizing: border-box;
-    
-    /*
     margin-top: 6%;
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 10%;
-    */
-
 }
 
 
@@ -206,32 +199,3 @@
     text-align: center;
     padding-top: 2%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

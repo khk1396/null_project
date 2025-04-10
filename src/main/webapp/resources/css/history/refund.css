@@ -1,0 +1,33 @@
+/*  환불 내역 */
+
+
+
+.refundNo    {width: 20% ;}
+.refundInfo  {width: 45% ;}
+.refundPrice {width: 20% ;}
+.refundOpen  {width: 0% ;}
+.refundNull  {width: 15% ;}
+
+/* 주문번호, 상품정보, 결재 금액, 개봉 여부, 배송조회/환불신청 */
+.refundUniquekey         {width: 20%; padding-top: 7%;}
+.refundImageDateName     {width: 45%; }
+.refundBoxPrice          {width: 20%; padding-top: 7%;}
+.refundBoxOpen           {width: 0%; padding-top: 7%;}
+.refundDeliveryRefundBtn {width: 15%; padding-top: 8%;
+}
+
+
+.refundImageDateName{
+    display: flex;
+    border: px black solid;
+    }
+
+.downMenuDown-refundImageDateName {
+    height: 50%;
+    border: px black solid;
+}
+
+/* 이미지, 구매날짜, 박스명*/
+.refundImage         {height: 100%;}
+.refundPurchaseDate  {height: 50%; width: 100%;}
+.refundBoxName       {height: 50%; width: 100%;}

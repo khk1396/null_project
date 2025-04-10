@@ -1,294 +1,156 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList
+				, com._null.semi_box.mypage.model.vo.OrderHistory 
+                , com._null.semi_box.mypage.common.PageInfo"%>    
+
 <!DOCTYPE html5>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>배송 내역</title>
+<title>배송내역</title>
 
-<link href="${ pageContext.request.contextPath }/resources/css/history/common.css" rel="stylesheet" />
+<link href="${ pageContext.request.contextPath }/resources/css/history/common.css" rel="stylesheet" /> 
+ 
+<link href="${ pageContext.request.contextPath }/resources/css/history/delivery.css" rel="stylesheet" /> 
+
     <style>
-
-
-
-        #orderContentUp, #orderContentDown{
-            border: px pink solid;
-            width: 100%;
-            margin: 0;
-        }
-
-        #orderContentUp {  height: 20%; 
-            box-sizing: border-box;
-        }
-        #orderContentDown { height: 80%;
-            box-sizing: border-box;
-
-        }
-
-
-        #orderContentUpTitle, #orderContentUpCategory{
-            border: px red solid;
-            width: 100%;
-            margin: 0;
-        }
-        #orderContentUpTitle {
-            font-size: 60px;
-            height: 50%;
-        }
-        #orderContentUpCategory {
-            height: 45%;
-            display: flex;
-            box-sizing: border-box;
-            border-top: 0.6mm black solid;
-        }        
-
-        #orderContentUpTitle {
-            border: px brown solid;
-            height: 55%;
-            font-size: 40px;
-            font-family: sans-serif;
-            padding-left: 2%;
-            padding-top: 1%;
-            
-        }
-
-        .Category {
-            border:  px brown solid;                        
-            height: 100%;
-            font-size  : 16px;
-            font-family: sans-serif;
-            text-align: center;
-            line-height: 60px;
-        }
-        #CategoryNo            {width: 10%; border: px red solid} 
-        #CategoryInfo          {width: 45%; 
-            height: 100%;
-            font-size  : 16px;
-            font-family: sans-serif;          
-            padding-left: 4%;  
-            line-height: 60px;
-            border: px red solid}  
-        #CategoryQuantity      {width: 30%; border: px red solid} 
-        #CategoryPrice         {width: 15%; border: px red solid}              
-        
-
-        .orderinquiry {
-            border:  px brown solid;
-            border-top: 1px black solid;
-            border-bottom: 1px black solid;
-            width: 100%;
-            height: 25%;
-            display: flex;
-            
-        }
-
-        .orderinquirydetail{ height: 100%; border: px brown solid;
-            text-align: center;
-            padding-top: 5%;
-        }
-
-        #orderinquiryNo         {width: 10%; }
-        #orderinquiryInfo       {width: 45%;
-            display: flex;        
-        }
-        #orderinquiryQuantity   {width: 30%; 
-        
-        }
-        #orderinquiryPrice      {width: 15%; }
-
-        
-        #orderinquiryNull {
-            width: 20%;
-            height: 100%;
-            border: px brown solid;
-            text-align: center;
-        }
-
-        .orderinquirydetail-left , .orderinquirydetail-right {
-             height: 100%;
-             width: 100%;
-        }
-        .orderinquirydetail-left { width: 40%;}
-        .orderinquirydetail-right { width: 60%;}
-
-        .boxinfo{
-            border: px green solid;
-            height: 20%;
-            padding-top: 6%;
-        }
-
-        .boximage {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .parcel, .refund {
-            width: 100%;
-            height: 50%;
-            border: px pink solid;
-        }
-        .parcel{
-            padding-top: 8%;
-        }
-
-
-        .memberInfo {
-            border: px pink solid;
-            height: 20%;
-            padding-top: 6%;
-        }
         
 
     </style>
 </head>
 <body >
+
+
+	<% ArrayList<OrderHistory> orderHistory = (ArrayList<OrderHistory>)request.getAttribute("list"); %>
+
+
     	<!-- HEADER -->
 	<jsp:include page="/views/common/header.jsp" />
 	
 	<!-- STYLE -->
 	<jsp:include page="/views/common/style.jsp" />
 	
-	<!-- ASIDE BAR -->
-    <jsp:include page="/views/myPage/asideNavBar.jsp" />
 
+    <div class="my-page container purchase-history page-layout footer-fixed-bottom">
+		<!-- ASIDE BAR -->
+		<jsp:include page="/views/myPage/asideNavBar.jsp" />
+		
+		<div class="my-page contents-container purchase-history">
+			
+            <!-- 상단 버튼 -->
+            <div class="my-page order-frame upMenu " >
+            </div>
+
+            <!-- 중단 타이틀 -->
+            <div class="my-page order-frame midMenu" >
+                <!-- <div class="my-page midMenu-item title">주문 내역</div> -->
+                 <h1 class="my-page title">배송 내역</h1>                 
+            </div>
+
+            <!-- 하단 조회 목록-->
+            <div class="my-page order-frame downMenu">
+
+                <!-- 조회되는 컬럼명 -->
+                <div class="my-page order-frame downMenuUp">
+
+                    <div class="my-page downMenuUp-item deliveryNo">접수 번호</div>
+                    <div class="my-page downMenuUp-item deliveryInfo">상품 정보</div>
+                    <div class="my-page downMenuUp-item deliveryPrice">배송 정보</div>
+                    <div class="my-page downMenuUp-item deliveryOpen"></div>
+                    <div class="my-page downMenuUp-item deliveryNull">배송 상태 </div>
+
+
+                </div>
+
+
+
+                <!-- 조회되는 컬럼값 -->
+                <div class="my-page order-frame downMenuDown">
+
+
+                        <% for (int i=0 ; i<orderHistory.size(); i++) { %>
+                        <% OrderHistory ohistory = orderHistory.get(i); %>
+
+
+                        <div class="my-page downMenuDown-frame output  ">
+                            <div class="my-page downMenuDown-item deliveryUniquekey" ><%= ohistory.getUserPk() %></div> 
+
+	                            <div class="my-page downMenuDown-item deliveryImageDateName" >
+	                                  <div class="my-page downMenuDown-item-image ">
+	                                <img class="my-page downMenuDown-orderImageDateName deliveryImage" src="${pageContext.request.contextPath}/resources/images/black.jpg" alt="box이미지">
 	
-     <!-- main 틀-->
-    <div class="mainFrame">
-         <!-- 상단 틀-->
-        <div id="orderMenu">
+	                                </div>
+                                        <div class="my-page downMenuDown-item-info">
+                                            <div class="my-page downMenuDown-orderImageDateName deliveryPurchaseDate">
+                                                <h5>배송 신청 날짜</h5>
+                                                <%= ohistory.getPayDate() %>
+                                            </div>
+                                            <div class="my-page downMenuDown-orderImageDateName deliveryBoxName">
+                                                <h5>실상품명</h5>
+                                                <%= ohistory.getBoxName() %>
+                                            </div>
+                                            <div class="my-page downMenuDown-orderImageDateName deliveryProductPrice">
+                                                <h5>실금액</h5>
+                                                <%= ohistory.getBoxName() %>
+                                            </div>
+	                                    </div>
+	                            </div> 
+
+	                            <div class="my-page downMenuDown-item deliveryBoxPrice" >
+                                    받는 사람 이름 <br> <br> <br>
+                                    배송지 
+                                </div> 
+	                            <div class="my-page downMenuDown-item deliveryBoxOpen" ><%= ohistory.getStatus() %></div> 
+	                            <div class="my-page downMenuDown-item deliveryDeliveryRefundBtn" >
+                                        배송 중
+	                                </div>                                 
+                        </div> 
+                        <% } %>
+                </div>  
 
 
-            <div class="menubtn"></div>
-            <div class="menubtn"></div>
-            <div class="menubtn">
-                <div class="menubtn-shopping">배송내역</div>
+                <% PageInfo pi = (PageInfo)request.getAttribute("pi"); %>
+                <%
+				    int currPage = 0, startPage = 0, endPage =0, maxPage =0;
+			
+                    if ( pi != null ){
+                        currPage = pi.getCurrPage();
+                        startPage = pi.getStartPage();
+                        endPage  = pi.getEndPage();
+                        maxPage = pi.getMaxPage();
+                    }
+                    
+                %>
+                <div id="pagingArea">
+                    <ul class="pagination">
+                        <% if (currPage == 1)  {%>
+                        <li class="page-item"><a class="page-link">Prev</a></li>
+                        <% } else { %>
+                            <li class="page-item"><a href="delivery-history?cpage=<%= currPage - 1%>" class="page-link">Prev</a></li>
+                        <% } %>
 
-            </div>
-            <div class="menubtn">
-                <div class="menubtn-order">주문 내역</div> 
-                <div class="menubtn-refund">환불 내역</div> 
-            </div>
-            <div class="menubtn"></div>
+                        <%-- 반복문을 사용하여 페이징 바 개수만큼 시작번호, 끝번호 활용하여 표시 --%>
+                        <% for (int p = startPage; p <= endPage; p++ ) { %>
+                        <li class="page-item"><a  href="delivery-history?cpage=<%= p %>" class="page-link" ><%= p%></a></li>
+                        <% } %>
+                        <% if (currPage == maxPage)  {%>
+                        <li class="page-item"><a  class="page-link">Next</a></li>
+                        <%} else { %>
+                        <li class="page-item"><a href="delivery-history?cpage=<%= currPage + 1%>" class="page-link">Next</a></li>
+                        <% } %>
 
-
-        </div>
-
-       <!-- 하위 틀-->
-        <di id="orderContent">
-
-            <!-- 제목 및 컬럼이름들 -->
-            <div id="orderContentUp">
-                <div id="orderContentUpTitle"> 배송 내역 </div>
-                <div id="orderContentUpCategory"> 
-                    <div class="Category" id="CategoryNo">접수 번호</div>
-                    <div id="CategoryInfo">상품정보</div>
-                    <div class="Category" id="CategoryQuantity">배송 정보</div>
-                    <div class="Category" id="CategoryPrice">배송 상태</div>
+                    </ul>
                 </div>
-            </div>
-
-            <!-- 각 컬럼 값들 -->
-            <div id="orderContentDown">
-                <div class="orderinquiry">
-                    <div class="orderinquirydetail" id="orderinquiryNo">접수번호</div>
-                    <div id="orderinquiryInfo">
-                        <div class="orderinquirydetail-left">
-                            <div class="image">
-                                <img class="boximage" src="${pageContext.request.contextPath}/resources/svg/box.JPG" alt="box이미지">
-                            </div>
-                        </div>
-                        <div class="orderinquirydetail-right">
-                            <div class="boxinfo Date">배송 신청 날짜</div>
-                            <div class="boxinfo name">박스명</div>
-                            <div class="boxinfo bcategory">카테고리</div>
-                            <div class="boxinfo productprice">실금액</div>
-                        </div>                        
-                    </div>
-                    <div id="orderinquiryQuantity">
-                        <div class="memberInfo">받는사람이름</div>
-                        <div class="memberInfo">연락처</div>
-                        <div class="memberInfo">주소</div>                            
-                        <div class="memberInfo">배송메시지</div>                            
-                    </div>
-                    <div class="orderinquirydetail" id="orderinquiryPrice">배송 완료</div>
-                </div>
-                <div class="orderinquiry">
-                    <div class="orderinquirydetail" id="orderinquiryNo">접수번호</div>
-                    <div id="orderinquiryInfo">
-                        <div class="orderinquirydetail-left">
-                            <div class="image">
-                                <img class="boximage" src="${pageContext.request.contextPath}/resources/svg/box.JPG" alt="box이미지">
-                            </div>
-                        </div>
-                        <div class="orderinquirydetail-right">
-                            <div class="boxinfo Date">배송 신청 날짜</div>
-                            <div class="boxinfo name">박스명</div>
-                            <div class="boxinfo bcategory">카테고리</div>
-                            <div class="boxinfo productprice">실금액</div>
-                        </div>                        
-                    </div>
-                    <div id="orderinquiryQuantity">
-                        <div class="memberInfo">받는사람이름</div>
-                        <div class="memberInfo">연락처</div>
-                        <div class="memberInfo">주소</div>                            
-                        <div class="memberInfo">배송메시지</div>                            
-                    </div>
-                    <div class="orderinquirydetail" id="orderinquiryPrice">배송 완료</div>
-                </div>
-                <div class="orderinquiry">
-                    <div class="orderinquirydetail" id="orderinquiryNo">접수번호</div>
-                    <div id="orderinquiryInfo">
-                        <div class="orderinquirydetail-left">
-                            <div class="image">
-                                <img class="boximage" src="${pageContext.request.contextPath}/resources/svg/box.JPG" alt="box이미지">
-                            </div>
-                        </div>
-                        <div class="orderinquirydetail-right">
-                            <div class="boxinfo Date">배송 신청 날짜</div>
-                            <div class="boxinfo name">박스명</div>
-                            <div class="boxinfo bcategory">카테고리</div>
-                            <div class="boxinfo productprice">실금액</div>
-                        </div>                        
-                    </div>
-                    <div id="orderinquiryQuantity">
-                        <div class="memberInfo">받는사람이름</div>
-                        <div class="memberInfo">연락처</div>
-                        <div class="memberInfo">주소</div>                            
-                        <div class="memberInfo">배송메시지</div>                            
-                    </div>
-                    <div class="orderinquirydetail" id="orderinquiryPrice">배송 완료</div>
-                </div>
-                <div class="orderinquiry">
-                    <div class="orderinquirydetail" id="orderinquiryNo">접수번호</div>
-                    <div id="orderinquiryInfo">
-                        <div class="orderinquirydetail-left">
-                            <div class="image">
-                                <img class="boximage" src="${pageContext.request.contextPath}/resources/svg/box.JPG" alt="box이미지">
-                            </div>
-                        </div>
-                        <div class="orderinquirydetail-right">
-                            <div class="boxinfo Date">배송 신청 날짜</div>
-                            <div class="boxinfo name">박스명</div>
-                            <div class="boxinfo bcategory">카테고리</div>
-                            <div class="boxinfo productprice">실금액</div>
-                        </div>                        
-                    </div>
-                    <div id="orderinquiryQuantity">
-                        <div class="memberInfo">받는사람이름</div>
-                        <div class="memberInfo">연락처</div>
-                        <div class="memberInfo">주소</div>                            
-                        <div class="memberInfo">배송메시지</div>                            
-                    </div>
-                    <div class="orderinquirydetail" id="orderinquiryPrice">배송 완료</div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
+
+			</div>
+		</div>
+	</div>
 
 	<!-- FOOTER -->
 	<jsp:include page="/views/common/footer.jsp" />
+
 </body>
 </html>

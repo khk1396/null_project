@@ -7,7 +7,7 @@
 <title>배송지신청</title>
 
 
-<link href="${ pageContext.request.contextPath }/resources/css/history/common.css" rel="stylesheet" />
+<link href="${ pageContext.request.contextPath }/resources/css/history/deliveryCO.css" rel="stylesheet" />
 
 </head>
 <body >

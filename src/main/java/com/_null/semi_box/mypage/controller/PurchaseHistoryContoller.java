@@ -32,7 +32,8 @@ public class PurchaseHistoryContoller extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response		
+			) throws ServletException, IOException {
 		/* 서비스 객체 생성 */
 		HistoryService hServcie = new HistoryServiceImpl();		
 		
@@ -40,39 +41,29 @@ public class PurchaseHistoryContoller extends HttpServlet {
 		/* 로그인한 user pk로 조회 */
 		/* 임시로 생성*/
 		String id = "4";
+		String cpage =	request.getParameter("cpage");
 		
-		/* 현재 페이지 받아오기 */
-//		int currPage = request.getParameter("currPage");
-		
-		if (request.getParameter("currPage") !=null) {
-			System.out.println(request.getParameter("currPage"));
-		}
-		
-		/* 전체 박스 구매 이력 수 조회 */
-		int listCount = hServcie.selectByPurchaseHistoryCount();
-		
-		
+		if ( cpage == null  ) {
+			 cpage = "1";
+		} 
+
 		// 페이징바 개수, 한 페이지당 표시할 게시글 개수 --> 지정 
-		int pageLimit = 10;  // 페이징바 개수
-		int boardLimit = 10; // 한페이지 당 10개 표시
+		int pageLimit = 5;  // 페이징바 개수
+		int boardLimit = 4; // 한페이지 당 10개 표시
+
 		
-//		PageInfo pi = new PageInfo(listCount, currPage, pageLimit, boardLimit);
+		/* 유저 구매 이력 수 조회 */
+		int listCount = hServcie.selectUserOrder(id);
 		
+		PageInfo pi = new PageInfo(listCount, Integer.parseInt(cpage), pageLimit, boardLimit);
 		
 		/* 로그인한 계정명으로 구매 내역 조회 */
-		ArrayList<OrderHistory> list = hServcie.selectAllOrder(id);
-		
-		
-		
-//		if ( list != null) {
-//				for (int i=0; i<list.size(); i++) {
-//					  System.out.println(list.get(i));
-//				}
-//		} else {
-//			System.out.println("실패");
-//		}
+		ArrayList<OrderHistory> list = hServcie.selectAllOrder(pi, id);
+		System.out.println(list);
+		System.out.println(pi);
 		
 		request.setAttribute("list", list);
+		request.setAttribute("pi", pi);
 		
 		request.getRequestDispatcher("/views/myPage/purchaseHistory.jsp").forward(request, response);
 	}

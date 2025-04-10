@@ -1,5 +1,5 @@
 
-
+/* 공통 */ 
 
 .order-frame {
     border: px black solid;
@@ -42,16 +42,10 @@
     text-align: center;
     padding-top: 3px;
 }
-.orderNo    {width: 20% ;}
-.orderInfo  {width: 45% ;}
-.orderPrice {width: 10% ;}
-.orderOpen  {width: 10% ;}
-.orderNull  {width: 15% ;}
-
 
 .output {
     display: flex;
-    height: 22%;
+    height: 23%;
     margin-bottom: 1%;
 }
 
@@ -62,40 +56,17 @@
     font-family: SUIT-Regular, sans-serif;
 
 }
-.orderImageDateName{
-    display: flex;
-    border: px black solid;
-}
-.downMenuDown-orderImageDateName {
-    height: 50%;
-    border: px black solid;
-}
+
 
 .downMenuDown-item-image, .downMenuDown-item-info{ width: 50%;}
 .downMenuDown-item-info {padding-top: 7%; }
 
-/* 이미지, 구매날짜, 박스명*/
-.orderImage         {height: 100%;}
-.orderPurchaseDate  {height: 50%; width: 100%;}
-.orderBoxName       {height: 50%; width: 100%;}
-
-/* 주문번호, 상품정보, 결재 금액, 개봉 여부, 배송조회/환불신청 */
-.orderUniquekey         {width: 20%; padding-top: 7%;}
-.orderImageDateName     {width: 45%; }
-.orderBoxPrice          {width: 10%; padding-top: 7%;}
-.orderBoxOpen           {width: 10%; padding-top: 7%;}
-.orderDeliveryRefundBtn {width: 15%; padding-top: 4%; }
-
 
 .downMenuDown-orderDeliveryRefundBtn{
-    /* margin: 2%; */
+     margin: 3%; 
     
 }
 
-
-.orderDeliveryRefundBtn-a {
-background-color:transparent;
-}
 
 .pagination {
     width: 500px; 
@@ -110,9 +81,6 @@ background-color:transparent;
     width: 10%;
     text-align: center;
 }
-
-
-
 
 
 
