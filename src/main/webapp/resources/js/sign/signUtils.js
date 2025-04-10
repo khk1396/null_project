@@ -23,7 +23,7 @@ function checkId() {
 	const button = document.getElementById('check-id-btn');
 	
 	if(!userId) {
-		showToast("아이디를 입력하세요.", button);
+		showToast('아이디를 입력하세요.', button);
 		return;
 	}
 	
@@ -46,3 +46,28 @@ function checkId() {
 
 
 /* 닉네임 중복 확인 비동기 요청 */
+/* 아이디 중복 확인 비동기 요청 */
+function checkNickName() {
+	const userNickName = document.getElementById('sign-up-nickname').value.trim();
+	const button = document.getElementById('check-nickName-btn');
+	
+	if(!userNickName) {
+		showToast('닉네임을 입력하세요.', button);
+		return;
+	}
+	
+	fetch('checkNickName', {
+		method: 'POST',
+		headers: { 
+			'Content-Type': 'application/x-www-form-urlencoded'
+		},
+		body: `userNickName=${encodeURIComponent(userNickName)}`
+	})
+	.then(res => res.text())
+	.then(data => {
+		showToast(data, button);
+	})
+	.catch(() => {
+		showToast('', button)
+	}); 
+};

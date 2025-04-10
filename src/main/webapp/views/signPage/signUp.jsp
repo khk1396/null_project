@@ -65,7 +65,7 @@
 					<label class="input-label" for="sign-up-nickname"  >닉네임</label>
 					 <div class="sign-up-page input-container-inner nickname" >
 						<input id="sign-up-nickname" type="text" class="sign-up-page input input-primary" name="userNickName" />
-						<button class="sign-up-page btn btn-primary btn-small check-btn" type="button" >중복 검사</button>
+						<button id="check-nickName-btn" class="sign-up-page btn btn-primary btn-small check-btn" type="button" onclick="return checkNickName();">중복 검사</button>
 					 </div>
 				</span>
 				<!-- 

@@ -40,4 +40,14 @@ public class MemberServiceImpl implements MemberService {
 		return result;
 	}
 
+	public int selectMemberByNickName(String userNickName) {
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int result = mDao.selectMemberByNickName(sqlSession, userNickName);
+		
+		sqlSession.close();
+		
+		return result;
+	}
+
 }

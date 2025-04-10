@@ -17,4 +17,8 @@ public class MemberDao {
 		return sqlSession.selectOne("memberMapper.selectMemberById", userId);
 	}
 
+	public int selectMemberByNickName(SqlSession sqlSession, String userNickName) {
+		return sqlSession.selectOne("memberMapper.selectMemberByNickName", userNickName);
+	}
+
 }
