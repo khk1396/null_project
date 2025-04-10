@@ -22,6 +22,11 @@
 	
 	<!-- FOOTER -->
 	<%-- <jsp:include page="views/common/footer.jsp" /> --%>
+
+	<a href="${ pageContext.request.contextPath }//views/delivery/deliveryResult.jsp">배송 신청</a>
+	<a href="${ pageContext.request.contextPath }//views/delivery/deliveryCompleted.jsp">배송 신청 완료</a>
+
+
 	<jsp:include page="views/mainPage/main.jsp" />
 </body>
 </html>
