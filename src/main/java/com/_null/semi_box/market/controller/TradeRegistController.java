@@ -45,8 +45,7 @@ public class TradeRegistController extends HttpServlet {
 
 		if (selectProduct != null && loginUser.getUserPk().equals(selectProduct.getUserPk())) {	// 상품이 본인꺼인 경우
 			System.out.println("본인의 상품을 교환할 수 없습니다.");
-			request.setAttribute("alertMsg", "본인의 상품을 교환할 수 없습니다.");
-			request.getRequestDispatcher("/views/mainPage/main.jsp").forward(request, response);
+			response.sendRedirect(request.getContextPath());
 		} else {
 
 			ArrayList<Product> productList = mService.selectMyAllProducts(loginUser);
