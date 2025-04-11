@@ -20,5 +20,4 @@ public class MemberDao {
 	public int selectMemberByNickName(SqlSession sqlSession, String userNickName) {
 		return sqlSession.selectOne("memberMapper.selectMemberByNickName", userNickName);
 	}
-
 }

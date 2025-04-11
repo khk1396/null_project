@@ -1,4 +1,4 @@
-package com._null.semi_box.sign.template;
+package com._null.semi_box.member.template;
 
 import java.io.IOException;
 import java.io.InputStream;
