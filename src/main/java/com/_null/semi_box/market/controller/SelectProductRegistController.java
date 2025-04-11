@@ -41,7 +41,7 @@ public class SelectProductRegistController extends HttpServlet {
 			
 			if(productId.length > 1 || productId.length == 0) {	// 내 상품 체크박스를 2개이상 체크했을시 오류페이지로
 				System.out.println("상대 상품 1개를 내 상품 2개 이상과 교환할 수 없습니다.");
-				response.sendRedirect(request.getContextPath()+"/market/selectRegist");
+				response.sendRedirect(request.getContextPath()+"/market");
 			}else {	// 정상적으로 상품 1개만 선택하고 선택등록에서도 1개만 선택했을때
 				
 				// 내가 선택했던 상품 selectProductId로 Trade에서 등록되어있는 데이터를 찾아서 apply쪽에 나의 상품정보 update해주기
