@@ -25,13 +25,8 @@ public class CheckIdController extends HttpServlet {
 		
 		response.setContentType("text/plain; charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		
-		if(result > 0) {
-			out.print("이미 사용 중인 아이디입니다.");
-		} else {
-			out.print("사용 가능한 아이디입니다.");
-		}
-		
+
+		out.print(result);
 	}
 
 }
