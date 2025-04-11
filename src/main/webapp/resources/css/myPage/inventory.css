@@ -8,7 +8,13 @@
 	margin-right: 12px;
 }
 
+.my-page.item-list-container.inventory {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 52px;
+}
+
 .my-page.box-item-container.card {
-	width: calc((100% - 100px)/3);
-	height: calc((100% - 100px)/3);
+	width: calc((100% - 104px)/3);
+	height: calc((100% - 104px)/3);
 }

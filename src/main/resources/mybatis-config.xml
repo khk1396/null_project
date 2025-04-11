@@ -4,10 +4,13 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-	<!-- Mapper namespace 설정 -->
+	<!-- ***** Mapper namespace 설정 ***** -->
 	<typeAliases>
+		<!-- MEMBER -->
     	<typeAlias alias="Member" type="com._null.semi_box.member.model.vo.Member"/>
-	<typeAlias  type="com._null.semi_box.mypage.model.vo.OrderHistory" alias="OrderHistory" />
+  		<!-- PAYBOX -->
+    	<typeAlias alias="PayBox" type="com._null.semi_box.payBox.model.vo.PayBox"/>
+      <typeAlias  type="com._null.semi_box.mypage.model.vo.OrderHistory" alias="OrderHistory" />
 	</typeAliases>
 	
     <environments default="development">
@@ -27,6 +30,7 @@
         <mapper resource="mapper/boxOpenMapper.xml"/>
         <mapper resource="mapper/diaryMapper.xml"/>
         <mapper resource="mapper/memberMapper.xml"/>
-	<mapper resource="mapper/historyMapper.xml"/>
+        <mapper resource="mapper/historyMapper.xml"/>
+        <mapper resource="mapper/payBoxMapper.xml" />
     </mappers>
 </configuration>
