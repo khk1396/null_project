@@ -64,7 +64,7 @@ public class MarketDAO {
 	}
 
 	public int updateStatustoHave(SqlSession sqlSession, String productId) {		
-		return sqlSession.update("marketMapper.updateStatustoHave", productId);
+		return sqlSession.update("marketMapper.updateStatusToHave", productId);
 	}
 
 	public int updateTradeStatusToAccept(SqlSession sqlSession, Product myProduct) {
