@@ -17,7 +17,7 @@
 		     , STATUS
 		  FROM MEMBER
 		 WHERE USER_ID = #{userId} 
-		       AND USER_PASSWORD = #{userPassword}
+		       AND USER_PASSWORD = encrypt_data(#{userPassword}, 'default_key') 
 		       AND STATUS = 'Y'
    </select>
    <select id="selectMemberById" resultType="_int" >
@@ -45,12 +45,35 @@
 					VALUES ( SEQ_USER_PK.NEXTVAL
 						  , #{userId}
 						  , #{userName}
-						  , #{userPassword}
+						  , encrypt_data(#{userPassword}, 'default_key')
 						  , #{userNickName}
 						  , #{address}
 						  , SYSDATE
 						  , 'Y' )
    </insert>
+   
+   <update id="withdrawMember">
+		UPDATE MEMBER
+		    SET STATUS = 'N'
+		WHERE USER_ID = #{userId}
+		    AND USER_PASSWORD = encrypt_data(#{userPassword}, 'default_key')
+   </update>
+   
+   <update id="updatePassword">
+   		UPDATE MEMBER
+   		   SET USER_PASSWORD = encrypt_data(#{password}, 'default_key')
+   		 WHERE USER_ID = #{userId}
+   		       AND USER_PASSWORD = encrypt_data(#{currentPwd}, 'default_key')
+   		       AND STATUS = 'Y'
+   </update>
+
+   <update id="updateMember">
+   		UPDATE MEMBER
+   		   SET USER_NICKNAME = #{userNickName}
+   		     , ADDRESS = #{address}
+   		 WHERE USER_ID = #{userId}
+   		 	   AND STATUS = 'Y'
+   </update>
    
    <!-- resultMap 추가 -->
    <resultMap id="memberResultMap" type="Member">

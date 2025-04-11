@@ -17,14 +17,15 @@
 				<h1>회원 탈퇴</h1>
 			</div>
 			<div class="my-page info-container modify-account">
-				<form class="my-page container-inner modify-account" action="" method="POST" >				
+				<form class="my-page container-inner modify-account" action="${ pageContext.request.contextPath }/mypage/withdraw" method="post" >
 					<!-- 비밀번호 입력 -->
 					<span class="my-page input-container primary current-pwd" >
 						<label class="my-page input-label" for="current-pwd"  >현재 비밀번호</label>
-						<input id="current-pwd" type="password" class="my-page input input-primary" name="currentPwd" />
+						<input id="current-pwd" type="password" class="my-page input input-primary" name="userPassword" />
+					    <input type="hidden" name="userId" value="${ loginUser.getUserId() }" />
 					</span>
 					<span class="my-page btn-container" >
-						<a class="my-page btn btn-secondary btn-small btn-hover" href="" >탈퇴하기</a>
+					<button class="my-page btn btn-secondary btn-small btn-hover" type="submit">탈퇴하기</button>
 					</span>
 				</form>
 			</div>
