@@ -14,7 +14,9 @@
 	<!-- HEADER -->
 	<jsp:include page="/views/common/header.jsp" />
 	<jsp:include page="/views/common/style.jsp" />
+	<!-- TOAST -->
 	<div id="toast" ></div>
+	
 	<!-- SIGN UP PAGE -->
 	<div class="sign-page container page-layout footer-fixed-bottom" >
 		<span class="sign-page inner box-shadow" >
@@ -64,7 +66,7 @@
 					 -->
 					<label class="input-label" for="sign-up-nickname"  >닉네임</label>
 					 <div class="sign-up-page input-container-inner nickname" >
-						<input id="sign-up-nickname" type="text" class="sign-up-page input input-primary" name="userNickName" />
+						<input id="sign-up-nickname" type="text" class="sign-up-page input input-primary" name="userNickName" onchange="checkNickNameExist();" />
 						<button id="check-nickName-btn" class="sign-up-page btn btn-primary btn-small check-btn" type="button" onclick="return checkNickName();">중복 검사</button>
 					 </div>
 				</span>
@@ -78,7 +80,7 @@
 					<input id="sign-up-address" type="text" class="sign-up-page input input-primary" name="address" />
 				</span>
 				<div class="sign-up-page btn-container" >
-					<button class="sign-up-page sign-up-btn btn btn-medium btn-secondary btn-hover submit" type="submit" >회원가입</button>
+					<button id="sign-up-submit-btn" class="sign-up-page sign-up-btn btn btn-medium btn-secondary btn-hover submit" type="submit" onclick="return submitSignUp();" >회원가입</button>
 					<button class="sign-up-page sign-up-btn btn btn-medium btn-secondary btn-hover" type="reset" onclick="return history.back();" >돌아가기</button>
 				</div>
 			</form>

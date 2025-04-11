@@ -19,19 +19,14 @@ import com._null.semi_box.member.service.MemberServiceImpl;
 public class CheckNickNameController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String userNickName = request.getParameter("userNickName");
-		
 		int result = new MemberServiceImpl().selectMemberByNickName(userNickName);
 		
 		response.setContentType("text/plain; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		
-		if(result > 0) {
-			out.print("이미 사용 중인 닉네임입니다.");
-		} else {
-			out.print("사용 가능한 닉네임입니다.");
-		}
-		
+		out.print(result);
 	}
 
 }
