@@ -2,7 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList
 				, com._null.semi_box.mypage.model.vo.OrderHistory 
-                , com._null.semi_box.mypage.common.PageInfo"%>    
+                , com._null.semi_box.mypage.common.PageInfo
+                "%>    
+
+<% ArrayList<OrderHistory> orderHistory = (ArrayList<OrderHistory>)request.getAttribute("list"); %>
+
+
 
 <!DOCTYPE html5>
 <html>
@@ -21,7 +26,7 @@
 <body >
 
 
-	<% ArrayList<OrderHistory> orderHistory = (ArrayList<OrderHistory>)request.getAttribute("list"); %>
+
 
 
     	<!-- HEADER -->
@@ -32,7 +37,7 @@
 	
 
 
-
+        
     
     <div class="my-page container purchase-history page-layout footer-fixed-bottom">
 		<!-- ASIDE BAR -->
@@ -81,17 +86,18 @@
 
 
                         <div class="my-page downMenuDown-frame output  ">
-                            <div class="my-page downMenuDown-item orderUniquekey" ><%= ohistory.getUserPk() %></div> 
+                            <div class="my-page downMenuDown-item orderUniquekey"><%= ohistory.getPayId() %></div> 
 
 	                            <div class="my-page downMenuDown-item orderImageDateName" >
 	                                  <div class="my-page downMenuDown-item-image ">
-	                                <img class="my-page downMenuDown-orderImageDateName orderImage" src="${pageContext.request.contextPath}/resources/images/black.jpg" alt="box이미지">
-	
+	                                <img class="my-page downMenuDown-orderImageDateName orderImage" src="<%= ohistory.getBoxImg() %>" alt="<%= ohistory.getBoxImg() %>"> 
+	                                
 	                                </div>
                                         <div class="my-page downMenuDown-item-info">
                                             <div class="my-page downMenuDown-orderImageDateName orderPurchaseDate">
                                                 <h5>구매날짜</h5>
                                                 <%= ohistory.getPayDate() %>
+
                                             </div>
                                             <div class="my-page downMenuDown-orderImageDateName orderBoxName">
                                                 <h5>박스명</h5>
@@ -104,7 +110,9 @@
 	                            <div class="my-page downMenuDown-item orderBoxOpen" ><%= ohistory.getStatus() %></div> 
 	                            <div class="my-page downMenuDown-item orderDeliveryRefundBtn" >
 	                                <button class="my-page downMenuDown-orderDeliveryRefundBtn btn btn-small btn-primary btn-hover">  <a class="orderDeliveryRefundBtn-a" href="delivery-history">배송 조회</a></button>
-	                                <button class="my-page downMenuDown-orderDeliveryRefundBtn btn btn-small btn-secondary btn-hover"><a class="orderDeliveryRefundBtn-a"  href="refund-hostroy">환불 신청</a></button>
+	                                <button class="my-page downMenuDown-orderDeliveryRefundBtn btn btn-small btn-secondary btn-hover"><a class="orderDeliveryRefundBtn-a" onclick="confirmAndQuery(this);" data-pid="<%= ohistory.getPayId() %>"> 환불 신청</a></button>
+                                    <!-- 환불 신청간 로그인 id를 받기 위한 hidden input-->
+                                     <input type="hidden" id="userPk" name="userPk" value="<%= ohistory.getUserPk() %>"/>
 	                            </div>                                 
                         </div> 
                         <% } %>
@@ -152,6 +160,50 @@
 
 	<!-- FOOTER -->
 	<jsp:include page="/views/common/footer.jsp" />
+
+유저 정보, 주문번호 
+
+
+        function test() {
+        if (confirm("환불을 신청하시겠습니까?")) {
+            alert("정상적으로 신청되었습니다.");
+
+        } else {
+            alert("취소되었습니다.");
+        }
+     }
+
+
+
+     <script>
+
+
+        /* 환불 신청간 */
+        //let payId =  document.getElementById("test");
+        let userPk =  document.getElementById("userPk");
+
+     
+        function confirmAndQuery(target) {
+            if (confirm("해당 상품 환불을 신청하시겠습니까?")) {
+                // payId
+                const payId = target.getAttribute("data-pid");
+
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", "refundYN?payId="+ payId +"&&userPk="+userPk.value , true); // URL은 서블릿 경로
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        alert("환불 신청이 완료되었습니다.");
+                        // 또는 document.getElementById("result").innerHTML = result;
+                        console.log(payId);
+                    }
+                };
+                xhr.send();
+            } else {
+               
+            }
+        }
+            
+    </script>
 
 </body>
 </html>

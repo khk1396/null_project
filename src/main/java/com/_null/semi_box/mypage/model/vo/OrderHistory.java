@@ -4,29 +4,57 @@ import java.sql.Date;
 
 public class OrderHistory {
 	
+	private int    payId;
 	private String userPk;
 	private String boxImg;
 	private String boxName;
 	private Date   payDate;
 	private int	   price;
+	private Date   refundDate;
 	private String status;
 	
 	
 	
+
+
+
 	public OrderHistory() {
 		super();
 	}
 
 
 
-	public OrderHistory(String userPk, String boxImg, String boxName, Date payDate, int price, String status) {
+	public OrderHistory(int payId ,String userPk, String boxImg, String boxName, Date payDate, int price, Date refundDate ,String status) {
 		super();
 		this.userPk = userPk;
 		this.boxImg = boxImg;
 		this.boxName = boxName;
 		this.payDate = payDate;
 		this.price = price;
+		this.refundDate = refundDate;
 		this.status = status;
+	}
+
+	public Date getRefundDate() {
+		return refundDate;
+	}
+
+
+
+	public void setRefundDate(Date refundDate) {
+		this.refundDate = refundDate;
+	}
+
+
+
+	public int getPayId() {
+		return payId;
+	}
+
+
+
+	public void setPayId(int pay_id) {
+		this.payId = pay_id;
 	}
 
 
@@ -105,9 +133,18 @@ public class OrderHistory {
 
 	@Override
 	public String toString() {
-		return "OrderHistory [userPk=" + userPk + ", boxImg=" + boxImg + ", boxName=" + boxName + ", payDate=" + payDate
-				+ ", price=" + price + ", status=" + status + "]";
+		return "OrderHistory [payId=" + payId + ", userPk=" + userPk + ", boxImg=" + boxImg + ", boxName=" + boxName
+				+ ", payDate=" + payDate + ", price=" + price + ", refundDate=" + refundDate + ", status=" + status
+				+ "]";
 	}
+
+
+
+
+
+
+
+
 	
 	
 	

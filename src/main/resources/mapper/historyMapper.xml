@@ -5,9 +5,10 @@
 
 <mapper namespace="orderHistoryMapper">
 
-    <!-- PRODUCT 테이블 insert -->
+    <!-- 주문내역 조회 -->
     <select id="selectAllOrder" parameterType="OrderHistory" resultMap="selectAllOrder1" >
-		 select user_pk      	      
+		 select  pay_id
+		 		,user_pk      	      
 		        ,box_img    	  
 		        ,box_name   	    
 		        ,pay_date   	    
@@ -18,8 +19,14 @@
 		join box b using(box_code) 
 		join box_img bi on bi.box_img_code = b.box_img_code 
 		where user_pk = #{id}
+			 order by pay_id desc
+		 
+		 <if test="id != null ">
+		 
+		 </if>
     </select>
     
+    <!-- 페이징을 위한 주문내역 전체 수 조회 -->
      <select id="selectUserOrder" resultType="int" >
 		 select count(*)  	    
 		from pay_box p 
@@ -28,14 +35,88 @@
 		join box_img bi on bi.box_img_code = b.box_img_code 
 		where user_pk = #{id}
     </select>
+    
+    
+    
+     <!-- 환불 내역 조회 -->
+    <select id="selectUserAllRefund" parameterType="OrderHistory" resultMap="selectAllOrder1" >
+		select pay_id   	      
+		        ,box_img    	  
+		        ,box_name   	    
+		        ,refund_date   	    
+		        ,price      	  
+		        ,p.status   	    
+		from pay_box p 
+		join member using(user_pk) 
+		join box b using(box_code) 
+		join box_img bi on bi.box_img_code = b.box_img_code 
+		where user_pk = #{id}
+           and p.status = 'REFUND'
+           order by pay_id desc
+    </select>
+    
+    <!-- 페이징을 위한 환불내역 전체 수 조회 -->
+     <select id="selectUserRefund" resultType="int" >
+		 select count(*)  	    
+		from pay_box p 
+		join member using(user_pk) 
+		join box b using(box_code) 
+		join box_img bi on bi.box_img_code = b.box_img_code 
+		where user_pk = #{id}
+		   and p.status = 'REFUND'
+    </select>
+
+
+
+    <!-- 배송 내역 조회 -->
+    <select id="selectUserAllDelivery" parameterType="OrderHistory" resultMap="selectAllOrder1" >
+		select pay_id   	      
+		        ,box_img    	  
+		        ,box_name   	    
+		        ,refund_date   	    
+		        ,price      	  
+		        ,p.status   	    
+		from pay_box p 
+		join member using(user_pk) 
+		join box b using(box_code) 
+		join box_img bi on bi.box_img_code = b.box_img_code 
+		where user_pk = #{id}
+           and p.status = 'REFUND'
+           order by pay_id desc
+    </select>
+    
+    <!-- 페이징을 위한 배송 내역 전체 수 조회 -->
+     <select id="selectUserDelivery" resultType="int" >
+		 select count(*)  	    
+		from pay_box p 
+		join member using(user_pk) 
+		join box b using(box_code) 
+		join box_img bi on bi.box_img_code = b.box_img_code 
+		where user_pk = #{id}
+		   and p.status = 'REFUND'
+    </select>
+
+
+	<update id="refundChange">
+		update pay_box
+	    set status = 'REFUND'
+	      , refund_date = sysdate
+	    where pay_id = #{ payId }	
+	      and user_pk = #{ userPk }
+	             
+	</update>
+	
+
 
     <!-- resultMap 추가 -->
     <resultMap id="selectAllOrder1" type="OrderHistory">
+    	<result property="payId" column="PAY_ID"/>
         <result property="userPk" column="USER_PK"/>
         <result property="boxImg" column="BOX_IMG"/>
         <result property="boxName" column="BOX_NAME"/>
         <result property="payDate" column="PAY_DATE"/>
         <result property="price" column="PRICE"/>
+        <result property="refundDate" column="REFUND_DATE"/>
         <result property="status" column="STATUS"/>
     </resultMap>
 

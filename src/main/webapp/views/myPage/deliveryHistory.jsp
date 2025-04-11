@@ -74,7 +74,7 @@
 
 
                         <div class="my-page downMenuDown-frame output  ">
-                            <div class="my-page downMenuDown-item deliveryUniquekey" ><%= ohistory.getUserPk() %></div> 
+                            <div class="my-page downMenuDown-item deliveryUniquekey" ><%= ohistory.getPayId() %></div> 
 
 	                            <div class="my-page downMenuDown-item deliveryImageDateName" >
 	                                  <div class="my-page downMenuDown-item-image ">

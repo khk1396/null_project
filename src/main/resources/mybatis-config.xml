@@ -4,9 +4,17 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+<!-- 
+	<settings>
+		<setting name="logImpl" value="STDOUT_LOGGING"/>
+	</settings>
+	 -->
 	<!-- Mapper namespace 설정 -->
 	<typeAliases>
     	<typeAlias alias="Member" type="com._null.semi_box.member.model.vo.Member"/>
+    	 <!-- 주문내역 객체  -->
+    	<typeAlias  type="com._null.semi_box.mypage.model.vo.OrderHistory" alias="OrderHistory" />
+    	
 	</typeAliases>
 	
     <environments default="development">
@@ -15,8 +23,13 @@
             <dataSource type="POOLED">
                 <property name="driver" value="oracle.jdbc.OracleDriver"/>
                 <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+                <!-- 
                 <property name="username" value="C##SEMI"/>
                 <property name="password" value="SEMI"/>
+                 -->
+                <property name="username" value="C##semi_v2"/>
+                <property name="password" value="SEMI"/>
+                
             </dataSource>
         </environment>
     </environments>
@@ -26,6 +39,6 @@
         <mapper resource="mapper/boxOpenMapper.xml"/>
         <mapper resource="mapper/diaryMapper.xml"/>
         <mapper resource="mapper/memberMapper.xml"/>
-	<mapper resource="mapper/historyMapper.xml"/>
+	    <mapper resource="mapper/historyMapper.xml"/>
     </mappers>
 </configuration>
