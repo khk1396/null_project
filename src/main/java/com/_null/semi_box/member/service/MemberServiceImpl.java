@@ -4,7 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com._null.semi_box.member.model.dao.MemberDao;
 import com._null.semi_box.member.model.vo.Member;
-import com._null.semi_box.sign.template.Template;
+import com._null.semi_box.member.template.Template;
 
 public class MemberServiceImpl implements MemberService {
 	private MemberDao mDao = new MemberDao();

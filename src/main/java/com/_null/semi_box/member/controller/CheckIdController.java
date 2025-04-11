@@ -1,4 +1,4 @@
-package com._null.semi_box.sign.controller;
+package com._null.semi_box.member.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
