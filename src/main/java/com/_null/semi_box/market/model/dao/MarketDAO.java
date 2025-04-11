@@ -56,7 +56,7 @@ public class MarketDAO {
 	}
 
 	public int updateCancelApply(SqlSession sqlSession, String productId) {
-		return sqlSession.update("marketMapper.updateCancelApply", productId);
+		return sqlSession.delete("marketMapper.updateCancelApply", productId);
 	}
 
 	public int updateStatusToTrade(SqlSession sqlSession, String myProductId) {
