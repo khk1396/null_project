@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com._null.semi_box.payBox.model.dao.PayBoxDAO;
 import com._null.semi_box.payBox.model.vo.PayBox;
-import com._null.semi_box.sign.template.Template;
+import com._null.semi_box.boxopen.common.Template;
 
 public class PayBoxServiceImpl implements PayBoxService {
 	private PayBoxDAO payBoxDAO = new PayBoxDAO();

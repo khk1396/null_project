@@ -32,5 +32,6 @@
         <mapper resource="mapper/memberMapper.xml"/>
         <mapper resource="mapper/historyMapper.xml"/>
         <mapper resource="mapper/payBoxMapper.xml" />
+        <mapper resource="mapper/myProductMapper.xml" />
     </mappers>
 </configuration>

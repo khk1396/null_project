@@ -19,7 +19,7 @@
 			<div class="my-page sub-header inventory" > 
 				<a class="my-page sub-header btn btn-small btn-secondary btn-hover" >나의 박스</a>
 				<!-- TODO : 나의 상품 페이지 구현 -->
-				<a class="my-page sub-header btn btn-small btn-secondary btn-hover" href="${pageContext.request.contextPath }/mypage/myProduct">나의 상품</a>
+				<a class="my-page sub-header btn btn-small btn-secondary btn-hover" href="${ pageContext.request.contextPath }/mypage/myProduct">나의 획득 상품</a>
 			</div>
 			
 			<div class="my-page title-container" >
