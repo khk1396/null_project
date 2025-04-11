@@ -87,7 +87,7 @@
 	</select>
 	
 	<update id="updateCancelApply">
-		UPDATE TRADE SET APPLY_USER_PK = NULL, APPLY_PRODUCT_ID = NULL, APPLY_DATE = NULL, APPLY_COMMENT = NULL 
+		DELETE TRADE 
 		WHERE APPLY_PRODUCT_ID = #{productId}
 	</update>
 	
