@@ -35,18 +35,13 @@ public class SignUpController extends HttpServlet {
 		
 		int result = 0;
 		
-//		try {
-				result = new MemberServiceImpl().insertMember(m);
-//		} catch(Exception e) 
-//		{
-//			
-//		}
+		result = new MemberServiceImpl().insertMember(m);
 		
 		if (result > 0) {		// 회원가입 성공!! --> 메인페이지 url 재요청
 			request.setAttribute("alertMsg", "회원가입에 성공했습니다^^");
 			request.getRequestDispatcher("/views/signPage/signIn.jsp").forward(request, response);
 		} else {	
-			request.setAttribute("errorMsg", "회원가입에 실패했습니다.");
+			request.setAttribute("alertMsg", "회원가입에 실패했습니다.");
 			// 회원 가입 화면
 			request.getRequestDispatcher("/views/signPage/signUp.jsp").forward(request, response); 
 		}		
