@@ -17,24 +17,26 @@
 				<h1>비밀번호 변경</h1>
 			</div>
 			<div class="my-page info-container modify-account">
-				<form class="my-page container-inner modify-account" action="" method="POST" >				
-					<!-- 아이디, readonly -->
+				<form class="my-page container-inner modify-account" action="${ pageContext.request.contextPath }/mypage/modify-password" method="post" >
+					<!-- , readonly -->
+					<input type="hidden" name="userId" value="${ loginUser.userId }" />
+					<!-- 현재 비밀번호, readonly -->
 					<span class="my-page input-container primary current-pwd" >
-						<label class="my-page input-label" for="current-pwd"  >현재 비밀번호</label>
+						<label class="my-page input-label" for="current-pwd" >현재 비밀번호</label>
 						<input id="current-pwd" type="password" class="my-page input input-primary" name="currentPwd" />
 					</span>
-					<!-- 닉네임 -->
+					<!-- 변경할 비밀번호 -->
 					<span class="my-page input-container primary change-pwd" >
-						<label class="my-page input-label" for="change-pwd"  >변경할 비밀번호</label>
+						<label class="my-page input-label" for="change-pwd" >변경할 비밀번호</label>
 						<input id="change-pwd" type="password" class="my-page input input-primary" name="password" />
 					</span>
-					<!-- 전화번호 -->
+					<!-- 비밀번호 확인 -->
 					<span class="my-page input-container primary change-pwd-check" >
-						<label class="my-page input-label" for="change-pwd-check"  >비밀번호 확인</label>
+						<label class="my-page input-label" for="change-pwd-check" >비밀번호 확인</label>
 						<input id="change-pwd-check" type="password" class="my-page input input-primary" />
 					</span>
 					<span class="my-page btn-container" >
-						<a class="my-page btn btn-secondary btn-small btn-hover" href="" >변경하기</a>
+					<button class="my-page btn btn-secondary btn-small btn-hover" type="submit" >변경하기</button>
 					</span>
 				</form>
 			</div>

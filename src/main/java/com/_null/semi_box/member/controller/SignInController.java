@@ -39,11 +39,12 @@ public class SignInController extends HttpServlet {
 		if (loginUser != null) {
 			HttpSession session = req.getSession();
 			session.setAttribute("loginUser", loginUser);
+			
 			resp.sendRedirect( req.getContextPath() );  // 메인페이지(/semi_box)로 이동후 메인 페이지에 SIGN IN위치에 SIGN OUT 아이콘 표시해야함
 		} else {
-			req.setAttribute("errorMsg", "로그인에 실패했습니다.");
-			// 에러 메시지 표시후 로그인창으로 signin
-			resp.sendRedirect( req.getContextPath() + "/signin" );  // 로그인 화면
+			req.setAttribute("alertMsg", "로그인에 실패했습니다.");
+			// 에러 메시지 표시후 로그인창으로 signIn
+			req.getRequestDispatcher("/views/signPage/signIn.jsp").forward(req, resp);
 		}
-	}	
+	}
 }
