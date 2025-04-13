@@ -48,14 +48,17 @@ public class PurchaseHistoryContoller extends HttpServlet {
 		HttpSession session = request.getSession();
 		Member m =  (Member)session.getAttribute("loginUser");	
 		
+		if ( m == null) {
+			request.setAttribute("alertMsg", "로그인후 시도해주세요");
+			request.getRequestDispatcher("/views/signPage/signIn.jsp").forward(request, response);
+		}
+		
+		
 		int id = m.getUserPk();
 		
 		if ( cpage == null  ) {
 			 cpage = "1";
 		} 
-		
-		
-		
 
 		// 페이징바 개수, 한 페이지당 표시할 게시글 개수 --> 지정 
 		int pageLimit = 5;  // 페이징바 개수

@@ -59,14 +59,7 @@ public class OrderHistoryDao {
 	}
 
 	/* 환불 신청한 상품 상태 변경 */
-/*
-	public static int refundChange(SqlSession session, OrderHistory orderHistory) {
-		
-		 return session.update("orderHistoryMapper.refundChange", orderHistory );
-	}
-	*/
 
-	
 	public static int refundChange(SqlSession session, OrderHistory orderHistory) {
 		 
 		return session.update("orderHistoryMapper.refundChange", orderHistory );

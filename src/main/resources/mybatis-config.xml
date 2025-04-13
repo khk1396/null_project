@@ -22,12 +22,12 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="oracle.jdbc.OracleDriver"/>
-                <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+                <property name="url" value="jdbc:oracle:thin:@115.90.212.20:10000:xe"/>
                 <!-- 
                 <property name="username" value="C##SEMI"/>
                 <property name="password" value="SEMI"/>
                  -->
-                <property name="username" value="C##semi_v2"/>
+                <property name="username" value="C##SEMI"/>
                 <property name="password" value="SEMI"/>
                 
             </dataSource>
@@ -40,5 +40,6 @@
         <mapper resource="mapper/diaryMapper.xml"/>
         <mapper resource="mapper/memberMapper.xml"/>
 	    <mapper resource="mapper/historyMapper.xml"/>
+	    <mapper resource="mapper/deliveryMapper.xml"/>
     </mappers>
 </configuration>

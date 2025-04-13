@@ -44,6 +44,11 @@ public class DeliveryHistoryContorller extends HttpServlet {
 		HttpSession session = request.getSession();
 		Member m =  (Member)session.getAttribute("loginUser");
 		
+		if ( m == null) {
+			request.setAttribute("alertMsg", "로그인후 시도해주세요");
+			request.getRequestDispatcher("/views/signPage/signIn.jsp").forward(request, response);
+		}
+		
 		int id = m.getUserPk();
 		
 		String cpage =	request.getParameter("cpage");
@@ -67,6 +72,7 @@ public class DeliveryHistoryContorller extends HttpServlet {
 		
 		request.setAttribute("list", list);
 		request.setAttribute("pi", pi);
+		session.setAttribute("loginUser", m);
 		
 		request.getRequestDispatcher("/views/myPage/deliveryHistory.jsp").forward(request, response);
 	}

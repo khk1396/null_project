@@ -45,6 +45,11 @@ public class RefundHistoryContorller extends HttpServlet {
 		HttpSession session = request.getSession();
 		Member m =  (Member)session.getAttribute("loginUser");
 		
+		if ( m == null) {
+			request.setAttribute("alertMsg", "로그인후 시도해주세요");
+			request.getRequestDispatcher("/views/signPage/signIn.jsp").forward(request, response);
+		}
+		
 		int id = m.getUserPk();
 
 		String cpage =	request.getParameter("cpage");

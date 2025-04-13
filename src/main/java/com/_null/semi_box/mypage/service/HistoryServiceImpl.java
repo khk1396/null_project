@@ -71,7 +71,7 @@ public class HistoryServiceImpl implements HistoryService {
 	public ArrayList<OrderHistory> selectUserDelivery(PageInfo pi, int id) {
 		SqlSession session = Template.getSqlSession(); 
 		
-		ArrayList<OrderHistory> list = (ArrayList<OrderHistory>)OrderHistoryDao.selectUserRefund(session, pi, id);
+		ArrayList<OrderHistory> list = (ArrayList<OrderHistory>)OrderHistoryDao.selectUserDelivery(session, pi, id);
 		
 		session.close();
 		
@@ -83,7 +83,7 @@ public class HistoryServiceImpl implements HistoryService {
 	public int selectUserDelivery(int id) {
 		SqlSession session = Template.getSqlSession(); 
 		
-		int list = OrderHistoryDao.selectUserRefund(session, id);
+		int list = OrderHistoryDao.selectUserDelivery(session, id);
 		
 		session.close();
 		

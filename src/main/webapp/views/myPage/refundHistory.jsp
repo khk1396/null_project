@@ -85,7 +85,7 @@
 
                             <div class="my-page downMenuDown-item refundImageDateName" >
                                   <div class="my-page downMenuDown-item-image ">
-                                <img class="my-page downMenuDown-refundImageDateName refundImage" src="${pageContext.request.contextPath}/resources/images/black.jpg" alt="box이미지">
+                                <img class="my-page downMenuDown-refundImageDateName refundImage" src="<%= ohistory.getBoxImg() %>" alt="box이미지">
                                 </div>
 
                                   <div class="my-page downMenuDown-item-info">

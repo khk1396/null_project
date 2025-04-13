@@ -8,7 +8,11 @@
 </head>
 <body>
 	<jsp:include page="/views/common/style.jsp" />
-	<jsp:include page="/views/common/header.jsp" />
+	<jsp:include page="/views/common/header.jsp" />.
+	
+	<a href="deliveryRequest">배송지 신청</a>
+	<a href="views/delivery/deliveryCompleted.jsp">배송신청 완료</a>
+	
 	<!-- NOTI: branch - impl#01_mainUI -->
 	<div class="main-page top-banner-container" >
 		<!-- TODO: 메인 배너  -->

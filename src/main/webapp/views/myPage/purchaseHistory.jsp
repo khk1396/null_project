@@ -73,6 +73,7 @@
                     <div class="my-page downMenuUp-item orderNull"> </div>
 
 
+
                 </div>
 
 
@@ -83,10 +84,39 @@
 
                         <% for (int i=0 ; i<orderHistory.size(); i++) { %>
                         <% OrderHistory ohistory = orderHistory.get(i); %>
-
-
+						
                         <div class="my-page downMenuDown-frame output  ">
+                            <% if (!ohistory.getStatus().equals("REFUND") ) {%>
                             <div class="my-page downMenuDown-item orderUniquekey"><%= ohistory.getPayId() %></div> 
+
+	                            <div class="my-page downMenuDown-item orderImageDateName" >
+	                                  <div class="my-page downMenuDown-item-image ">
+	                                <img class="my-page downMenuDown-orderImageDateName orderImage" src="<%= ohistory.getBoxImg() %>" alt="<%= ohistory.getBoxImg() %>">
+	                                
+	                                </div>
+                                        <div class="my-page downMenuDown-item-info">
+                                            <div class="my-page downMenuDown-orderImageDateName orderPurchaseDate">
+                                                <h5>구매날짜</h5>
+                                                <%= ohistory.getPayDate() %>
+
+                                            </div>
+                                            <div class="my-page downMenuDown-orderImageDateName orderBoxName">
+                                                <h5>박스명</h5>
+                                                <%= ohistory.getBoxName() %>
+                                            </div>
+	                                    </div>
+	                            </div> 
+	                            <div class="my-page downMenuDown-item orderBoxPrice" ><%= ohistory.getPrice() %></div> 
+	                            <div class="my-page downMenuDown-item orderBoxOpen" ><%= ohistory.getStatus() %></div> 
+	                            <div class="my-page downMenuDown-item orderDeliveryRefundBtn" >
+	                                <button class="my-page downMenuDown-orderDeliveryRefundBtn btn btn-small btn-primary btn-hover">  <a class="orderDeliveryRefundBtn-a" href="delivery-history">배송 조회</a></button>
+	                                <button class="my-page downMenuDown-orderDeliveryRefundBtn btn btn-small btn-secondary btn-hover"><a class="orderDeliveryRefundBtn-a" onclick="confirmAndQuery(this);" data-pid="<%= ohistory.getPayId() %>"> 환불 신청</a></button>
+                                    <!-- 환불 신청간 로그인 id를 받기 위한 hidden input-->
+                                     <input type="hidden" id="userPk" name="userPk" value="<%= ohistory.getUserPk() %>"/>
+	                            </div>   
+                                
+                                <%} else { %>
+                                <div class="my-page downMenuDown-item orderUniquekey"><%= ohistory.getPayId() %></div> 
 
 	                            <div class="my-page downMenuDown-item orderImageDateName" >
 	                                  <div class="my-page downMenuDown-item-image ">
@@ -105,16 +135,14 @@
                                             </div>
 	                                    </div>
 	                            </div> 
-
-	                            <div class="my-page downMenuDown-item orderBoxPrice" ><%= ohistory.getPrice() %></div> 
-	                            <div class="my-page downMenuDown-item orderBoxOpen" ><%= ohistory.getStatus() %></div> 
-	                            <div class="my-page downMenuDown-item orderDeliveryRefundBtn" >
-	                                <button class="my-page downMenuDown-orderDeliveryRefundBtn btn btn-small btn-primary btn-hover">  <a class="orderDeliveryRefundBtn-a" href="delivery-history">배송 조회</a></button>
-	                                <button class="my-page downMenuDown-orderDeliveryRefundBtn btn btn-small btn-secondary btn-hover"><a class="orderDeliveryRefundBtn-a" onclick="confirmAndQuery(this);" data-pid="<%= ohistory.getPayId() %>"> 환불 신청</a></button>
-                                    <!-- 환불 신청간 로그인 id를 받기 위한 hidden input-->
-                                     <input type="hidden" id="userPk" name="userPk" value="<%= ohistory.getUserPk() %>"/>
-	                            </div>                                 
+	                            <div class="my-page downMenuDown-item orderBoxOpen" ><%= ohistory.getPrice() %></div> 	                                                               
+                                    <div class="my-page downMenuDown-item orderBoxOpen" >UNUSED</div> 
+                                    <div class="my-page downMenuDown-item orderDeliveryRefundBtn statusRefund" >환불중</div>    
+	                             
+	                             
+	                        	<% }%>                                   
                         </div> 
+                           
                         <% } %>
                 </div>  
 
@@ -160,19 +188,6 @@
 
 	<!-- FOOTER -->
 	<jsp:include page="/views/common/footer.jsp" />
-
-유저 정보, 주문번호 
-
-
-        function test() {
-        if (confirm("환불을 신청하시겠습니까?")) {
-            alert("정상적으로 신청되었습니다.");
-
-        } else {
-            alert("취소되었습니다.");
-        }
-     }
-
 
 
      <script>
