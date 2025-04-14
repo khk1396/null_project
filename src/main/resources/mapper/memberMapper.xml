@@ -59,7 +59,7 @@
 		    AND USER_PASSWORD = #{userPassword}
    </update>
    
-   <update id="updatePassword">
+   <update id="updatePassword" parameterType="map">
    		UPDATE MEMBER
    		   SET USER_PASSWORD = #{password}
    		 WHERE USER_ID = #{userId}
@@ -67,7 +67,7 @@
    		       AND STATUS = 'Y'
    </update>
 
-   <update id="updateMember">
+   <update id="updateMember" >
    		UPDATE MEMBER
    		   SET USER_NICKNAME = #{userNickName}
    		     , ADDRESS = #{address}
