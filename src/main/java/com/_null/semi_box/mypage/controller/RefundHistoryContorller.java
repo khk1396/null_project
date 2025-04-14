@@ -8,7 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com._null.semi_box.member.model.vo.Member;
 import com._null.semi_box.mypage.common.PageInfo;
 import com._null.semi_box.mypage.model.vo.OrderHistory;
 import com._null.semi_box.mypage.service.HistoryService;
@@ -39,8 +41,17 @@ public class RefundHistoryContorller extends HttpServlet {
 		
 		/* 로그인한 user pk로 조회 */
 		/* 임시로 생성*/
-		String id = "4";
 		
+		HttpSession session = request.getSession();
+		Member m =  (Member)session.getAttribute("loginUser");
+		
+		if ( m == null) {
+			request.setAttribute("alertMsg", "로그인후 시도해주세요");
+			request.getRequestDispatcher("/views/signPage/signIn.jsp").forward(request, response);
+		}
+		
+		int id = m.getUserPk();
+
 		String cpage =	request.getParameter("cpage");
 		
 		if ( cpage == null  ) {
@@ -53,14 +64,12 @@ public class RefundHistoryContorller extends HttpServlet {
 
 		
 		/* 유저 구매 이력 수 조회 */
-		int listCount = hServcie.selectUserOrder(id);
+		int listCount = hServcie.selectUserRefund(id);
 		
 		PageInfo pi = new PageInfo(listCount, Integer.parseInt(cpage), pageLimit, boardLimit);
 		
 		/* 로그인한 계정명으로 구매 내역 조회 */
-		ArrayList<OrderHistory> list = hServcie.selectAllOrder(pi, id);
-		System.out.println(list);
-		System.out.println(pi);
+		ArrayList<OrderHistory> list = hServcie.selectUserRefund(pi, id);
 		
 		request.setAttribute("list", list);
 		request.setAttribute("pi", pi);
