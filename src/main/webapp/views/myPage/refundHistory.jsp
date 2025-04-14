@@ -81,17 +81,17 @@
 
 
                         <div class="my-page downMenuDown-frame output  ">
-                            <div class="my-page downMenuDown-item refundUniquekey" ><%= ohistory.getUserPk() %></div> 
+                            <div class="my-page downMenuDown-item refundUniquekey" ><%= ohistory.getPayId() %></div> 
 
                             <div class="my-page downMenuDown-item refundImageDateName" >
                                   <div class="my-page downMenuDown-item-image ">
-                                <img class="my-page downMenuDown-refundImageDateName refundImage" src="${pageContext.request.contextPath}/resources/images/black.jpg" alt="box이미지">
+                                <img class="my-page downMenuDown-refundImageDateName refundImage" src="<%= ohistory.getBoxImg() %>" alt="box이미지">
                                 </div>
 
                                   <div class="my-page downMenuDown-item-info">
                                     <div class="my-page downMenuDown-refundImageDateName refundPurchaseDate">
                                         <h5>환불 신청 날짜</h5>
-                                        <%= ohistory.getPayDate() %>
+                                        <%= ohistory.getRefundDate() %>
                                     </div>
                                     <div class="my-page downMenuDown-refundImageDateName refundBoxName">
                                         <h5>박스명</h5>
