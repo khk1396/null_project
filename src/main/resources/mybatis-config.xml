@@ -4,6 +4,12 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+
 	<!-- ***** Mapper namespace 설정 ***** -->
 	<typeAliases>
 		<!-- MEMBER -->
@@ -11,6 +17,8 @@
   		<!-- PAYBOX -->
     	<typeAlias alias="PayBox" type="com._null.semi_box.payBox.model.vo.PayBox"/>
       <typeAlias  type="com._null.semi_box.mypage.model.vo.OrderHistory" alias="OrderHistory" />
+      <typeAlias  type="com._null.semi_box.market.model.vo.Product" alias="Product" />
+      <typeAlias  type="com._null.semi_box.market.model.vo.Trade" alias="Trade" />
 	</typeAliases>
 	
     <environments default="development">
@@ -19,8 +27,8 @@
             <dataSource type="POOLED">
                 <property name="driver" value="oracle.jdbc.OracleDriver"/>
                 <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-                <property name="username" value="C##SEMI"/>
-                <property name="password" value="SEMI"/>
+                <property name="username" value="C##SEMIBOX"/>
+                <property name="password" value="SEMIBOX"/>
             </dataSource>
         </environment>
     </environments>
@@ -32,6 +40,7 @@
         <mapper resource="mapper/memberMapper.xml"/>
         <mapper resource="mapper/historyMapper.xml"/>
         <mapper resource="mapper/payBoxMapper.xml" />
+        <mapper resource="mapper/marketMapper.xml" />
         <mapper resource="mapper/myProductMapper.xml" />
     </mappers>
 </configuration>
