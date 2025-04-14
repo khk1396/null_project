@@ -40,11 +40,12 @@ public class DeliveryCompletedControlloer extends HttpServlet {
 		/* 배송신청에서 주소 값 받기  */
 		String address = request.getParameter("orderArddress");
 		
-		/* DB에 배송신청 값 보내기  */
-		int result = dService.deliveryApplication(5, address);
-
+		
 		int ProductId = Integer.parseInt(request.getParameter("ProductId"));
 		
+		/* DB에 배송신청 값 보내기  */
+		int result = dService.deliveryApplication(ProductId, address);
+
 		HttpSession session = request.getSession();
 		Member m = (Member)session.getAttribute("loginUser");
 		OrderHistory oh = dService.selectDeliveryInfo(m.getUserPk(), ProductId );
