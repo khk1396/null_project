@@ -8,7 +8,6 @@
 <link href="${ pageContext.request.contextPath }/resources/css/myPage/modifyAccount.css" rel="stylesheet" />
 <link href="${ pageContext.request.contextPath }/resources/css/signPage/common.css" rel="stylesheet" />
 <script src="${ pageContext.request.contextPath }/resources/js/common/utils.js" type="text/javascript" ></script>
-<script src="${ pageContext.request.contextPath }/resources/js/sign/signUtils.js" type="text/javascript" ></script>
 <script src="${ pageContext.request.contextPath }/resources/js/myPage/myPageUtils.js" type="text/javascript" ></script>
 
 <script type="text/javascript">
@@ -50,8 +49,9 @@
 					<span class="my-page btn-container" >
 					<button class="my-page btn btn-secondary btn-small btn-hover" type="button" id="change-password-btn" onclick="
 						const checkPwdPassed = changePassword();					
-						if (!checkPwdPassed) {return false;}	
-					" >변경하기</button>
+						if (!checkPwdPassed) {return false;}
+						return true;
+					   ">변경하기</button>
 					</span>
 				</form>
 			</div>
