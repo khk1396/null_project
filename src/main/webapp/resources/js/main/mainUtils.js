@@ -34,7 +34,7 @@ function addProductItem(product) {
 }
 
 function addBoxItem(box) {
-	const boxName = box.boxName.toUpperCase();
+	const boxName = box.boxName;
 	const boxImg = box.boxImg;
 	const boxPrice = box.boxPrice;
 	
@@ -46,7 +46,7 @@ function addBoxItem(box) {
 				</span>
 				<span class="box-item card info-container" >
 					<div class="box-item card title">
-						${boxName}
+						${boxName.toUpperCase()}
 					</div>
 					<div class="box-item card price">
 						${boxPrice}원
