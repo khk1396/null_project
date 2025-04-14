@@ -37,7 +37,8 @@
 				<% for(int i = 0; i < list.size(); i++) { %>
 				
 					<span class="my-page box-item-container card box-shadow" >
-						<a class="my-page box-item-link" href="#" >
+					<!-- TODO: 박스 오픈 기능 추가  -->
+						<a class="my-page box-item-link" href="${ pageContext.request.contextPath }/getProduct?boxCode=<%= list.get(i).getBoxCode() %>" >
 							<span class="my-page box-item card img-container" >
 								<img class="my-page box-item card img" src="<%= list.get(i).getBoxImg() %>" />
 							</span>

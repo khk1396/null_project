@@ -10,7 +10,12 @@
     	<typeAlias alias="Member" type="com._null.semi_box.member.model.vo.Member"/>
   		<!-- PAYBOX -->
     	<typeAlias alias="PayBox" type="com._null.semi_box.payBox.model.vo.PayBox"/>
-      <typeAlias  type="com._null.semi_box.mypage.model.vo.OrderHistory" alias="OrderHistory" />
+      	<!-- MAIN BOX, PRODUCT -->
+      	<typeAlias alias="MainBox" type="com._null.semi_box.main.model.vo.MainBox"/>
+      	<typeAlias alias="MainProduct" type="com._null.semi_box.main.model.vo.MainProduct"/>
+    	<!-- ORDER HISTORY -->
+      	<typeAlias  type="com._null.semi_box.mypage.model.vo.OrderHistory" alias="OrderHistory" />
+      	
 	</typeAliases>
 	
     <environments default="development">
@@ -33,5 +38,6 @@
         <mapper resource="mapper/historyMapper.xml"/>
         <mapper resource="mapper/payBoxMapper.xml" />
         <mapper resource="mapper/myProductMapper.xml" />
+        <mapper resource="mapper/mainMapper.xml" />
     </mappers>
 </configuration>
