@@ -16,9 +16,11 @@
     	<typeAlias alias="Member" type="com._null.semi_box.member.model.vo.Member"/>
   		<!-- PAYBOX -->
     	<typeAlias alias="PayBox" type="com._null.semi_box.payBox.model.vo.PayBox"/>
-      <typeAlias  type="com._null.semi_box.mypage.model.vo.OrderHistory" alias="OrderHistory" />
-      <typeAlias  type="com._null.semi_box.market.model.vo.Product" alias="Product" />
-      <typeAlias  type="com._null.semi_box.market.model.vo.Trade" alias="Trade" />
+      	<!-- MAIN BOX, PRODUCT -->
+      	<typeAlias alias="MainBox" type="com._null.semi_box.main.model.vo.MainBox"/>
+      	<typeAlias alias="MainProduct" type="com._null.semi_box.main.model.vo.MainProduct"/>
+    	  <!-- ORDER HISTORY -->
+      	<typeAlias  type="com._null.semi_box.mypage.model.vo.OrderHistory" alias="OrderHistory" />
 	</typeAliases>
 	
     <environments default="development">
@@ -43,5 +45,6 @@
         <mapper resource="mapper/payBoxMapper.xml" />
         <mapper resource="mapper/marketMapper.xml" />
         <mapper resource="mapper/myProductMapper.xml" />
+        <mapper resource="mapper/mainMapper.xml" />
     </mappers>
 </configuration>
