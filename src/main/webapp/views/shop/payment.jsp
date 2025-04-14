@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+  String quantity = request.getParameter("quantity");
+  String totalPrice = request.getParameter("totalPrice");
+%>
+
 <!DOCTYPE html5>
 <html>
 <head>
@@ -21,7 +26,9 @@
 		</div>
 		<div class="shop-page payment contents-inner box-shadow">
 			<div class="shop-page payment payment-img-container">
-				<img class="shop-page payment payment-img" src="${pageContext.request.contextPath}/resources/images/black.jpg" />
+				<img class="shop-page payment payment-img" 
+					 src="${pageContext.request.contextPath}/resources/images/${semiBoxVo.boxName}.jpg" alt="박스이미지"/>  
+					    
 			</div>
 			<div class="shop-page payament payment-details-container">
 				<div class="shop-page payment payment-product-info-container" >
@@ -30,20 +37,22 @@
 					</div>
 					<div class="shop-page payment payment-product-info product-grade">
 						<span class="shop-page payment product-info label">박스 등급</span> 
-						<span class="shop-page payment product-info value">Platinum</span>
+						<span class="shop-page payment product-info value">${semiBoxVo.boxName.toUpperCase()}</span>
 					</div>
 					<div class="shop-page payment-product-info price">
 						<span class="shop-page payment product-info label">판매 가격</span>
-						<span class="shop-page payment product-info value">9,900원</span>
+						<span class="shop-page payment product-info value">${semiBoxVo.boxPrice} 원</span>
 					</div>
+					
 					<div class="shop-page payment-product-info quantity">
 						<span class="shop-page payment product-info label">수량</span>
-						<span class="shop-page payment product-info value"> 2</span>
+						<span class="shop-page payment product-info value"><%= quantity %> 개</span>
 					</div>
 					<div class="shop-page payment-product-info total-price">
 						<span class="shop-page payment product-info label">총 결제 금액</span> 
-						<span class="shop-page payment product-info value">19,800원</span>
+						<span class="shop-page payment product-info value"><%= String.format("%,d", Integer.parseInt(totalPrice)) %> 원</span>
 					</div>				
+					
 				</div>
 				<div class="shop-page payment payment-option-container">
 					<div class="shop-page payment payment-option-title" >
@@ -63,7 +72,33 @@
 					</label>
 					<div class="shop-page payment btn-container" >
 						<!-- NOTI: 임시 링크 버튼, 선택 옵션에 따라 결제 방법 진행 -->
-						<a class="shop-page payment btn btn-small btn-secondary" href="${ pageContext.request.contextPath }/shop/paymentResult" >결제</a>
+						<!-- 결제수단 -->
+						
+						<form action="${pageContext.request.contextPath}/shop/paymentResult" method="get">
+  							<input type="hidden" name="boxName" value="${semiBoxVo.boxName}">
+  							<input type="hidden" name="boxPrice" value="${semiBoxVo.boxPrice}">
+  							<input type="hidden" name="quantity" id="hiddenQuantity" value="">
+  							<input type="hidden" name="totalPrice" id="hiddenTotalPrice" value="">
+  							<input type="hidden" name="paymentMethod" id="paymentMethod">
+  
+  							<button type="submit" class="shop-page payment btn btn-small btn-secondary">결제</button>
+						</form>
+
+					<script>
+  						document.querySelector("form").addEventListener("submit", function () {
+  							const selected = document.querySelector('input[name="payment"]:checked');
+    						if (selected) {
+							      document.getElementById("paymentMethod").value = selected.nextElementSibling.innerText.trim();
+							    }
+    						
+    					    const quantity = "<%= quantity %>";
+    					    const totalPrice = "<%= totalPrice %>";
+
+    					    document.getElementById("hiddenQuantity").value = quantity;
+    					    document.getElementById("hiddenTotalPrice").value = totalPrice;
+    						
+						    });
+					</script>
 					</div>
 				</div>
 	        </div>
@@ -74,6 +109,7 @@
 	<jsp:include page="../common/footer.jsp" />
 </body>
 </html>
+
 
 
 

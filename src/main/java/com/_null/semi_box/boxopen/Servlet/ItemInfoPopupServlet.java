@@ -16,6 +16,7 @@ public class ItemInfoPopupServlet extends HttpServlet {
         // itemInfoPopup.jsp로 포워딩
         RequestDispatcher dispatcher = request.getRequestDispatcher("/views/boxOpen/itemInfoPopup.jsp");
         dispatcher.forward(request, response);
+        
     }
 }
 

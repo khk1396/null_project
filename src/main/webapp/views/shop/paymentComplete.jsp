@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+  String boxName = request.getParameter("boxName");
+  String boxPrice = request.getParameter("boxPrice");
+  String quantity = request.getParameter("quantity");
+  String totalPrice = request.getParameter("totalPrice");
+  String paymentMethod = request.getParameter("paymentMethod");
+
+  int priceInt = Integer.parseInt(boxPrice);
+  int qtyInt = Integer.parseInt(quantity);
+  int totalInt = Integer.parseInt(totalPrice);
+%>
 <!DOCTYPE html5>
 <html>
 <head>
@@ -26,31 +37,34 @@
 			    <div class="shop-page payment-result payment-info title product">
 			    	주문 정보
 			    </div>
+			    <!--  주문상품 -->
 	    		<div class="shop-page payment-result payment-info product">
-	    			<span class="shop-page payment-result info sub-title product" >
-	    				주문 상품
-	    			</span>
+	    			<span class="shop-page payment-result info sub-title product" >주문 상품</span>
 	    			<span class="shop-page payment-result info info">
-	    				Platinum Box 9900 * 2개
-	    			</span>
+	    				<%= boxName %> Box <%= quantity %>개  
+	    			 </span>
 	    		</div>
-	    		<div class="shop-page payment-result payment-info price">
-	    			<span class="shop-page payment-result info sub-title price" >
-	    				주문 금액
-	    			</span>
-	    			<span class="shop-page payment-result info value price" >
-	    				19,800원
-	    			</span>
-	    		</div>
+	
+	    		<!-- 주문 금액 -->
+				<div class="shop-page payment-result payment-info price">
+					<span class="shop-page payment-result info sub-title price">주문 금액</span>
+  					<span class="shop-page payment-result info value price">
+    					<%= String.format("%,d", totalInt) %>원
+  					</span>
+				</div>
+				
+				<!-- 결제 수단 -->
 			    <div class="shop-page payment-result payment-info method title">
 			    	결제 수단
 			    </div>
-	    		<div class="shop-page payment-result payment-info method-info">
-	    			쿠팡와우카드(KB국민)/일시불
-	    		</div>
-	    		<div class="shop-page payment-result payment-info total-price">
-	    			총 결제 금액 19,800원
-	    		</div>
+				<div class="shop-page payment-result payment-info method-info">
+  					결제 형태 <%= paymentMethod %>
+				</div>
+	    		
+	    		<!-- 총 결제 금액 -->
+				<div class="shop-page payment-result payment-info total-price">
+  					총 결제 금액 <%= String.format("%,d", Integer.parseInt(totalPrice)) %>원
+				</div>
 			</div>
 	    	<div class="shop-page payment payment-btn-container">
 	        	<a href="${ pageContext.request.contextPath }/shop" class="shop-page payment btn btn-secondary btn-medium btn-hover">

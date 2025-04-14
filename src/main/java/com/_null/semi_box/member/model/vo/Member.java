@@ -10,7 +10,7 @@ public class Member {
 	private String userNickName;     // 회원닉네임
 	private String address;          // 배송지
 	private Date enrollDate;         // 가입일
-	private String status;           // 탈퇴유무 ('Y': 탈퇴, 'N': 회원) 
+	private String status;           // 회원여부 ('Y':회원 , 'N':삭제) 
 	
 	public Member () {};
 	

@@ -15,11 +15,11 @@ public class BoxOpenDao {
     }
 
     // PRODUCT_DETAIL 테이블에서 상품 상세 조회
-    public BoxOpenProductDetail selectProductDetailByProductSn(SqlSession sqlSession, String productSn) {
-        return sqlSession.selectOne("boxOpenMapper.selectProductDetailByProductSn", productSn);
+    public BoxOpenProductDetail selectProductDetailByProductSn(SqlSession sqlSession, int productSn) { // 변경됨
+        return sqlSession.selectOne("boxOpenMapper.selectProductDetailByProductSn", productSn); // 변경됨
     }
-    
-    // Map.of 사용함(return/)
+
+    // 다이어리 수정
     public int updateDiary(SqlSession session, String productId, String diary) {
         return session.update("boxOpenMapper.updateDiary", 
             Map.of("productId", productId, "diary", diary));

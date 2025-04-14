@@ -33,12 +33,12 @@
 			<!-- TODO: 유저 관련 테이블 생성 후 컬럼명 변경 -->
 			<form class="sign-page form" action="signin" method="post" >
 				<span class="sign-in-page input-container shrink userId" >
-					<input id="sign-in-userId" class="sign-in-page input shrink" type="text" name="userId" onfocus="return onFocusShrinkInput('.sign-in-page.userId')" />
+					<input id="sign-in-userId" class="sign-in-page input shrink" type="text" name="userId" required onfocus="return onFocusShrinkInput('.sign-in-page.userId')" />
 					<label class="input-label shrink" for="sign-in-userId" >ID</label>
 				</span>
 				<!-- pwd input -->
 				<span class="sign-in-page input-container shrink userPwd" >
-					<input id="sign-in-userPwd" type="password" class="sign-in-page input shrink" name="userPassword" onfocus="return onFocusShrinkInput('.sign-in-page.userPwd')" />
+					<input id="sign-in-userPwd" type="password" class="sign-in-page input shrink" name="userPassword" required onfocus="return onFocusShrinkInput('.sign-in-page.userPwd')" />
 					<label class="input-label shrink" for="sign-in-userPwd"  >PASSWORD</label>
 				</span>
 				<!-- 비밀번호 찾기 버튼 -->
@@ -47,7 +47,7 @@
 				<div class="sign-in-page btn-container" >
 					<button class="sign-in-page sign-in-btn btn btn-medium btn-primary btn-hover" type="submit" >로그인</button>
 					<!-- <button class="sign-in-page sign-up-btn btn btn-medium btn-secondary btn-hover" type="button" onclick="" >회원가입</button> -->
-					<a class="sign-in-page sign-up-btn btn btn-medium btn-secondary btn-hover" href="signup">회원가입</a>
+					<a class="sign-in-page sign-up-btn btn btn-medium btn-secondary btn-hover" href="signup" onclick="" >회원가입</a>
 				</div>			
 			</form>
 		</span>	
