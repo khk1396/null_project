@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="com._null.semi_box.market.model.vo.Product, java.util.ArrayList" %>
 <!DOCTYPE html5>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>나의 등록 상품</title>
-<script src="${ pageContext.request.contextPath }/resources/js/market/marketUtils.js" type="text/javascript" ></script>
+<script src="${ pageContext.request.contextPath }/resources/js/market/registeredItem.js" type="text/javascript" ></script>
 </head>
 <body>
 	<!-- HEADER -->
@@ -23,52 +24,66 @@
 
 			<div class="market-page my-registered-item-list-container my-registered">
 				<div class="market-page my-registered-item-list-inner my-registered">
-					<% for (int i = 0; i < 100; i++) { %>
+					<%
+						ArrayList<Product> registedProductList = (ArrayList<Product>)request.getAttribute("registedProductList");
+						ArrayList<Product> appliedProductList = (ArrayList<Product>)request.getAttribute("appliedProductList");
+						
+						for(int i = 0; i < registedProductList.size(); i++) {
+					%>
+					<form  action="myRegistedProducts" method="post">
 						<!-- TODO: 실제 데이터 조회 시 data-set 값 변경해야 함 -->
 						<div 
 							class="market-page my-registered-item-container list my-registered box-shadow" 
 							<%-- data-set="trade-list<%= i %>" --%> 
 							onclick="return onClickRegisteredItem(this);"
 						  	aria-expanded="false"
-							aria-controls="trade-list<%= i %>"
-						>
+							aria-controls="trade-list<%= i %>">
 							<div class="market-page my-registered-item-inner info-container my-registered">
 								<span class="market-page my-registered-item img-container">
-									<img class="market-page my-registered-item img" src="/semi_box/views/market/puppy.jpg" alt="PRODUCT.IMG">
+									<img class="market-page my-registered-item img" src="<%= registedProductList.get(i).getProductImg() %>" alt="PRODUCT.IMG">
 								</span>
 								<span class="market-page my-registered-item info-container" >
-									<div class="market-page my-registered-item prod-name">상품명</div>
-									<div class="market-page my-registered-item prod-price">500,000원</div>
-									<div class="market-page my-registered-item prod-category">카테고리</div>
-									<div class="market-page my-registered-item prod-comment" >코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트</div>
-									<div class="market-page my-registered-item prod-created-date" >2025-04-04</div>
+									<input type="hidden" name="registProductId" value="<%= registedProductList.get(i).getProductId() %>"/>
+									<div class="market-page my-registered-item prod-name"><%= registedProductList.get(i).getProductName() %></div>
+									<div class="market-page my-registered-item prod-price"><%= registedProductList.get(i).getProductPrice() %>원</div>
+									<div class="market-page my-registered-item prod-comment" ><%= registedProductList.get(i).getRegistComment() %></div>
+									<div class="market-page my-registered-item prod-created-date" ><%= registedProductList.get(i).getGetDate() %></div>
 								</span>
 							</div>
 						</div>
 						<div id="trade-list<%= i %>" class="market-page my-registered trade-item-list-container" >
 							<!-- TODO: 비동기 통신으로 거래 요청 목록 조회해야 함 -->
+									
 							<div class="market-page my-registered trade-item-list-inner" >
+									
 								<div class="market-page my-registered trade-item-container box-shadow" >
+									<%
+									for(int t = 0; t < appliedProductList.size(); t++) {
+										if(registedProductList.get(i).getProductId().equals(appliedProductList.get(t).getOtherProductId())){
+									%>
 									<div class="market-page my-registered trade-item-inner my-registered">
 										<span class="market-page my-registered trade-item img-container">
-											<img class="market-page my-registered trade-item img" src="/semi_box/views/market/puppy.jpg" alt="PRODUCT.IMG">
+											<img class="market-page my-registered trade-item img" src="<%= appliedProductList.get(t).getProductImg() %>" alt="PRODUCT.IMG">
 										</span>
 										<span class="market-page my-registered trade-item info-container" >
-											<div class="market-page my-registered trade-item prod-name">상품명</div>
-											<div class="market-page my-registered trade-item prod-price">10,000원</div>
-											<div class="market-page my-registered trade-item prod-category">카테고리</div>
-											<div class="market-page my-registered trade-item prod-comment" >코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트</div>
-											<div class="market-page my-registered trade-item prod-created-date" >2025-04-04</div>
+											<input type="hidden" name="applyProductId" value="<%= appliedProductList.get(t).getProductId() %>"/>
+											<div class="market-page my-registered trade-item prod-name"><%= appliedProductList.get(t).getProductName() %></div>
+											<div class="market-page my-registered trade-item prod-price"><%= appliedProductList.get(t).getProductPrice() %>원</div>
+											<div class="market-page my-registered trade-item prod-comment" ><%= appliedProductList.get(t).getRegistComment() %></div>
+											<div class="market-page my-registered trade-item prod-created-date" ><%= appliedProductList.get(t).getGetDate() %></div>
 										</span>
 										<!-- TODO: 비동기 요청 기능 들어가야 함 -->
-										<span class="market-page my-registered trade-item btn-container" >
-											<button class="market-page my-registered trade-item btn btn-small btn-secondary btn-hover" >수락</button>
-											<button class="market-page my-registered trade-item btn btn-small btn-secondary btn-hover">거절</button>				
+										<span class="market-page my-registered trade-item btn-container">
+											<button class="market-page my-registered trade-item btn btn-small btn-secondary btn-hover" name="apply" value="accept">수락</button>
+											<button class="market-page my-registered trade-item btn btn-small btn-secondary btn-hover" name="apply" value="reject">거절</button>				
 										</span> 
 									</div>
+							<% }} %>
 								</div>
 							</div>
+							
 						</div>
+						</form>
 					<% } %>
 				</div>
 			</div>

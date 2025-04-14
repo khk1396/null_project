@@ -27,7 +27,10 @@
     	-->
     	<div class="shop-page item-list-container" >
     		<div class="shop-page item-container box-shadow" >
+    			<a class="shop-page item-inner product-item-link" href="${pageContext.request.contextPath}/shop/details?boxType=black">
+    		<!--  
     			<a class="shop-page item-inner product-item-link" href="${pageContext.request.contextPath}/shop/details" >
+    		-->
 	    			<div class="shop-page item-img-container" >
 		    			<img class="shop-page item-img" src="${pageContext.request.contextPath}/resources/images/black.jpg"/>    			
 	    			</div>
@@ -42,9 +45,10 @@
     			</a>
     		</div>
 	   		<div class="shop-page item-container box-shadow" >
-	   			<a class="shop-page item-inner product-item-link" >
+	   				<!-- <a class="shop-page item-inner product-item-link" href="${pageContext.request.contextPath}/shop/details" > -->
+	    		<a class="shop-page item-inner product-item-link" href="${pageContext.request.contextPath}/shop/details?boxType=platinum">
 	    			<div class="shop-page item-img-container" >
-		    			<img class="shop-page item-img" src="${pageContext.request.contextPath}/resources/images/platinum.jpg"/>    			
+		    			<img class="shop-page item-img" src="${pageContext.request.contextPath}/resources/images/platinum.jpg"/>
 	    			</div>
 	    			<div class="shop-page item-info-container" >
 	    				<div class="shop-page item-info description" >
@@ -57,7 +61,7 @@
     			</a>
     		</div>
     		<div class="shop-page item-container box-shadow" >
-	    		<a class="shop-page item-inner product-item-link" >
+	    		<a class="shop-page item-inner product-item-link" href="${pageContext.request.contextPath}/shop/details?boxType=gold">
 	    			<div class="shop-page item-img-container" >
 		    			<img class="shop-page item-img" src="${pageContext.request.contextPath}/resources/images/gold.jpg"/>    			
 	    			</div>
@@ -72,7 +76,7 @@
 		   		</a>
     		</div>    		
     		<div class="shop-page item-container box-shadow" >
-    			<a class="shop-page item-inner product-item-link" >
+    				    			<a class="shop-page item-inner product-item-link" href="${pageContext.request.contextPath}/shop/details?boxType=silver">
 	    			<div class="shop-page item-img-container" >
 		    			<img class="shop-page item-img" src="${pageContext.request.contextPath}/resources/images/silver.jpg"/>    			
 	    			</div>
@@ -87,7 +91,7 @@
     			</a>
     		</div>
     		<div class="shop-page item-container box-shadow" >
-    			<a class="shop-page item-inner product-item-link" >
+    				    			<a class="shop-page item-inner product-item-link" href="${pageContext.request.contextPath}/shop/details?boxType=bronze">
 	    			<div class="shop-page item-img-container" >
 		    			<img class="shop-page item-img" src="${pageContext.request.contextPath}/resources/images/bronze.jpg"/>    			
 	    			</div>

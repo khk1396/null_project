@@ -12,15 +12,12 @@
 .orderOpen  {width: 10% ;}
 .orderNull  {width: 15% ;}
 
-
-
 /* 주문번호, 상품정보, 결재 금액, 개봉 여부, 배송조회/환불신청 */
 .orderUniquekey         {width: 20%; padding-top: 7%;}
 .orderImageDateName     {width: 45%; }
 .orderBoxPrice          {width: 10%; padding-top: 7%;}
 .orderBoxOpen           {width: 10%; padding-top: 7%;}
 .orderDeliveryRefundBtn {width: 15%; padding-top: 4%; }
-
 
 .orderDeliveryRefundBtn-a {
     background-color:transparent;
@@ -33,4 +30,8 @@
 .downMenuDown-orderImageDateName {
     /* height: 50%; */
     border: px black solid;
+}
+
+.statusRefund {
+    padding-top: 65px;
 }

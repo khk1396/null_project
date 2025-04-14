@@ -1,6 +1,7 @@
 package com._null.semi_box.shop.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,3 +18,6 @@ public class PaymentResultController extends HttpServlet {
 		request.getRequestDispatcher("/views/shop/paymentComplete.jsp").forward(request, response);
 	}
 }
+
+
+

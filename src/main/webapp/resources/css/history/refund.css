@@ -1,6 +1,10 @@
 /*  환불 내역 */
 
 
+/* 이미지, 구매날짜, 박스명*/
+.refundImage         {height: 100%; width: 100%;}
+.refundPurchaseDate  {height: 50%; width: 100%;}
+.refundBoxName       {height: 50%; width: 100%;}
 
 .refundNo    {width: 20% ;}
 .refundInfo  {width: 45% ;}
@@ -16,18 +20,13 @@
 .refundDeliveryRefundBtn {width: 15%; padding-top: 8%;
 }
 
-
 .refundImageDateName{
     display: flex;
     border: px black solid;
     }
 
 .downMenuDown-refundImageDateName {
-    height: 50%;
+    /* height: 50%; */
     border: px black solid;
 }
 
-/* 이미지, 구매날짜, 박스명*/
-.refundImage         {height: 100%;}
-.refundPurchaseDate  {height: 50%; width: 100%;}
-.refundBoxName       {height: 50%; width: 100%;}

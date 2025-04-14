@@ -1,6 +1,5 @@
 package com._null.semi_box.boxopen.service;
 
-
 import org.apache.ibatis.session.SqlSession;
 
 import com._null.semi_box.boxopen.model.dao.BoxOpenDao;
@@ -14,7 +13,7 @@ public class BoxOpenServiceImpl implements BoxOpenService {
 
     @Override
     public int insertBoxOpenProduct(BoxOpenProduct product) {
-    	SqlSession session = getSqlSession();
+        SqlSession session = getSqlSession();
         int result = dao.insertBoxOpenProduct(session, product);
         if (result > 0) session.commit();
         else session.rollback();
@@ -23,13 +22,13 @@ public class BoxOpenServiceImpl implements BoxOpenService {
     }
 
     @Override
-    public BoxOpenProductDetail selectProductDetailByProductSn(String productSn) {
-    	SqlSession session = getSqlSession();
-        BoxOpenProductDetail detail = dao.selectProductDetailByProductSn(session, productSn);
+    public BoxOpenProductDetail selectProductDetailByProductSn(int productSn) { // 변경됨
+        SqlSession session = getSqlSession();
+        BoxOpenProductDetail detail = dao.selectProductDetailByProductSn(session, productSn); // 변경됨
         session.close();
         return detail;
     }
-    
+
     @Override
     public int updateDiary(String productId, String diary) {
         SqlSession session = getSqlSession();

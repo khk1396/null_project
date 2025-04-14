@@ -65,6 +65,6 @@ public class ProductServlet extends HttpServlet {
         }
 
         // ItemInfoPopup.jsp로 포워딩
-        request.getRequestDispatcher("/views/common/boxOpen/ItemInfoPopup.jsp").forward(request, response);
+        request.getRequestDispatcher("/views/common/boxOpen/ItemInfoPopup.jsp").forward(request, response);        
     }
 }

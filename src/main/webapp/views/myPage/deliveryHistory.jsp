@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList
+                , com._null.semi_box.member.model.vo.Member
 				, com._null.semi_box.mypage.model.vo.OrderHistory 
                 , com._null.semi_box.mypage.common.PageInfo"%>    
 
@@ -11,7 +12,6 @@
 <title>배송내역</title>
 
 <link href="${ pageContext.request.contextPath }/resources/css/history/common.css" rel="stylesheet" /> 
- 
 <link href="${ pageContext.request.contextPath }/resources/css/history/delivery.css" rel="stylesheet" /> 
 
     <style>
@@ -22,8 +22,15 @@
 <body >
 
 
-	<% ArrayList<OrderHistory> orderHistory = (ArrayList<OrderHistory>)request.getAttribute("list"); %>
+	<% 
+        ArrayList<OrderHistory> orderHistory = (ArrayList<OrderHistory>)request.getAttribute("list"); 
+        Member loginUser = (Member)session.getAttribute("loginUser");
+    %>
 
+
+    <% if ( loginUser == null) { %>
+         response.sendRedirect("${ pageContext.request.contextPath }");
+    <%   }   %>
 
     	<!-- HEADER -->
 	<jsp:include page="/views/common/header.jsp" />
@@ -74,34 +81,36 @@
 
 
                         <div class="my-page downMenuDown-frame output  ">
-                            <div class="my-page downMenuDown-item deliveryUniquekey" ><%= ohistory.getUserPk() %></div> 
+                            <div class="my-page downMenuDown-item deliveryUniquekey" ><%= ohistory.getOrderId() %></div> 
 
 	                            <div class="my-page downMenuDown-item deliveryImageDateName" >
 	                                  <div class="my-page downMenuDown-item-image ">
-	                                <img class="my-page downMenuDown-orderImageDateName deliveryImage" src="${pageContext.request.contextPath}/resources/images/black.jpg" alt="box이미지">
+	                                <img class="my-page downMenuDown-orderImageDateName deliveryImage" src="${ pageContext.request.contextPath }/<%= ohistory.getProductImg() %>" alt="box이미지">
 	
 	                                </div>
                                         <div class="my-page downMenuDown-item-info">
                                             <div class="my-page downMenuDown-orderImageDateName deliveryPurchaseDate">
                                                 <h5>배송 신청 날짜</h5>
-                                                <%= ohistory.getPayDate() %>
+                                                <%= ohistory.getStartDeliveryDate() %>
                                             </div>
                                             <div class="my-page downMenuDown-orderImageDateName deliveryBoxName">
                                                 <h5>실상품명</h5>
-                                                <%= ohistory.getBoxName() %>
+                                                <%= ohistory.getProductName() %>
                                             </div>
                                             <div class="my-page downMenuDown-orderImageDateName deliveryProductPrice">
                                                 <h5>실금액</h5>
-                                                <%= ohistory.getBoxName() %>
+                                                <%= ohistory.getProductPrice() %>
                                             </div>
 	                                    </div>
 	                            </div> 
 
 	                            <div class="my-page downMenuDown-item deliveryBoxPrice" >
-                                    받는 사람 이름 <br> <br> <br>
-                                    배송지 
+                                    <%= ohistory.getUserName() %> <br> <br> <br>
+                                    <%= ohistory.getAddress() %> 
                                 </div> 
-	                            <div class="my-page downMenuDown-item deliveryBoxOpen" ><%= ohistory.getStatus() %></div> 
+	                            <div class="my-page downMenuDown-item deliveryBoxOpen" >
+                                     
+                                </div> 
 	                            <div class="my-page downMenuDown-item deliveryDeliveryRefundBtn" >
                                         배송 중
 	                                </div>                                 

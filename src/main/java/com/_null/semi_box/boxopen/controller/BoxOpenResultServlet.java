@@ -5,72 +5,80 @@ import com._null.semi_box.boxopen.model.vo.BoxOpenProductDetail;
 import com._null.semi_box.boxopen.service.BoxOpenService;
 import com._null.semi_box.boxopen.service.BoxOpenServiceImpl;
 import com._null.semi_box.boxopen.util.FortuneUtil;
+import com._null.semi_box.member.model.vo.Member; // "loginUser" 캐스팅을 위한 import
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.UUID;
-import java.util.Date;
-import java.text.SimpleDateFormat;
 
 @WebServlet("/boxOpenResult")
 public class BoxOpenResultServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // 1. 사용자 ID (세션에서 가져온다고 가정)
+        // 1. 로그인된 사용자 정보 가져오기
         HttpSession session = request.getSession();
-        String userPk = (String) session.getAttribute("userPk");
-        if (userPk == null) userPk = "temp-user"; // 테스트용
+        Object loginUserObj = session.getAttribute("loginUser");
+
+        int userPk;
+        if (loginUserObj == null) {
+            // 로그인되어 있지 않으면 로그인 페이지로 리다이렉트
+            response.sendRedirect(request.getContextPath() + "/views/member/loginForm.jsp");
+            return;
+        } else {
+            // 로그인된 사용자에서 userPk 추출
+            Member loginUser = (Member) loginUserObj;
+            userPk = loginUser.getUserPk();
+        }
 
         // 2. 랜덤 숫자 → 상품 번호 매핑
         int rand = (int) (Math.random() * 100); // 0~99
-        int productSnNumber = (rand / 10) + 101;
-        String productSn = String.valueOf(productSnNumber);
+        int productSn = (rand / 10) + 101;      // int로 바로 사용
 
         // 3. UUID 생성
         String uuid = UUID.randomUUID().toString();
 
         // 4. 운세 및 다이어리 기본값
-        String fortune = FortuneUtil.generateFortune();				// boxopen.util.(FortuneUtil)참고!!!
+        String fortune = FortuneUtil.generateFortune();
         String diary = "기록이 없습니다.";
 
         // 5. BoxOpenProduct 객체 생성
         BoxOpenProduct product = new BoxOpenProduct();
         product.setProductId(uuid);
         product.setUserPk(userPk);
-        product.setProductSn(productSn);
+        product.setProductSn(productSn); // int로 수정됨
         product.setFortune(fortune);
         product.setDiary(diary);
         product.setStatus("HAVE");
+        product.setGetDate(new java.sql.Date(System.currentTimeMillis()));
+
+        // 로그로 확인
+        System.out.println("ㅅㄷㄴㅅdyd / insert 전 product 객체: " + product);
 
         // 6. 서비스 호출
         BoxOpenService service = new BoxOpenServiceImpl();
         int result = service.insertBoxOpenProduct(product);
-        System.out.println(product);
-        System.out.println(result);
-        
-        BoxOpenProductDetail detail = service.selectProductDetailByProductSn(productSn);
-        
-        /* 
-         * console 테스트용(로그 조회)
-        if (detail == null) {
-            System.out.println("test PRODUCT_DETAIL에 해당 productSn 없을 경ㅇ우: " + productSn);
-        } else {
-            System.out.println("test 상품 정보 있을 경우: " + detail.toString());
-        }
-        */
-        
-        
-        // 7. 결과를 request에 담고 JSP로 전달
-        request.setAttribute("productName", detail.getProductName());
-        request.setAttribute("productImg", detail.getProductImg());
-        request.setAttribute("productPrice", detail.getProductPrice());
-        request.setAttribute("fortune", product.getFortune());
-        request.setAttribute("productId", uuid);							// if uuid 꼬이는 오류 발생시에 이 구간 수정 
 
+        // 7. 상품 상세 정보 조회 (int 전달)
+        BoxOpenProductDetail detail = service.selectProductDetailByProductSn(productSn);
+
+        // 8. 결과를 request에 담아서 JSP로 전달
+        if (detail != null) {
+            request.setAttribute("productName", detail.getProductName());
+            request.setAttribute("productImg", detail.getProductImg());
+            request.setAttribute("productPrice", detail.getProductPrice());
+        } else {
+            request.setAttribute("productName", "존재하지 않는 상품");
+            request.setAttribute("productImg", "/resources/img/default.png");
+            request.setAttribute("productPrice", 0);
+        }
+
+        request.setAttribute("fortune", product.getFortune());
+        request.setAttribute("productId", uuid);
+
+        // 결과 화면으로 포워딩
         request.getRequestDispatcher("/views/boxOpen/itemInfoPopup.jsp").forward(request, response);
     }
 }
-

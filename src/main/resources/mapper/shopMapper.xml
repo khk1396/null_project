@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="SemiBoxMapper">
+
+  <!-- 특정 타입(boxType)으로 박스 조회 -->
+  <select id="selectBoxByType" parameterType="String" resultType="SemiBox">
+    SELECT
+      BOX_CODE AS boxCode,
+      BOX_IMG_CODE AS boxImgCode,
+      BOX_PRICE AS boxPrice,
+      BOX_NAME AS boxName
+    FROM BOX
+    WHERE BOX_NAME = #{boxType}
+  </select> 
+  
+</mapper>

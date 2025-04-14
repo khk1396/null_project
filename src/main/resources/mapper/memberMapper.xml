@@ -51,6 +51,29 @@
 						  , SYSDATE
 						  , 'Y' )
    </insert>
+
+   <update id="withdrawMember">
+		UPDATE MEMBER
+		    SET STATUS = 'N'
+		WHERE USER_ID = #{userId}
+		    AND USER_PASSWORD = #{userPassword}
+   </update>
+   
+   <update id="updatePassword" parameterType="map">
+   		UPDATE MEMBER
+   		   SET USER_PASSWORD = #{password}
+   		 WHERE USER_ID = #{userId}
+   		       AND USER_PASSWORD = #{currentPwd}
+   		       AND STATUS = 'Y'
+   </update>
+
+   <update id="updateMember" >
+   		UPDATE MEMBER
+   		   SET USER_NICKNAME = #{userNickName}
+   		     , ADDRESS = #{address}
+   		 WHERE USER_ID = #{userId}
+   		 	   AND STATUS = 'Y'
+   </update>
    
    <!-- resultMap 추가 -->
    <resultMap id="memberResultMap" type="Member">

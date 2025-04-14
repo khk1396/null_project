@@ -8,17 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/mypage/modify-account")
+import com._null.semi_box.member.service.MemberServiceImpl;
+
+@WebServlet("/mypage/withdraw") 
 public class WithdrawController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	/**
-	 * @param request
-	 * @param response
-	 * @throws ServletException
-	 * @throws IOException
-	 */
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Content directory: /src/main/webapp
-		request.getRequestDispatcher("/views/myPage/modifyAccount.jsp").forward(request, response);
+		request.getRequestDispatcher("/views/myPage/withdraw.jsp").forward(request, response);	
 	}
 }

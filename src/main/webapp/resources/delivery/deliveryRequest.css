@@ -1,0 +1,84 @@
+.delivery {
+    border: px black solid;
+    width: 50%;
+} 
+
+
+.Application{
+    display: flex;
+    font-family: SUIT-Regular, sans-serif;
+    
+}
+
+.Application1{height: 10%;   font-size: 50px; padding-top: 1%; padding-left: 1%;}
+.Application2{height: 10%; font-size: 20px;}
+.Application4{height: 30%; font-size: 20px;}
+.Application5{height: 8%;
+    /* padding-left: 50%; */
+}
+
+.Application-left { 
+    width: 15%; 
+    background-color: #C1E5F5; 
+    text-align: center;
+    border: 1px  black solid; 
+    border-width: thin;
+ }
+.Application-right { width: 85%; border:1px black solid; box-sizing: border-box;}
+
+.left1{padding-top: 3%;}
+.left2{padding-top: 3%;}
+.left4{padding-top: 10%;}
+.left5{padding-top: 5%;}
+
+
+.address {   padding-top: 20%; }
+.address1, .address2 {  font-family: SUIT-Regular, sans-serif;}
+.delivery-flex{  display: flex;  padding-top: 3%;  height: 100%;}
+.delivery-flex div { margin-left: 2%; height: 50%;}
+
+.orderName { border: 1px black solid; width: 200px; }
+.orderNamediv { padding-top: 3.5%;}
+.orderName-btn { padding-top: 3%;}
+
+.textsize {
+    border: 1px black solid;
+    height: 30%; }
+
+.orderMainArddress {
+    border: px black solid;
+    width: 600px;
+    height: 50px;
+    margin-top: 11%;
+    margin-left: 2%;
+}
+
+.addressBoxSize{
+    border:1px black solid;
+    width: 600px;
+    height: 30px;
+    font-size: 30px;
+}
+
+.delivery-item-btn{
+    border: px black solid;
+    width: 100%;
+    padding-left: 40%;
+}
+
+.deliverySubmit {
+    border: px black solid;
+    height: 100%;
+    /* padding-left: 45%; */
+    align-items: center;
+    justify-content: center;
+}
+
+.deliverBtn, .CancleBtn {
+    margin: 10px;
+   
+}
+
+.bgTransparent{
+background-color:transparent;
+}

@@ -75,7 +75,9 @@ function checkPassword() {
 function checkNickName() {
 	const value = document.getElementById('sign-up-nickname').value.trim();
 	const regExp = /^[ㄱ-ㅎ가-힣a-zA-Z0-9]+$/;
-		
+	
+	console.log ("userNickName Check:" + value);
+	
 	return regExp.test(value);
 }
 
@@ -83,6 +85,8 @@ function checkNickName() {
 function checkNickNameExist() {
 	const userNickName = document.getElementById('sign-up-nickname').value.trim();
 	const button = document.getElementById('check-nickName-btn');
+	
+	console.log ("userNickName Exist:" + userNickName);
 	
 	if(!userNickName) {
 		showToast('닉네임을 입력해주세요.', button);
