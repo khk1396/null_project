@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>나의 획득 상품</title>
-<link href="${ pageContext.request.contextPath }/resources/css/myPage/inventory.css" rel="stylesheet" />
+<link href="${ pageContext.request.contextPath }/resources/css/myPage/myProduct.css" rel="stylesheet" />
 </head>
 <body>
 	<jsp:include page="/views/common/header.jsp" />
@@ -40,19 +40,19 @@
 				%>
 					<% if (product != null) { %>
 						<span class="my-page box-item-container card box-shadow">
-							<<a class="my-page box-item-link" href="deliveryRequest?prodcutId=<%= product.getProductId() %>">
+							<a class="my-page box-item-link" href="deliveryRequest?prodcutId=<%= product.getProductId() %>">
 								<span class="my-page box-item card img-container">
 									<!--  <img src="${pageContext.request.contextPath}${product.productImg}" alt="${product.productName}" /> -->
-									<img src="<%= request.getContextPath() + product.getProductImg() %>" alt="<%= product.getProductName() %>" />
+									<img class="my-page box-item card img" src="<%= request.getContextPath() + product.getProductImg() %>" alt="<%= product.getProductName() %>" />
 								</span>
-								<span class="my-page box-item card info-container">
-									<div class="my-page box-item card title">
+								<span class="my-page box-item card info-container my-product">
+									<div class="my-page box-item card title my-product">
 										<%= product.getProductName() %> 
 									</div>
-									<div class="my-page box-item card price">
+									<div class="my-page box-item card price my-product">
 										<%= product.getProductPrice() %> 원
 									</div>
-									<div class="my-page box-item card des">
+									<div class="my-page box-item card des my-product">
 										<%= product.getProductDescription() %>
 									</div>
 								</span>
