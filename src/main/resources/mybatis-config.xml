@@ -5,11 +5,11 @@
 
 <configuration>
 
-<!-- 	<settings>
+	<settings>
 		<setting name="jdbcTypeForNull" value="NULL"/>
-		데이터가 null값으로 전달되었을 때, 빈값이 아닌 NULL로 설정
+		<!--  데이터가 null값으로 전달되었을 때, 빈값이 아닌 NULL로 설정-->
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
-	</settings> -->
+	</settings> 
 	
 	<!-- ***** Mapper namespace 설정 ***** -->
 	<typeAliases>
@@ -24,10 +24,10 @@
       	<typeAlias alias="MainBox" type="com._null.semi_box.main.model.vo.MainBox"/>
       	<typeAlias alias="MainProduct" type="com._null.semi_box.main.model.vo.MainProduct"/>
 
-      <!-- Type Alias 등록 -->
-      <typeAlias alias="ModifyPassword" type="com._null.semi_box.mypage.model.vo.ModifyPassword" />
-      <typeAlias alias="Trade" type="com._null.semi_box.market.model.vo.Trade" />
-      <typeAlias alias="Product" type="com._null.semi_box.market.model.vo.Product" />
+      	<!-- Type Alias 등록 -->
+ 	<typeAlias alias="ModifyPassword" type="com._null.semi_box.mypage.model.vo.ModifyPassword" />
+       	<typeAlias alias="Trade" type="com._null.semi_box.market.model.vo.Trade" />
+       	<typeAlias alias="Product" type="com._null.semi_box.market.model.vo.Product" />
 	</typeAliases>
 	
     <environments default="development">

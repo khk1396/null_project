@@ -2,6 +2,7 @@ package com._null.semi_box.main.model.vo;
 
 public class MainProduct {
 	private int productSn; 				//	PRODUCT_SN	NUMBER
+	private String productId; 			//	PRODUCT_ID	NUMBER
 	private String boxCode; 			//	BOX_CODE	VARCHAR2(10 BYTE)
 	private String productName; 		//	PRODUCT_NAME	VARCHAR2(30 BYTE)
 	private String productDescription; 	//	PRODUCT_DESCRIPTION	VARCHAR2(300 BYTE)
@@ -47,10 +48,20 @@ public class MainProduct {
 	public void setProductImg(String productImg) {
 		this.productImg = productImg;
 	}
+	
+	public String getProductId() {
+		return productId;
+	}
+
+	public void setProductId(String productId) {
+		this.productId = productId;
+	}
+
 	@Override
 	public String toString() {
-		return "MainProduct [productSn=" + productSn + ", boxCode=" + boxCode + ", productName=" + productName
-				+ ", productDescription=" + productDescription + ", productPrice=" + productPrice + ", productImg="
-				+ productImg + "]";
+		return "MainProduct [productSn=" + productSn + ", productId=" + productId + ", boxCode=" + boxCode
+				+ ", productName=" + productName + ", productDescription=" + productDescription + ", productPrice="
+				+ productPrice + ", productImg=" + productImg + "]";
 	}
+
 }

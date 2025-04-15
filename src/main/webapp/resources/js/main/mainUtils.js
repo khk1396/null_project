@@ -12,14 +12,14 @@ function addElementList(listData, callbackAddItem) {
 }
 
 function addProductItem(product) {
-	const productImg = product.productImg;
-	const productName = product.productName;
-	const productDescription = product.productDescription;
+	const productImg = product.productImg; // 이미지 경로
+	const productName = product.productName; // 이미지 이름
+	const productDescription = product.productDescription; // 상품 설명
 
 	return ` 
 		<span class="prod-item-container card box-shadow" >
 			<span class="prod-item card img-container" >
-				<img class="prod-item card img" src="${productImg}" />
+				<img class="prod-item card img" src="/semi_box/${productImg}" />
 			</span>
 			<span class="prod-item card info-container" >
 				<div class="prod-item card title" >
@@ -89,11 +89,11 @@ window.onload = function() {
 		
 		// ADD PRODUCT LIST
 		// "main-product-item-list"
-		const mainProductItemListElement = document.createElement('div');
 		const mainProductItemListSection = document.getElementById('main-product-item-list');
+		const mainProductItemListElement = document.createElement('div');
 		
 		mainProductItemListElement.classList.add('main-page');
-		mainProductItemListElement.classList.add('box-item-list');
+		mainProductItemListElement.classList.add('prod-item-list');
 		mainProductItemListElement.innerHTML = addElementList(mainProductListData, addProductItem);
 		
 		mainProductItemListSection.append(mainProductItemListElement);

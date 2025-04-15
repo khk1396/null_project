@@ -8,10 +8,10 @@ import java.net.http.HttpResponse;
 public class FortuneUtil {
 
     public static String generateFortune() {
-        String apiKey = "key"; // 여기에 API 키!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 5$ 토큰 없는 키일시 429로인한 null 회수 
-        String endpoint = "https://api.openai.com/v1/chat/completions";
-        String model = "gpt-3.5-turbo";
-        String prompt = "오늘의 짧은 행운(금전운)의 메시지를 한 문장으로 말해줘.";
+//        String apiKey = "s-"; // 여기에 API 키!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 5$ 토큰 없는 키일시 429로인한 null 회수 
+//        String endpoint = "https://api.openai.com/v1/chat/completions";
+//        String model = "gpt-3.5-turbo";
+//        String prompt = "오늘의 짧은 행운(금전운)의 메시지를 한 문장으로 말해줘.";
 
         try {
             HttpClient client = HttpClient.newHttpClient();
