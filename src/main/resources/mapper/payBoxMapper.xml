@@ -21,6 +21,7 @@
 		    JOIN BOX USING (BOX_CODE)
 		    JOIN BOX_IMG USING (BOX_IMG_CODE)
 		WHERE USER_PK = #{userPk}
+		AND STATUS = 'UNUSED'
 		ORDER BY PAY_DATE
 	</select>
    
