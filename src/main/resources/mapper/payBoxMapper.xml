@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="payBoxMapper">
+    <!--  로그인 ID, PASSWORD 확인 -->
+	<select id="selectPayBoxAll" resultMap="payBoxResultMap" >
+	<!-- PAYBOX BOX CODE 정보로 BOX 테이블 조인, BOX 테이블의 BOX IMAGE CODE로 BOX IMG 테이블 조인  -->
+		SELECT 
+		    PAY_ID,
+		    USER_PK,
+		    BOX_CODE,
+		    BOX_IMG,
+		    PRICE,
+		    PAY_METHOD,
+		    PAY_DATE,
+			REFUND_DATE,
+			STATUS
+		FROM PAY_BOX
+		    JOIN BOX USING (BOX_CODE)
+		    JOIN BOX_IMG USING (BOX_IMG_CODE)
+		WHERE USER_PK = #{userPk}
+		ORDER BY PAY_DATE
+	</select>
+   
+	<resultMap id="payBoxResultMap" type="com._null.semi_box.payBox.model.vo.PayBox"> 
+		<!-- id, type -->
+		<!-- property, column -->
+		<!-- payId -->
+		<result property="payId" column="PAY_ID" />
+		<!-- userPk -->
+		<result property="userPk" column="USER_PK" />
+		<!-- boxCode -->
+		<result property="boxCode" column="BOX_CODE" />
+		<!-- price -->
+		<result property="price" column="PRICE" />
+		<!-- payMethod -->
+		<result property="payMethod" column="PAY_METHOD" />
+		<!-- payDate -->
+		<result property="payDate" column="PAY_DATE" />
+		<!-- status -->   	
+		<result property="status" column="STATUS" />
+		<!-- box img -->   	
+		<result property="boxImg" column="BOX_IMG" />
+	</resultMap>
+
+	<select id="selectByUserId" parameterType="String" resultType="com._null.semi_box.payBox.model.vo.PayBox" >
+		SELECT BOX_CODE AS boxCode,
+		BOX_IMG AS boxImg,
+		BOX_PRICE AS price,
+		PAY_METHOD AS payMethod
+		FROM PAY_BOX
+		WHERE USER_PK = #{userPk}
+		ORDER BY PAY_DATE DESC
+	</select>
+	
+	<insert id="insertPayBox" parameterType="com._null.semi_box.payBox.model.vo.PayBox">
+	INSERT INTO PAY_BOX (
+		PAY_ID, USER_PK, BOX_CODE, PRICE, PAY_METHOD, PAY_DATE
+	) VALUES (
+		SEQ_PAY_ID.NEXTVAL,
+		#{userPk},
+		#{boxCode},
+		#{price},
+		#{payMethod},
+		SYSDATE
+	)
+</insert>
+</mapper>

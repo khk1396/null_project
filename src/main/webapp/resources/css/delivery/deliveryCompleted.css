@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/* 신청완료 페이지*/ 
+
+.deliveryMainFrame{
+    width: auto;
+    height: auto;
+    border: px black solid;
+    box-sizing: border-box;
+    margin-top: 6%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+}
+
+/*Complet 크기 확인용 */
+.Complet{border: px black solid}
+
+
+/* 신청완료 타이틀 */
+.title       {
+    height: 20%;  
+    font-family: SUIT-Regular, sans-serif; 
+    font-size: 100px;
+    text-align: center;
+    line-height: 160px;
+}
+
+/* 배송 신청 완료 및 안내 메시지 */
+.coment      {
+    height: 10%;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 1px black solid;
+}  
+
+/* 접수 번호 */
+.completNo   {height: 10%;  display: flex; }
+/* 접수 날짜 */
+.completDate {height: 10%; display: flex;}
+/* 메인 및 조회 버튼 */
+.completBtn  {height: 30%; display: flex;}
+
+/* 메인 및 조회 메뉴 내부 버튼  */
+.completdown{
+    width: 25%;
+    height: 100%;
+    border: px pink solid;
+    font-family: SUIT-Regular, sans-serif; 
+    font-size: 35px;
+    text-align: center;
+    padding-top: 2%;
+    background-color:transparent
+}
+
+.orderDeliveryRefundBtn-a {
+    background-color:transparent;
+    }

@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.main-header-container {
+  position: sticky;
+  top: 0;
+  padding: 0 32px;
+  border-bottom: 1px solid #1e2022;
+  min-width: 1200px;
+  z-index: 1000;
+}
+
+.main-header.container-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-header.logo-link {
+  padding: 8px 16px;
+}
+
+.main-header.logo-link .main-header.logo {
+  min-width: 102px;
+  height: 38px;
+}
+
+.main-header.nav-link-container {
+  display: flex;
+  align-items: center;
+}
+
+.main-header.nav-link-container .main-header.nav-link {
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+.main-header.btn {
+  margin-left: 8px;
+}

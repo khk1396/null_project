@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+<!-- 	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+		데이터가 null값으로 전달되었을 때, 빈값이 아닌 NULL로 설정
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings> -->
+	
+	<!-- ***** Mapper namespace 설정 ***** -->
+	<typeAliases>
+		<!-- MEMBER -->
+    	<typeAlias alias="Member" type="com._null.semi_box.member.model.vo.Member"/>
+  		<!-- PAYBOX -->
+    	<!-- <typeAlias alias="PayBox" type="com._null.semi_box.payBox.model.vo.PayBox"/> -->
+		<!-- HISTORY -->
+        <typeAlias  type="com._null.semi_box.mypage.model.vo.OrderHistory" alias="OrderHistory" />
+
+     	<!-- MAIN BOX, PRODUCT -->
+      	<typeAlias alias="MainBox" type="com._null.semi_box.main.model.vo.MainBox"/>
+      	<typeAlias alias="MainProduct" type="com._null.semi_box.main.model.vo.MainProduct"/>
+
+      <!-- Type Alias 등록 -->
+      <typeAlias alias="ModifyPassword" type="com._null.semi_box.mypage.model.vo.ModifyPassword" />
+      <typeAlias alias="Trade" type="com._null.semi_box.market.model.vo.Trade" />
+      <typeAlias alias="Product" type="com._null.semi_box.market.model.vo.Product" />
+	</typeAliases>
+	
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="oracle.jdbc.OracleDriver"/>
+                <property name="url" value="jdbc:oracle:thin:@115.90.212.20:10000:xe"/>
+                <property name="username" value="C##SEMI"/>
+                <property name="password" value="SEMI"/>
+            </dataSource>
+        </environment>
+    </environments>
+	
+	<!-- Mapper 등록 -->
+    <mappers>
+        <mapper resource="mapper/boxOpenMapper.xml"/>
+        <mapper resource="mapper/diaryMapper.xml"/>
+        <mapper resource="mapper/memberMapper.xml"/>
+        <mapper resource="mapper/historyMapper.xml"/>
+        <mapper resource="mapper/deliveryMapper.xml"/>
+        <mapper resource="mapper/payBoxMapper.xml"/>
+        <mapper resource="mapper/myProductMapper.xml"/>
+        <mapper resource="mapper/withdrawMapper.xml"/> 
+        <mapper resource="mapper/modifyPasswordMapper.xml"/>  
+        <mapper resource="mapper/marketMapper.xml"/>      
+        <mapper resource="mapper/shopMapper.xml"/>    
+        <mapper resource="mapper/semiProductMapper.xml"/>   
+        <mapper resource="mapper/mainMapper.xml" /> 
+    </mappers>
+</configuration>

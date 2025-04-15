@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mainMapper">
+
+    <!-- PRODUCT 테이블 insert -->
+    <select id="selectBoxList" resultMap="mainBox" >
+		 SELECT
+		 	BOX_CODE, 
+		 	BOX_IMG,
+		 	BOX_NAME,
+		 	BOX_PRICE
+		 FROM BOX
+		 	JOIN BOX_IMG USING (BOX_IMG_CODE)
+    </select>
+    
+    <select id="selectProductList" resultType="mainProduct" >
+ 		SELECT 
+		    PRODUCT_SN,
+		    BOX_CODE,
+		    PRODUCT_NAME, 
+		    PRODUCT_DESCRIPTION,
+		    PRODUCT_PRICE, 
+		    PRODUCT_IMG
+		FROM PRODUCT_DETAIL 
+    </select>
+
+    <!-- resultMap 추가 -->
+    <resultMap id="mainBox" type="MainBox">
+        <result property="boxCode" column="BOX_CODE"/>
+        <result property="boxImg" column="BOX_IMG"/>
+        <result property="boxName" column="BOX_NAME"/>
+        <result property="boxPrice" column="BOX_PRICE"/>
+    </resultMap>
+    
+    <resultMap id="mainProduct" type="MainProduct">
+        <result property="productSn" column="PRODUCT_SN"/>
+        <result property="boxCode" column="BOX_CODE"/>
+        <result property="productName" column="PRODUCT_NAME"/>
+        <result property="productDescription" column="PRODUCT_DESCRIPTION"/>
+        <result property="productPrice" column="PRODUCT_PRICE"/>
+        <result property="productImg" column="PRODUCT_IMG"/>
+    </resultMap>
+</mapper>

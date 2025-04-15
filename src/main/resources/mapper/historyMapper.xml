@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="orderHistoryMapper">
+
+    <!-- 주문내역 조회 -->
+    <select id="selectAllOrder" parameterType="OrderHistory" resultMap="selectAllOrder1" >
+		 select  pay_id
+		 		,user_pk      	      
+		        ,box_img    	  
+		        ,box_name   	    
+		        ,pay_date   	
+		        ,refund_date     
+		        ,price      	  
+		        ,p.status   	    
+		from pay_box p 
+		join member using(user_pk) 
+		join box b using(box_code) 
+		join box_img bi on bi.box_img_code = b.box_img_code 
+		where user_pk = #{id}
+			 order by pay_id desc
+		 
+		 <if test="id != null ">
+		 
+		 </if>
+    </select>
+    
+    <!-- 페이징을 위한 주문내역 전체 수 조회 -->
+     <select id="selectUserOrder" resultType="int" >
+		 select count(*)  	    
+		from pay_box p 
+		join member using(user_pk) 
+		join box b using(box_code) 
+		join box_img bi on bi.box_img_code = b.box_img_code 
+		where user_pk = #{id}
+    </select>
+    
+    
+    
+     <!-- 환불 내역 조회 -->
+    <select id="selectUserAllRefund" parameterType="OrderHistory" resultMap="selectAllOrder1" >
+		select pay_id   	      
+		        ,box_img    	  
+		        ,box_name   	    
+		        ,refund_date   	    
+		        ,price      	  
+		        ,p.status   	    
+		from pay_box p 
+		join member using(user_pk) 
+		join box b using(box_code) 
+		join box_img bi on bi.box_img_code = b.box_img_code 
+		where user_pk = #{id}
+           and p.status = 'REFUND'
+           order by pay_id desc
+    </select>
+    
+    <!-- 페이징을 위한 환불내역 전체 수 조회 -->
+     <select id="selectUserRefund" resultType="int" >
+		 select count(*)  	    
+		from pay_box p 
+		join member using(user_pk) 
+		join box b using(box_code) 
+		join box_img bi on bi.box_img_code = b.box_img_code 
+		where user_pk = #{id}
+		   and p.status = 'REFUND'
+    </select>
+
+
+
+    <!-- 배송 내역 조회 -->
+    <select id="selectUserAllDelivery" parameterType="OrderHistory" resultMap="selectAllOrder1" >
+   	select order_id 
+        , d.address
+        , start_delivery_date
+        , delivery_status
+        , product_name
+        , product_img
+        , product_price
+        , p.user_pk
+        , m.user_name
+	from product p
+	   join product_detail using(product_sn)
+	   join delivery d using(product_id)
+	   join member m on m.user_pk = p.user_pk
+	   where p.user_pk = #{id}
+	   order by order_id desc
+    </select>
+    
+    <!-- 페이징을 위한 배송 내역 전체 수 조회 -->
+     <select id="selectUserDelivery" resultType="int" >
+		 select count(*)  	    	
+		   from product p
+			   join product_detail using(product_sn)
+			   join delivery d using(product_id)
+			   join member m on m.user_pk = p.user_pk
+			   where p.user_pk = #{id}
+    </select>
+
+
+   <!-- 환불신청시 상태 변경 -->
+	<update id="refundChange">
+		update pay_box
+	    set status = 'REFUND'
+	      , refund_date = sysdate
+	    where pay_id = #{ payId }	
+	      and user_pk = #{ userPk }
+	             
+	</update>
+	
+
+
+    <!-- resultMap 추가 -->
+    <resultMap id="selectAllOrder1" type="OrderHistory">
+    
+        <result property="userPk" column="USER_PK"/>     				<!-- 유저 키 -->
+        <result property="userName" column="USER_NAME"/>     			<!-- 유저 이름 -->            
+    	<result property="payId" column="PAY_ID"/>		 				<!-- 구매 번호 -->
+    	<result property="boxName" column="BOX_NAME"/>   				<!-- 박스 이름 -->    
+        <result property="boxImg" column="BOX_IMG"/>     				<!-- 박스이미지 -->
+        <result property="payDate" column="PAY_DATE"/>   				<!-- 박스구매날짜 -->
+        <result property="price" column="PRICE"/>		 				<!-- 금액 -->
+        <result property="refundDate" column="REFUND_DATE"/> 			<!-- 환불신청날짜 -->
+        <result property="status" column="STATUS"/>						<!-- 상태 -->
+        
+        <result property="orderId" column="ORDER_ID"/>					<!-- 배송 번호 -->
+        <result property="address" column="ADDRESS"/>	 				<!-- 배송 주소 -->
+        <result property="startDeliveryDate" column="START_DELIVERY_DATE"/> 	<!-- 배송 신청 날짜 -->
+        <result property="deliveryStatus" column="DELIVERY_STATUS"/>   	<!-- 배송 현황 -->
+        	
+        <result property="productName" column="PRODUCT_NAME"/>			<!-- 실상품 이름 -->
+        <result property="productImg" column="PRODUCT_IMG"/>			<!-- 실상품 이미지 -->
+        <result property="productPrice" column="PRODUCT_PRICE"/>		<!-- 실상품 가격 -->
+           	
+    </resultMap>
+    
+   
+    
+
+
+</mapper>

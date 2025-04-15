@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="boxOpenMapper">
+
+    <!-- resultMap: PRODUCT_DETAIL 조회 결과 매핑 -->
+    <resultMap id="productDetailResultMap" type="com._null.semi_box.boxopen.model.vo.BoxOpenProductDetail">
+        <result property="productSn" column="PRODUCT_SN"/>
+        <result property="boxCode" column="BOX_CODE"/>
+        <result property="productName" column="PRODUCT_NAME"/>
+        <result property="productDescription" column="PRODUCT_DESCRIPTION"/>
+        <result property="productPrice" column="PRODUCT_PRICE"/>
+        <result property="productImg" column="PRODUCT_IMG"/>
+    </resultMap>
+
+    <!-- PRODUCT 테이블에 새로운 상품 기록 추가 -->
+    <insert id="insertBoxOpenProduct" parameterType="com._null.semi_box.boxopen.model.vo.BoxOpenProduct">
+        INSERT INTO PRODUCT (
+            PRODUCT_ID,
+            USER_PK,
+            PRODUCT_SN,
+            GET_DATE,
+            DIARY,
+            FORTUNE,
+            STATUS
+        ) VALUES (
+            #{productId},
+            #{userPk},
+            #{productSn},
+            SYSDATE,
+            #{diary},
+            #{fortune},
+            #{status}
+        )
+    </insert>
+
+    <!-- 특정 PRODUCT_SN에 해당하는 PRODUCT_DETAIL 조회 -->
+    <select id="selectProductDetailByProductSn" 
+            parameterType="int" 
+            resultMap="productDetailResultMap">
+        SELECT 
+            PRODUCT_SN,
+            BOX_CODE,
+            PRODUCT_NAME,
+            PRODUCT_DESCRIPTION,
+            PRODUCT_PRICE,
+            PRODUCT_IMG
+        FROM PRODUCT_DETAIL
+        WHERE PRODUCT_SN = #{productSn}
+    </select>
+
+    <!-- PRODUCT 테이블의 DIARY 내용 수정 -->
+    <update id="updateDiary" parameterType="map">
+        UPDATE PRODUCT
+        SET DIARY = #{diary}
+        WHERE PRODUCT_ID = #{productId}
+    </update>
+
+    <!-- PRODUCT_DETAIL 테이블에 존재하는 모든 PRODUCT_SN 조회 -->
+    <select id="selectAllProductSn" resultType="string">
+        SELECT PRODUCT_SN
+        FROM PRODUCT_DETAIL
+    </select>
+
+</mapper>

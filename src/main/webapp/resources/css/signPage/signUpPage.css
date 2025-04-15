@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/* SIGN-UP PAGE */
+
+.sign-up-page.input-container {
+	margin-bottom: 36px;
+}
+
+.sign-up-page.input-container.nickname {
+	margin-bottom: 84px;
+}
+
+.sign-up-page.btn-container {
+	display: flex;
+	justify-content: center;
+}
+
+.sign-up-page.sign-up-btn.submit {
+	margin-right: 40px;
+}
+
+.sign-up-page.input-container-inner {
+	position: relative;
+}
+
+.sign-up-page.btn.btn-primary.btn-small.check-btn {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	border-radius: 4px;
+}

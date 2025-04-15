@@ -1,0 +1,26 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="myProductMapper">
+    <select id="selectMyProductList" resultType="com._null.semi_box.mypage.model.vo.MyProduct">
+        SELECT 
+            P.PRODUCT_ID as productId, -- UUID (PRODUCT_ID)
+            P.USER_PK as userPk,        -- USER_PK (회원 ID)
+            P.PRODUCT_SN as productSn,  -- PRODUCT_SN (상품 고유 번호)
+            D.PRODUCT_NAME as productName, -- PRODUCT_NAME (상품명)
+            D.PRODUCT_DESCRIPTION as productDescription, -- PRODUCT_DESCRIPTION (상품 설명)
+            D.PRODUCT_PRICE as productPrice, -- PRODUCT_PRICE (상품 가격)
+            D.PRODUCT_IMG as productImg, -- PRODUCT_IMG (상품 이미지)
+            P.DIARY as diary, -- DIARY (다이어리 내용)
+            P.FORTUNE as fortune -- FORTUNE (운세)
+        FROM 
+            PRODUCT P
+        JOIN
+            PRODUCT_DETAIL D ON P.PRODUCT_SN = D.PRODUCT_SN
+        WHERE 
+            P.USER_PK = #{userPk}
+    </select>
+</mapper>
+
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="deliveryMapper">
+
+   
+   <insert id="deliveryApplication">
+   	
+   		 insert into delivery
+  			values (seq_delivery_orderid.nextval, #{ productId }, #{address} , sysdate, 'PROGRESS' )
+   </insert>
+    
+   
+    <select id="selectDeliveryInfo" resultType="OrderHistory" resultMap="selectAllOrder1">
+           
+       select order_id
+            , START_DELIVERY_DATE
+	    from product p 
+		   join product_detail using(product_sn)
+		   join delivery d on d.product_id = p.product_id
+		   join member m on m.user_pk = p.user_pk
+		   where p.user_pk = #{userPk}
+	           and p.product_id = #{productId}
+                 and order_id = ( select      
+                        max(ORDER_ID)
+	                    from delivery
+	                    where product_id = #{productId}
+	                    group by product_Id)           
+		   order by order_id desc
+    </select>
+
+<!-- resultMap 추가 -->
+    <resultMap id="selectAllOrder1" type="OrderHistory">
+    
+        <result property="userPk" column="USER_PK"/>     				<!-- 유저 키 -->
+        <result property="userName" column="USER_NAME"/>     			<!-- 유저 이름 -->            
+    	<result property="payId" column="PAY_ID"/>		 				<!-- 구매 번호 -->
+    	<result property="boxName" column="BOX_NAME"/>   				<!-- 박스 이름 -->    
+        <result property="boxImg" column="BOX_IMG"/>     				<!-- 박스이미지 -->
+        <result property="payDate" column="PAY_DATE"/>   				<!-- 박스구매날짜 -->
+        <result property="price" column="PRICE"/>		 				<!-- 금액 -->
+        <result property="refundDate" column="REFUND_DATE"/> 			<!-- 환불신청날짜 -->
+        <result property="status" column="STATUS"/>						<!-- 상태 -->
+        
+        <result property="orderId" column="ORDER_ID"/>					<!-- 배송 번호 -->
+        <result property="address" column="ADDRESS"/>	 				<!-- 배송 주소 -->
+        <result property="startDeliveryDate" column="START_DELIVERY_DATE"/> 	<!-- 배송 신청 날짜 -->
+        <result property="deliveryStatus" column="DELIVERY_STATUS"/>   	<!-- 배송 현황 -->
+        	
+        <result property="productName" column="PRODUCT_NAME"/>			<!-- 실상품 이름 -->
+        <result property="productImg" column="PRODUCT_IMG"/>			<!-- 실상품 이미지 -->
+        <result property="productPrice" column="PRODUCT_PRICE"/>		<!-- 실상품 가격 -->
+           	
+    </resultMap>
+
+</mapper>
