@@ -16,18 +16,21 @@
 		 	JOIN BOX_IMG USING (BOX_IMG_CODE)
     </select>
     
-    <select id="selectProductList" resultType="mainProduct" >
+    <select id="selectProductList" resultMap="mainProduct" >
  		SELECT 
 		    PRODUCT_SN,
+		    PRODUCT_ID,
 		    BOX_CODE,
 		    PRODUCT_NAME, 
 		    PRODUCT_DESCRIPTION,
-		    PRODUCT_PRICE, 
 		    PRODUCT_IMG
-		FROM PRODUCT_DETAIL 
+		FROM PRODUCT_DETAIL
+			JOIN PRODUCT USING (PRODUCT_SN)
+		WHERE STATUS = 'TRADE'
     </select>
 
     <!-- resultMap 추가 -->
+    <!-- 메인 인기 상품 -->
     <resultMap id="mainBox" type="MainBox">
         <result property="boxCode" column="BOX_CODE"/>
         <result property="boxImg" column="BOX_IMG"/>
@@ -35,12 +38,13 @@
         <result property="boxPrice" column="BOX_PRICE"/>
     </resultMap>
     
+    <!-- 메인 교환 신청 중인 상품 -->
     <resultMap id="mainProduct" type="MainProduct">
         <result property="productSn" column="PRODUCT_SN"/>
+        <result property="productId" column="PRODUCT_ID"/>
         <result property="boxCode" column="BOX_CODE"/>
         <result property="productName" column="PRODUCT_NAME"/>
         <result property="productDescription" column="PRODUCT_DESCRIPTION"/>
-        <result property="productPrice" column="PRODUCT_PRICE"/>
         <result property="productImg" column="PRODUCT_IMG"/>
     </resultMap>
 </mapper>

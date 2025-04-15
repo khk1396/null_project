@@ -24,10 +24,10 @@
       	<typeAlias alias="MainBox" type="com._null.semi_box.main.model.vo.MainBox"/>
       	<typeAlias alias="MainProduct" type="com._null.semi_box.main.model.vo.MainProduct"/>
 
-      <!-- Type Alias 등록 -->
-      <typeAlias alias="ModifyPassword" type="com._null.semi_box.mypage.model.vo.ModifyPassword" />
-      <typeAlias alias="Trade" type="com._null.semi_box.market.model.vo.Trade" />
-      <typeAlias alias="Product" type="com._null.semi_box.market.model.vo.Product" />
+      	<!-- Type Alias 등록 -->
+      	<typeAlias alias="ModifyPassword" type="com._null.semi_box.mypage.model.vo.ModifyPassword" />
+      	<typeAlias alias="Trade" type="com._null.semi_box.market.model.vo.Trade" />
+      	<typeAlias alias="Product" type="com._null.semi_box.market.model.vo.Product" />
 	</typeAliases>
 	
     <environments default="development">

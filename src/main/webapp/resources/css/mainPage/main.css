@@ -5,7 +5,7 @@
   position: relative;
   width: 100%;
   min-width: 1200px;
-  height: 300px;
+  height: 400px;
 }
 
 .main-page.top-banner-link {
@@ -19,13 +19,13 @@
 }
 
 .main-page.contents-container {
-  padding: 36px 88px;
+  padding: 180px 88px 240px;
 }
 
 /* BOX-LIST SECTION */
 
 .main-page.section-title.box-title {
-  font-size: 24px;
+  font-size: 36px;
 }
 
 .main-page.box-item-list {
@@ -33,15 +33,19 @@
   flex-wrap: wrap;
   gap: 24px 3.3%;
 
-  margin-top: 24px;
+  margin-top: 88px;
 }
 
 /* PROD-LIST SECTION */
 
 .main-page.section.prod-list-container {
-  margin-top: 36px;
+  margin-top: 120px;
 }
 
 .main-page.prod-item-list {
-  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 88px;
+  gap: 24px 3.3%;
+  align-content: stretch;
 }
