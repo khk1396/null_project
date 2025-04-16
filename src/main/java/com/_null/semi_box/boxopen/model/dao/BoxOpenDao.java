@@ -24,4 +24,8 @@ public class BoxOpenDao {
         return session.update("boxOpenMapper.updateDiary", 
             Map.of("productId", productId, "diary", diary));
     }
+
+	public int updatePayBoxStatus(SqlSession session, int payId) {
+        return session.update("boxOpenMapper.updatePayBoxStatus", payId);
+	}
 }

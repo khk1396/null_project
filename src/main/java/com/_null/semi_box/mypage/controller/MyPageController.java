@@ -27,6 +27,7 @@ public class MyPageController extends HttpServlet {
 			int userPk = loginUser.getUserPk();
 			PayBoxService inventoryService = new PayBoxServiceImpl();
 			ArrayList<PayBox> list = inventoryService.selectPayBoxAllByUserPk(userPk);
+			System.out.println(list);
 			
 			request.setAttribute("payBoxList", list);
 

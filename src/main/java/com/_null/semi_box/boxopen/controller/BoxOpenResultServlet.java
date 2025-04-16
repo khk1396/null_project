@@ -77,6 +77,16 @@ public class BoxOpenResultServlet extends HttpServlet {
 
         request.setAttribute("fortune", product.getFortune());
         request.setAttribute("productId", uuid);
+        
+        // 박스 USED 변경
+        System.out.println(request.getParameter("payId"));
+        int payId = (int)(session.getAttribute("payId"));
+        System.out.println(payId);
+        int updateBoxResult = service.updatePayBoxStatus(payId);
+        
+        session.removeAttribute("payId");
+        // 박스 USED
+        
 
         // 결과 화면으로 포워딩
         request.getRequestDispatcher("/views/boxOpen/itemInfoPopup.jsp").forward(request, response);

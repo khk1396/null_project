@@ -38,4 +38,14 @@ public class BoxOpenServiceImpl implements BoxOpenService {
         session.close();
         return result; 
     }
+
+	@Override
+	public int updatePayBoxStatus(int payId) {
+		 SqlSession session = getSqlSession();
+	        int result = dao.updatePayBoxStatus(session, payId);
+	        if (result > 0) session.commit();
+	        else session.rollback();
+	        session.close();
+	        return result; 
+	}
 }

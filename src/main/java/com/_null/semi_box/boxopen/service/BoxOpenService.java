@@ -7,4 +7,5 @@ public interface BoxOpenService {
     int insertBoxOpenProduct(BoxOpenProduct product);
     BoxOpenProductDetail selectProductDetailByProductSn(int productSn); // 변경됨
     int updateDiary(String productId, String diary);
+	int updatePayBoxStatus(int payId);
 }

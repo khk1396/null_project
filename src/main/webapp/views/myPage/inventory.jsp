@@ -38,7 +38,9 @@
                     <span class="my-page box-item-container card box-shadow">
                         <a class="my-page box-item-link" 
                            href="${ pageContext.request.contextPath }/views/boxOpen/boxEffect.jsp?boxCode=<%= list.get(i).getBoxCode() %>">
-                           
+                           <%
+                           	request.getSession().setAttribute("payId",list.get(i).getPayId());
+                           %>
                             <span class="my-page box-item card img-container">
                                 <img class="my-page box-item card img" src="<%= list.get(i).getBoxImg() %>" />
                             </span>

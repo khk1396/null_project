@@ -63,5 +63,11 @@
         SELECT PRODUCT_SN
         FROM PRODUCT_DETAIL
     </select>
+    
+    <update id="updatePayBoxStatus">
+    	UPDATE PAY_BOX
+    	SET STATUS = 'USED'
+    	WHERE PAY_ID = #{payId}
+    </update>
 
 </mapper>
